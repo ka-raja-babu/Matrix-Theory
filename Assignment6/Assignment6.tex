@@ -175,48 +175,70 @@ $\therefore$
 \eta = \vec{u}^T\vec{p_1} = -4
 \end{align}
 
-Now,the vertex $\vec{c}$ is given by
+The vertex $\vec{c}$ is given by
 \begin{align}
 \myvec{-8 & 0\\0 & 0\\0 & 1}\vec{c} &= \myvec{0\\0\\0}
 \\
 \implies \vec{c} &= \myvec{0\\0}
 \end{align}
 
-Now,the focal length is given by
+The focal length $f$ is given by
 \begin{align}
-\frac{1}{4}\abs{\frac{2\eta}{\lambda_2}} = \frac{1}{4}\abs{\frac{-8}{1}}= 2
+f = \frac{1}{4}\abs{\frac{2\eta}{\lambda_2}} = \frac{1}{4}\abs{\frac{-8}{1}}= 2
 \end{align}
 
-So,the focus is given by
+The focus $\vec{F}$ is given by
 \begin{align}
-\vec{F} = \myvec{2\\0}
+\vec{a} &= \frac{-2\eta\myvec{1 & 0}}{4} = \myvec{2 & 0}
+\\
+\vec{F} &= \vec{c} + \vec{a}^T = \myvec{2\\0}
 \end{align}
 
 $\because$
 Axis of parabola passes through both vertex and focus .
 \\
 $\therefore$
-Axis of given parabola is 
+Axis of parabola is given by
 \begin{align}
-\myvec{0 & 1}\vec{x} = 0
+\vec{m} =\vec{F} - \vec{c} &= \myvec{2\\0}
+\\
+\vec{x} = \vec{F} + k\vec{m} &= \myvec{2+2k \\ 0}
+\\
+\implies \myvec{0 & 1}\vec{x} &= 0
 \end{align}
 
 $\because$
-Vertex of parabola is at equal distance from focus and the directrix and is perpendicular to axis.
+Vertex of parabola is at equal distance from focus and directrix and is perpendicular to axis.
 \\
 $\therefore$
-Directrix of given parabola is 
+Directrix of parabola is given by
 \begin{align}
-\myvec{1 & 0}\vec{x} = -2
+\myvec{0 & 1}\vec{v_1}^T = 0
+\\
+\implies \vec{v_1} = \myvec{1 & 0}
+\end{align}
+So , 
+\begin{align}
+\vec{v_1}\vec{x} = -f
+\\
+\implies \myvec{1 & 0}\vec{x} = -2
 \end{align}
 
 $\because$
 Latus rectum of parabola passes through focus and is perpendicular to axis.
 \\
 $\therefore$
-Latus rectum of given parabola is 
+Latus rectum of parabola is given by
 \begin{align}
-\myvec{1 & 0}\vec{x} = 2
+\myvec{0 & 1}\vec{v_2}^T = 0
+\\
+\implies \vec{v_2} = \myvec{1 & 0}
+\end{align}
+So , 
+\begin{align}
+\vec{v_2}\vec{x} = f
+\\
+\implies \myvec{1 & 0}\vec{x} = 2
 \end{align}
 
 End points of latus rectum are
@@ -226,12 +248,43 @@ End points of latus rectum are
 \vec{N} &= \myvec{2\\-4}
 \end{align}
 
-So,the length of latus rectum is 
+So,the length of latus rectum $l$ is 
 \begin{align}
-\norm{\vec{M}-\vec{N}} = 8
+l = \norm{\vec{M}-\vec{N}} = 8
 \end{align}
 
-\newpage Plot of given parabola
+All parameters of parabola can be summarised in table \ref{tab:table1}
+
+\numberwithin{table}{section}
+\begin{table}[!ht]
+\begin{center}
+\begin{tabular}{ | m{3.5cm} | m{1.5cm}| m{2.5cm} | } 
+\hline
+Parameter & Symbol & Value \\
+\hline
+Vertex & $\vec{c}$ & \myvec{0\\0} \\ 
+\hline
+Focal Length & $f$ & 2 \\ 
+\hline
+Focus & $\vec{F}$ & \myvec{2\\0} \\
+\hline
+Axis &  & $\myvec{0 & 1}\vec{x} = 0$ \\
+\hline
+Directrix & & $\myvec{1 & 0}\vec{x} = -2$ \\
+\hline
+Latus rectum & & $\myvec{1 & 0}\vec{x} = 2$ \\
+\hline
+End points of latus rectum & $\vec{M},\vec{N}$ & $\myvec{2\\4},\myvec{2\\-4}$ \\
+\hline
+Length of latus rectum & $l$ & 8 \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Parameters of parabola}
+\label{tab:table1}
+\end{table}
+
+Plot of given parabola
 
 \numberwithin{figure}{section}
 \begin{figure}[!ht]
