@@ -146,6 +146,30 @@ https://github.com/ka-raja-babu/Matrix-Theory/tree/main/Assignment6
 Find the coordinates of the focus, axis, the equation of the directrix and latus rectum of the parabola $y^2$ = 8$x$ .
 %
 \section{Solution}
+
+All parameters of parabola $y^2=8x$ can be summarised in table \ref{tab:table1} .
+
+Note : Given general formula is valid only when parabola is in standard form i.e. $\abs{\vec{V}}$ = 0 and $\lambda_1$ = 0 . 
+
+$^{1}$ Procedure to find axis :
+\begin{enumerate}
+\item Calculate vertex $\vec{c}$ and focus $\vec{F}$.
+
+\item Find equation of line joining $\vec{c}$ and $\vec{F}$ using           $\vec{x}=\vec{F} +k\vec{m}$ where $\vec{m}=\vec{F}-\vec{c}$ and $k \in \mathbb{R}.$
+\end{enumerate}
+
+$^{2}$ Procedure to find directrix :
+\begin{enumerate}
+\item Calculate its direction vector $\vec{v_1}$ by using $\vec{v}^T\vec{v_1} =        0.$
+    \item Equate $\vec{v_1}^T\vec{x}$ to -$\beta$ to get final equation.
+\end{enumerate}
+
+$^{3}$ Procedure to find latus rectum :
+\begin{enumerate}
+\item Calculate its direction vector $\vec{v_2}$ by using $\vec{v}^T\vec{v_2} =        0.$
+    \item Equate $\vec{v_2}^T\vec{x}$ to $\beta$ to get final equation.
+\end{enumerate}
+
 \numberwithin{table}{section}
 \begin{table}[!ht]
 \begin{center}
@@ -160,17 +184,17 @@ Focal \newline Length & $\beta$ & 2 & $\frac{1}{4}\abs{\frac{2\eta}{\lambda_2}}$
 \hline
 Focus & $\vec{F}$ & \myvec{2\\0} & $\vec{F}=\vec{c} + \vec{a}^T$ \\
 \hline
-Axis &  & $\myvec{0 & 1}\vec{x}=0$ & $\vec{x}=\vec{F}+k\vec{m}$ \\
+Axis$^{1}$ &  & $\myvec{0 & 1}\vec{x}=0$ & $\vec{x}=\vec{F}+k\vec{m}$ \\
 \hline
 Axis di- \newline rection \newline vector & $\vec{v}$ & $\myvec{0 \\ 1}$ & $\vec{v}^T\vec{x}$ = 0 \\
 \hline
-Direct- \newline rix normal \newline vector & $\vec{v_1}$ & \myvec{1 \\ 0} & $\vec{v}^T\vec{v_1}$ = 0 \\
+Direct- \newline rix dire- \newline ction \newline vector & $\vec{v_1}$ & \myvec{1 \\ 0} & $\vec{v}^T\vec{v_1}$ = 0 \\
 \hline
-Direct- \newline rix & & $\myvec{1 & 0}\vec{x} = -2$ & $\vec{v_1}^T\vec{x} = -\beta$ \\
+Direct- \newline rix$^{2}$ &  & $\myvec{1 & 0}\vec{x} = -2$ & $\vec{v_1}^T\vec{x} = -\beta$ \\
 \hline
-Latus \newline rectum \newline normal \newline vector & $\vec{v_2}$ & $\myvec{1 \\ 0}$ & $\vec{v}^T\vec{v_2}$ = 0 \\ 
+Latus \newline rectum \newline directi- \newline on vector & $\vec{v_2}$ & $\myvec{1 \\ 0}$ & $\vec{v}^T\vec{v_2}$ = 0 \\ 
 \hline
-Latus \newline rectum & & $\myvec{1 & 0}\vec{x}=2$ & $\vec{v_2}^T\vec{x}=\beta$\\
+Latus \newline rectum$^{3}$ & & $\myvec{1 & 0}\vec{x}=2$ & $\vec{v_2}^T\vec{x}=\beta$\\
 \hline
 End \newline points \newline of latus \newline rectum & $\vec{M},\vec{N}$ & $\myvec{2\\4},\myvec{2\\-4}$ & $\myvec{\beta \\ \pm y(\beta)}$ \\
 \hline
@@ -182,10 +206,7 @@ Length \newline of latus \newline rectum & $l$ & 8 & $\norm{\vec{M}-\vec{N}}$\\
 \label{tab:table1}
 \end{table}
 
-All parameters of parabola $y^2=8x$ can be summarised in table \ref{tab:table1} .
-
-Note : Given general formula is valid only when parabola is in standard form i.e. $\abs{\vec{V}}$ = 0 and $\lambda_1$ = 0 . 
-
+\clearpage
 Given parabola is 
 \begin{align}
 y^2 &= 8x
