@@ -164,11 +164,11 @@ Axis &  & $\myvec{0 & 1}\vec{x}=0$ & $\vec{x}=\vec{F}+k\vec{m}$ \\
 \hline
 Axis di- \newline rection \newline vector & $\vec{v}$ & $\myvec{0 \\ 1}$ & $\vec{v}^T\vec{x}$ = 0 \\
 \hline
-Direct- \newline rix normal \newline vector & $\vec{v_1}$ & \myvec{1 \\ 0} & $\vec{v_1}\vec{v}^T$ = 0 \\
+Direct- \newline rix normal \newline vector & $\vec{v_1}$ & \myvec{1 \\ 0} & $\vec{v}^T\vec{v_1}$ = 0 \\
 \hline
 Direct- \newline rix & & $\myvec{1 & 0}\vec{x} = -2$ & $\vec{v_1}^T\vec{x} = -\beta$ \\
 \hline
-Latus \newline rectum \newline normal \newline vector & $\vec{v_2}$ & $\myvec{1 \\ 0}$ & $\vec{v_2}\vec{v}^T$ = 0 \\ 
+Latus \newline rectum \newline normal \newline vector & $\vec{v_2}$ & $\myvec{1 \\ 0}$ & $\vec{v}^T\vec{v_2}$ = 0 \\ 
 \hline
 Latus \newline rectum & & $\myvec{1 & 0}\vec{x}=2$ & $\vec{v_2}^T\vec{x}=\beta$\\
 \hline
@@ -255,7 +255,7 @@ Vertex of parabola is at equal distance from focus and directrix and is perpendi
 $\therefore$
 Directrix of parabola is given by
 \begin{align}
-\vec{v_1}\vec{v}^T = 0
+\vec{v}^T\vec{v_1} = 0
 \\
 \implies \vec{v_1} = \myvec{1 \\ 0}
 \end{align}
@@ -272,7 +272,7 @@ Latus rectum of parabola passes through focus and is perpendicular to axis.
 $\therefore$
 Latus rectum of parabola is given by
 \begin{align}
-\vec{v_2}\vec{v}^T = 0
+\vec{v}^T\vec{v_2} = 0
 \\
 \implies \vec{v_2} = \myvec{1 \\ 0}
 \end{align}
@@ -426,11 +426,11 @@ By using $\vec{c}$ from \eqref{eq:12} and $\vec{F}$ from \eqref{eq:13},axis can 
 \\
 \vec{x} &= \vec{F}+k\vec{m} \quad \brak{k \in \mathbb{R}} \label{eq:14}
 \\
-\implies \vec{v}\vec{x} &= 0 \quad (\text{$\vec{v}$ is direction vector of $\vec{x}$}) \label{eq:21}
+\implies \vec{v}^T\vec{x} &= 0 \quad (\text{$\vec{v}$ is direction vector of $\vec{x}$}) \label{eq:21}
 \end{align}
 Directrix is always perpendicular to axis such that 
 \begin{align}
-\vec{v_1}\vec{v}^T = 0 \quad (\text{$\vec{v_1}$ is normal vector}) \label{eq:19}
+\vec{v}^T\vec{v_1} = 0 \quad (\text{$\vec{v_1}$ is normal vector}) \label{eq:19}
 \end{align}
 Using \eqref{eq:16},\eqref{eq:21} and \eqref{eq:19},directrix can be expressed as 
 \begin{align}
@@ -438,7 +438,7 @@ Using \eqref{eq:16},\eqref{eq:21} and \eqref{eq:19},directrix can be expressed a
 \end{align}
 Also,latus rectum is always perpendicular to axis such that
 \begin{align}
-    \vec{v_2}\vec{v}^T = 0 \quad (\text{$\vec{v_2}$ is normal vector}) \label{eq:20}
+    \vec{v}^T\vec{v_2} = 0 \quad (\text{$\vec{v_2}$ is normal vector}) \label{eq:20}
 \end{align}
 Using \eqref{eq:16},\eqref{eq:21} and \eqref{eq:20},latus rectum can be expressed as \begin{align}
     \vec{v_2}^T\vec{x} = \beta 
