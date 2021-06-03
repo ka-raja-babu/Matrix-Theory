@@ -212,11 +212,11 @@ Length \newline of latus \newline rectum & $l$ & 8 & $\norm{\vec{M}-\vec{N}}$\\
 \begin{lemma}
 General equation of a conic is given by
 \begin{align}
-ax^2+2bxy+cy^2+2dx+2ey+f=0 \label{eq:15}
+ax^2+2bxy+cy^2+2dx+2ey+f=0 \label{eq:geneq}
 \end{align}
 and can be expressed as 
 \begin{align}
-    \vec{x}^T\vec{V}\vec{x} + 2\vec{u}^T\vec{x} + f = 0 \label{eq:1}
+    \vec{x}^T\vec{V}\vec{x} + 2\vec{u}^T\vec{x} + f = 0 \label{eq:veceq}
 \end{align}
 where
 \begin{align}
@@ -225,10 +225,11 @@ where
     \vec{u}&=\myvec{d & e}
 \end{align}
 \end{lemma}
+
 \begin{lemma}
-\eqref{eq:1} can be expressed as 
+\eqref{eq:veceq} can be expressed as 
 \begin{align}
-    \vec{y}^T\vec{D}\vec{y} + 2(\vec{V}\vec{c} + \vec{u})^T \vec{P}\vec{y} + \vec{c}^T\vec{V}\vec{c} + 2\vec{u}^T\vec{c} + f = 0 \label{eq:22}
+    \vec{y}^T\vec{D}\vec{y} + 2(\vec{V}\vec{c} + \vec{u})^T \vec{P}\vec{y} + \vec{c}^T\vec{V}\vec{c} + 2\vec{u}^T\vec{c} + f = 0 \label{eq:newveceq}
 \end{align}
 \end{lemma}
 
@@ -239,24 +240,22 @@ When $\abs{\vec{V}} = 0, \lambda_1 = 0$ and
 \vec{V}\vec{p}_2 = \lambda_2\vec{p}_2
 \end{align}
 
-Then, \eqref{eq:22} can be expressed as 
+Then, \eqref{eq:newveceq} can be expressed as 
 \begin{align}
-\vec{y}^T\vec{D}\vec{y} = -2\eta\myvec{1 & 0}\vec{y} \label{eq:23}
+\vec{y}^T\vec{D}\vec{y} = -2\eta\myvec{1 & 0}\vec{y} \label{eq:stdveceq}
 \end{align}
 \end{lemma}
 
 \begin{lemma}
 Focal length of a parabola is given by
 \begin{align}
-\beta = \frac{1}{4}\abs{\frac{2\vec{u}^T\vec{p}_1}{\lambda_2}} 
-\label{eq:16} 
-\end{align}
+\beta = \frac{1}{4}\abs{\frac{2\vec{u}^T\vec{p}_1}{\lambda_2}} \label{eq:foclen} \end{align}
 \end{lemma}
 
 \begin{lemma}
 Vertex of a parabola when it is in standard form is given by 
 \begin{align}
-\myvec{\vec{u}^T + \eta\vec{p_1}^T \\ \vec{V}}\vec{c} = \myvec{-f \\ \eta\vec{p_1} - \vec{u}} \label{eq:12}
+\myvec{\vec{u}^T + \eta\vec{p_1}^T \\ \vec{V}}\vec{c} = \myvec{-f \\ \eta\vec{p_1} - \vec{u}} \label{eq:vertex}
 \end{align}
 \end{lemma}
 
@@ -265,80 +264,92 @@ Focus of a parabola when it is in standard form is given by
 \begin{align}
 \vec{a} &= \frac{-2\eta\myvec{1 & 0}}{4} 
 \\
-\vec{F} &= \vec{c} + \vec{a}^T  \label{eq:25}
+\vec{F} &= \vec{c} + \vec{a}^T  \label{eq:focus}
 \end{align}
 \end{lemma}
+
 \begin{proof}
-From \eqref{eq:23},parameter $\vec{a}$ of parabola can be calculated as
+From \eqref{eq:stdveceq},parameter $\vec{a}$ of parabola can be calculated as
 \begin{align}
 \vec{a} &= \frac{-2\eta\myvec{1 & 0}}{4} 
 \end{align}
 $\therefore$ Focus $\vec{F}$ is given by
 \begin{align}
-\vec{F} &= \vec{c} + \vec{a}^T  \label{eq:13}
+\vec{F} &= \vec{c} + \vec{a}^T  
 \end{align}
 \end{proof}
+
 \begin{definition}
-Axis  of  a parabola  always passes through  both  vertex and focus \label{def:1}
+Axis  of  a parabola  always passes through  both  vertex and focus
+\label{def:1}
 \end{definition}
+
 \begin{lemma}
 Axis of a parabola when it is standard form is given by
 \begin{align}
-    \vec{x} &= \vec{F}+k\vec{m} \quad \brak{k \in \mathbb{R}} \label{eq:26}
+    \vec{x} &= \vec{F}+k\vec{m} \quad \brak{k \in \mathbb{R}} \label{eq:axis}
 \end{align}
 \end{lemma}
+
 \begin{proof}
 Using definition \ref{def:1}, axis can be calculated by finding equation of line joining vertex and focus.
 \\
-Using $\vec{c}$ from \eqref{eq:12} and $\vec{F}$ from \eqref{eq:13},
+Using $\vec{c}$ from \eqref{eq:vertex} and $\vec{F}$ from \eqref{eq:focus},
 \\
 axis can be calculated as
 \begin{align}
 \vec{m} &= \vec{F}-\vec{c} \quad (\text{$\vec{m}$ is direction vector})
 \\
-\vec{x} &= \vec{F}+k\vec{m} \quad \brak{k \in \mathbb{R}} \label{eq:14}
+\vec{x} &= \vec{F}+k\vec{m} \quad \brak{k \in \mathbb{R}} 
 \\
-\implies \vec{v}^T\vec{x} &= 0 \quad (\text{$\vec{v}$ is direction vector of $\vec{x}$}) \label{eq:21}
+\implies \vec{v}^T\vec{x} &= 0 \quad (\text{$\vec{v}$ is direction vector of $\vec{x}$}) \label{eq:vecaxis}
 \end{align}
 \end{proof}
+
 \begin{definition}
 Vertex  of  parabola  is  at  equal  distance  from focus and directrix and directrix is perpendicular to axis. \label{def:2}
 \end{definition}
+
 \begin{lemma}
 Directrix of a parabola when it is in standard form is given by
 \begin{align}
     \vec{v_1}^T\vec{x} = -\beta 
 \end{align}
 \end{lemma}
+
 \begin{proof}
 Using definition \ref{def:2},directrix is always perpendicular to axis such that
 \begin{align}
-\vec{v}^T\vec{v_1} = 0 \quad (\text{$\vec{v_1}$ is direction vector of directrix}) \label{eq:19}
+\vec{v}^T\vec{v_1} = 0 \quad (\text{$\vec{v_1}$ is direction vector of directrix}) \label{eq:directrix}
 \end{align}
-Using \eqref{eq:16} and \eqref{eq:19},directrix can be expressed as 
+Using \eqref{eq:foclen} and \eqref{eq:directrix},directrix can be expressed as 
 \begin{align}
     \vec{v_1}^T\vec{x} = -\beta 
 \end{align}
 \end{proof}
+
 \begin{definition}
 Latus rectum of parabola passes through focus and is perpendicular to axis. \label{def:3}
 \end{definition}
+
 \begin{lemma}
 Latus rectum of a parabola when it is in standard form is given by 
 \begin{align}
     \vec{v_2}^T\vec{x} = \beta 
 \end{align}
 \end{lemma}
+
 \begin{proof}
 Using definition \ref{def:3},latus rectum is always perpendicular to axis such that
 \begin{align}
-    \vec{v}^T\vec{v_2} = 0 \quad (\text{$\vec{v_2}$ is direction vector of latus rectum}) \label{eq:20}
+    \vec{v}^T\vec{v_2} = 0 \quad (\text{$\vec{v_2}$ is direction vector of latus rectum}) \label{eq:latus}
 \end{align}
-Using \eqref{eq:16} and \eqref{eq:20},latus rectum can be expressed as 
+Using \eqref{eq:foclen} and \eqref{eq:latus},latus rectum can be expressed as 
 \begin{align}
     \vec{v_2}^T\vec{x} = \beta 
 \end{align}
 \end{proof}
+
 \begin{lemma}
 End points of latus rectum of a parabola when it is in standard form is given by
 \begin{align}
@@ -347,16 +358,17 @@ End points of latus rectum of a parabola when it is in standard form is given by
     \vec{N}&=\myvec{\beta \\ y_2} 
 \end{align}
 \end{lemma}
+
 \begin{proof}
-Substituting $x=\beta$ in \eqref{eq:15},we get two values of $y$
+Substituting $x=\beta$ in \eqref{eq:geneq},we get two values of $y$
 \begin{align}
-    y_1 , y_2 \label{eq:30}
+    y_1 , y_2 \label{eq:ordinate}
 \end{align}
-Using \eqref{eq:30},end points of latus rectum can be calculated as
+Using \eqref{eq:ordinate},end points of latus rectum can be calculated as
 \begin{align}
-    \vec{M}&=\myvec{\beta \\ y_1} \label{eq:17}
+    \vec{M}&=\myvec{\beta \\ y_1} \label{eq:endpt1}
     \\
-    \vec{N}&=\myvec{\beta \\ y_2} \label{eq:18}
+    \vec{N}&=\myvec{\beta \\ y_2} \label{eq:endpt2}
 \end{align}
 \end{proof}
 
@@ -366,8 +378,9 @@ Length of latus rectum is given by
     l=\norm{\vec{M}-\vec{N}}
 \end{align}
 \end{lemma}
+
 \begin{proof}
-Using \eqref{eq:17} and \eqref{eq:18},length of latus rectum can be expressed as
+Using \eqref{eq:endpt1} and \eqref{eq:endpt2},length of latus rectum can be expressed as
 \begin{align}
     l=\norm{\vec{M}-\vec{N}}
 \end{align}
