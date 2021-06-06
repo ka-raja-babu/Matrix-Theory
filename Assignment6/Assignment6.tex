@@ -148,26 +148,26 @@ https://github.com/ka-raja-babu/Matrix-Theory/tree/main/Assignment6
 \numberwithin{table}{section}
 \begin{table}[!ht]
 \begin{center}
-\begin{tabular}{ | m{1.4cm} | m{1.0cm}| m{2.4cm} | m{2.3cm} | } 
+\begin{tabular}{ | m{1.4cm} | m{1.0cm}| m{2.3cm} | m{2.4cm} | } 
 \hline
-Para-\newline meter  & Sym-\newline bol  & Value  & General \newline Formula\\ 
+Para-\newline meter  & Sym-\newline bol  & General \newline Formula & Value \\ 
 \hline
-Vertex & $\vec{c}$ & $\myvec{0\\0}$ & $\myvec{\vec{u}^T + \eta\vec{p_1}^T \\ \vec{V}}\vec{c}$ \newline $= \myvec{-f \\ \eta\vec{p_1} - \vec{u}}$ \\ 
+Vertex & $\vec{c}$ & $\myvec{\vec{u}^T + \eta\vec{p_1}^T \\ \vec{V}}\vec{c}$ \newline $= \myvec{-f \\ \eta\vec{p_1} - \vec{u}}$ & $\myvec{0\\0}$ \\ 
 \hline
-Focal \newline Length & $\beta$ & 2 & $\frac{1}{2}\abs{\frac{\eta}{\lambda_2}}$
+Focal \newline Length & $\beta$ & $\frac{1}{2}\abs{\frac{\eta}{\lambda_2}}$ & 2 
 \\ 
 \hline
-Focus \newline & $\vec{F}$ & \myvec{2\\0} & $\vec{F}$ = $\vec{c}$ +  \newline ${\frac{-2\eta\myvec{1 & 0}}{4}}^{T}$ \newline \\
+Focus \newline & $\vec{F}$ &  $\vec{F}$ = $\vec{c}$ +  \newline ${\frac{-2\eta\myvec{1 & 0}}{4}}^{T}$ \newline & \myvec{2\\0}  \\
 \hline
-Axis &  & $\myvec{0 & 1}\vec{x}=0$ & $k(\vec{V}\vec{c}+\vec{u})^{T}\vec{x} = 0$ \\
+Axis &  & $(\vec{V}\vec{c}+\vec{u})^{T}\vec{x} = 0$  & $\myvec{0 & 1}\vec{x}=0$ \\
 \hline
-Direct- \newline rix &  & &$(\vec{V}\vec{c}+\vec{u})^T(\vec{x} +\beta) + \vec{u}^T\vec{c} + \vec{f} = 0$ \newline \\
+Direct- \newline rix &  & $(\vec{V}\vec{c}+\vec{u})^T(\vec{x} +\beta) + \vec{u}^T\vec{c} + \vec{f} = 0$ \newline  &$\myvec{1 & 0}\vec{x}=-2$\\
 \hline
-Latus \newline rectum & & &$(\vec{V}\vec{c}+\vec{u})^T(\vec{x} -\beta) + \vec{u}^T\vec{c} + \vec{f} = 0$ \\
+Latus \newline rectum & & $(\vec{V}\vec{c}+\vec{u})^T(\vec{x} -\beta) + \vec{u}^T\vec{c} + \vec{f} = 0$ & $\myvec{1 & 0}\vec{x} = 2$ \\
 \hline
-End \newline points \newline of latus \newline rectum & $\kappa$ & $\myvec{2 \\ \pm 4}$ & $\vec{u}^T\kappa =$ \newline $-\frac{(\kappa^T\vec{V}\kappa + f )}{2}$ \\
+End \newline points \newline of latus \newline rectum & $\kappa$ & $\vec{u}^T\kappa =$ \newline $-\frac{(\kappa^T\vec{V}\kappa + f )}{2}$ & $\myvec{2 \\ \pm 4}$  \\
 \hline
-Length \newline of latus \newline rectum & $l$ & 8 & $\norm{\beta(\vec{V}\vec{c}+\vec{u})^T}$ \\
+Length \newline of latus \newline rectum & $l$ & $\norm{\beta(\vec{V}\vec{c}+\vec{u})^T}$ & 8  \\
 \hline
 \end{tabular}
 \end{center}
@@ -257,7 +257,7 @@ From \eqref{eq:stdveceq} and \eqref{eq:vertex},focus $\vec{F}$ is given by
 \begin{lemma}
 Normal vector at any point $\vec{q}$ of a conic section is obtained as 
 \begin{align}
-    k\vec{n}=\vec{V}\vec{q} + \vec{u}
+    \vec{n}=\vec{V}\vec{q} + \vec{u}
 \end{align}
 \label{eq:norm}
 \end{lemma}
@@ -265,22 +265,18 @@ Normal vector at any point $\vec{q}$ of a conic section is obtained as
 \begin{lemma}
 Axis of a parabola when it is in standard form is given by
 \begin{align}
-k(\vec{V}\vec{c}+\vec{u})^{T}\vec{x} = 0 \label{eq:axis}
-\end{align}
-where,
-\begin{align}
-    k \in \mathbb{R}
+(\vec{V}\vec{c}+\vec{u})^{T}\vec{x} = 0 \label{eq:axis}
 \end{align}
 \end{lemma}
 
 \begin{proof}
 Using \eqref{eq:norm},Normal vector at vertex is given by 
 \begin{align}
-    k(\vec{V}\vec{c} + \vec{u})^T
+    (\vec{V}\vec{c} + \vec{u})^T
 \end{align}
 So,axis is given as 
 \begin{align}
-    k(\vec{V}\vec{c}+\vec{u})^{T}\vec{x} = 0
+    (\vec{V}\vec{c}+\vec{u})^{T}\vec{x} = 0
 \end{align}
 \end{proof}
 
@@ -430,7 +426,7 @@ Latus rectum of parabola is given by
 \\
 \implies \myvec{-4 & 0}(\vec{x-2}) &= 0
 \\
-\implies \myvec{1 & 0} &=2
+\implies \myvec{1 & 0}\vec{x} &=2
 \end{align}
 
 End points of latus rectum are
