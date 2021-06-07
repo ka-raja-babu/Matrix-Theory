@@ -131,12 +131,7 @@ columns=fullflexible
 \bigskip
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
-Download all python codes from 
-\begin{lstlisting}
-https://github.com/ka-raja-babu/Matrix-Theory/tree/main/ChallengeProblem1/Codes
-\end{lstlisting}
-%
-and latex-tikz codes from 
+Download latex-tikz code from 
 %
 \begin{lstlisting}
 https://github.com/ka-raja-babu/Matrix-Theory/tree/main/ChallengeProblem1
@@ -146,13 +141,11 @@ https://github.com/ka-raja-babu/Matrix-Theory/tree/main/ChallengeProblem1
 Show that the matrix $(t\vec{I}-\vec{n}\vec{n}^T)$ in the given document is a rank 1 matrix for a parabola.
 %
 \section{Solution}
-Given :
+Let
 \begin{align}
     \vec{V} = (t\vec{I}-\vec{n}\vec{n}^T) 
 \end{align}
-\\
-Let rank of a matrix $\vec{A}$ be represented by $\rho(\vec{A})$.
-\\
+
 Here, $\vec{V}$ is a diagonizable matrix such that
 \begin{align}
     \vec{P}^{-1}\vec{V}\vec{P} &= \vec{D}  \quad \brak{\text{Eigenvalue Decomposition}}
@@ -160,10 +153,12 @@ Here, $\vec{V}$ is a diagonizable matrix such that
     \vec{D} &= \myvec{\lambda_1 & 0 \\ 0 & \lambda_2}
 \end{align}
 
+Let rank of matrix be represented by $\rho$.
+
 \begin{lemma}
 Let $\vec{A}$ be a mxn diagonizable matrix.Then,
 \begin{align}
-   \rho(\vec{A}) = \rho(\vec{B}^{-1}\vec{A}\vec{B}) = \rho(\vec{D}) \label{eq1}
+   \rho(\vec{A}) = \rho(\vec{B}^{-1}\vec{A}\vec{B}) = \rho(\vec{D}) \label{eqq1}
 \end{align}
 \end{lemma}
 
@@ -195,7 +190,7 @@ So,
 \end{align}
 $\therefore$ Using \eqref{eq1},\eqref{eq2} and \eqref{eq3},
 \begin{align}
-    \rho(\vec{D}) = \rho(\vec{A})
+    \rho(\vec{A}) = \rho(\vec{D})
 \end{align}
 \end{proof}
 
@@ -217,7 +212,7 @@ And,in case of ellipse,hyperbola and circle, \label{result2}
     \lambda_2 \neq 0 
 \end{align}
 $\therefore$
-Using def.\ref{def1} , \eqref{eq1} and values of $\lambda_1$ and $\lambda_2$ ,
+Using def.\ref{def1} , \eqref{eqq1} and values of $\lambda_1$ and $\lambda_2$ ,
 
 For a parabola,
 \begin{align}
