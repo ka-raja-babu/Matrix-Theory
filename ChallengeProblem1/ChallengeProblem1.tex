@@ -146,7 +146,7 @@ Let
     \vec{V} = (t\vec{I}-\vec{n}\vec{n}^T) 
 \end{align}
 
-For any conic $ax^2 + 2bxy + cy^2 + 2dx + 2ey + f = 0$,
+For any conic, $ax^2 + 2bxy + cy^2 + 2dx + 2ey + f = 0$,
 \begin{align}
     \vec{V} = \myvec{a & b \\ b & c}
 \end{align}
@@ -156,14 +156,42 @@ So,$\vec{V}$ is a symmetric matrix such that
     \vec{V} = \vec{V}^T \label{symm}
 \end{align}
 
-\begin{theorem}[Spectral Theorem for Symmetric Matrix]
+\begin{theorem}
 \label{theorem1}
-Symmetric matrices are always orthogonally diagonizable matrices.
+A matrix $\vec{A}$ is orthogonally diagonizable if and only if $\vec{A}$ is symmetric.
 \end{theorem}
 
-Using \eqref{symm} and theorem \ref{theorem1}, $\vec{V}$ is a diagonizable matrix such that
+\begin{proof}
+Let us assume that $\vec{A}$ is orthogonally diagonizable such that 
 \begin{align}
-    \vec{P}^{-1}\vec{V}\vec{P} &= \vec{D}  \quad \brak{\text{Eigenvalue Decomposition}}
+    \vec{D} &= \vec{P}^{-1}\vec{A}\vec{P}
+    \\
+    \vec{P}^T &= \vec{P}^{-1}
+\end{align}
+Now,
+\begin{align}
+    \vec{A} &= \vec{P}\vec{D}\vec{P}^{-1}
+    \\
+    \implies \vec{A} &= \vec{P}\vec{D}\vec{P}^T \label{eqr1}
+\end{align}
+Now,
+\begin{align}
+    \vec{A}^T &= (\vec{P}\vec{D}\vec{P}^T)^T
+    \\
+    \implies \vec{A}^T &= (\vec{P}^T)^T\vec{D}^T\vec{P}^T
+    \\
+    \implies \vec{A}^T &= \vec{P}\vec{D}\vec{P}^T \label{eqr2}
+\end{align}
+$\therefore$ From \eqref{eqr1} and \eqref{eqr2},
+\begin{align}
+    \vec{A} = \vec{A}^T
+\end{align}
+Hence,$\vec{A}$ is orthogonally diagonizable only when $\vec{A}$ is symmetric.
+\end{proof}
+
+$\therefore$ Using \eqref{symm} and theorem \ref{theorem1}, $\vec{V}$ is a diagonizable matrix such that
+\begin{align}
+    \vec{P}^{-1}\vec{V}\vec{P} &= \vec{D} 
     \\
     \vec{D} &= \myvec{\lambda_1 & 0 \\ 0 & \lambda_2}
 \end{align}
@@ -228,7 +256,7 @@ And,in case of ellipse,hyperbola and circle, \label{result2}
     \lambda_2 \neq 0 
 \end{align}
 $\therefore$
-Using def.\ref{def1} , lemma \ref{lemma1} and values of $\lambda_1$ and $\lambda_2$ ,
+Using def.\ref{def1},lemma \ref{lemma1} and values of $\lambda_1$ and $\lambda_2$ ,
 
 For a parabola,
 \begin{align}
