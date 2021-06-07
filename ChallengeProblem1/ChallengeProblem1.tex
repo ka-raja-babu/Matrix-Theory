@@ -146,7 +146,22 @@ Let
     \vec{V} = (t\vec{I}-\vec{n}\vec{n}^T) 
 \end{align}
 
-Here, $\vec{V}$ is a diagonizable matrix such that
+For any conic $ax^2 + 2bxy + cy^2 + 2dx + 2ey + f = 0$,
+\begin{align}
+    \vec{V} = \myvec{a & b \\ b & c}
+\end{align}
+
+So,$\vec{V}$ is a symmetric matrix such that
+\begin{align}
+    \vec{V} = \vec{V}^T \label{symm}
+\end{align}
+
+\begin{theorem}[Spectral Theorem for Symmetric Matrix]
+\label{theorem1}
+Symmetric matrices are always orthogonally diagonizable matrices.
+\end{theorem}
+
+Using \eqref{symm} and theorem \ref{theorem1}, $\vec{V}$ is a diagonizable matrix such that
 \begin{align}
     \vec{P}^{-1}\vec{V}\vec{P} &= \vec{D}  \quad \brak{\text{Eigenvalue Decomposition}}
     \\
@@ -156,6 +171,7 @@ Here, $\vec{V}$ is a diagonizable matrix such that
 Let rank of matrix be represented by $\rho$.
 
 \begin{lemma}
+\label{lemma1}
 Let $\vec{A}$ be a mxn diagonizable matrix.Then,
 \begin{align}
    \rho(\vec{A}) = \rho(\vec{B}^{-1}\vec{A}\vec{B}) = \rho(\vec{D}) \label{eqq1}
@@ -212,7 +228,7 @@ And,in case of ellipse,hyperbola and circle, \label{result2}
     \lambda_2 \neq 0 
 \end{align}
 $\therefore$
-Using def.\ref{def1} , \eqref{eqq1} and values of $\lambda_1$ and $\lambda_2$ ,
+Using def.\ref{def1} , lemma \ref{lemma1} and values of $\lambda_1$ and $\lambda_2$ ,
 
 For a parabola,
 \begin{align}
