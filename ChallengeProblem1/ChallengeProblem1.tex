@@ -150,83 +150,83 @@ Given :
 \begin{align}
     \vec{V} = (t\vec{I}-\vec{n}\vec{n}^T) 
 \end{align}
-is a symmetric and orthogonal matrix .
 \\
-$\therefore$
+Let rank of a matrix $\vec{A}$ be represented by $\rho(\vec{A})$.
+\\
+Here, $\vec{V}$ is a diagonizable matrix such that
 \begin{align}
-    \vec{V} = \vec{V^T} = \vec{V}^{-1} \label{eq2}
+    \vec{P}^{-1}\vec{V}\vec{P} &= \vec{D}  \quad \brak{\text{Eigenvalue Decomposition}}
+    \\
+    \vec{D} &= \myvec{\lambda_1 & 0 \\ 0 & \lambda_2}
 \end{align}
 
-
 \begin{lemma}
-Let $\vec{A}$ be a mxn matrix.Then,
+Let $\vec{A}$ be a mxn diagonizable matrix.Then,
 \begin{align}
-   \rho(\vec{A}) = \rho(\vec{A^TA}) \label{eq1}
+   \rho(\vec{A}) = \rho(\vec{B}^{-1}\vec{A}\vec{B}) = \rho(\vec{D}) \label{eq1}
 \end{align}
 \end{lemma}
 
 \begin{proof}
-Let $\vec{x} \in$ $N(\vec{A})$ where $N(\vec{A})$ is the null space of $\vec{A}$.
+Here , $\vec{A}$ and $\vec{D}$ are similar matrices such that 
+\begin{align}
+    \vec{D} = \vec{B}^{-1}\vec{A}\vec{B}
+\end{align}
+Now,
+\begin{align}
+    \vec{B}\vec{D} &= (\vec{B}\vec{B}^{-1})\vec{A}\vec{B}
+    \\
+    \implies \vec{B}\vec{D} &= \vec{I}\vec{A}\vec{B}
+    \\
+    \implies \vec{B}\vec{D} &= \vec{A}\vec{B}
+\end{align}
+So,
+\begin{align}
+    \rho(\vec{A}\vec{B}) = \rho(\vec{B}\vec{D}) \label{eq1}
+\end{align}
+\\
+Since $\vec{B}$ is an invertible matrix and hence a full rank matrix.
 \\
 So,
 \begin{align}
-    \vec{A}\vec{x} = 0
+    \rho(\vec{A}\vec{B}) = \rho(\vec{A}) \label{eq2}
     \\
-    \implies \vec{A}^T\vec{A}\vec{x} = 0
-    \\
-    \implies \vec{x} \in N(\vec{A}^T\vec{A})
+    \rho(\vec{B}\vec{D}) = \rho(\vec{D}) \label{eq3}
 \end{align}
-Hence,
+$\therefore$ Using \eqref{eq1},\eqref{eq2} and \eqref{eq3},
 \begin{align}
-    N(\vec{A}) \subseteq N(\vec{A}^T\vec{A})
-\end{align}
-Again,let $\vec{x} \in$ $N(\vec{A}^T\vec{A})$
-\\
-So,
-\begin{align}
-    \vec{A}^T\vec{A}\vec{x} = 0
-    \\
-    \implies \vec{x}^T\vec{A}^T\vec{A}\vec{x} = 0
-    \\
-    \implies (\vec{A}\vec{x})^T(\vec{A}\vec{x}) = 0
-    \\
-    \implies \vec{A}\vec{x} = 0
-    \\
-    \implies \vec{x} \in N(\vec{A})
-\end{align}
-Hence,
-\begin{align}
-    N(\vec{A}^T\vec{A}) \subseteq N(\vec{A})
-\end{align}
-$\therefore$
-\begin{align}
-    N(\vec{A}^T\vec{A}) = N(\vec{A})
-    \\
-    \implies \text{dim}(N(\vec{A}^T\vec{A})) = \text{dim}(N(\vec{A}))
-    \\
-    \implies \rho(\vec{A}^T\vec{A}) = \rho(\vec{A})
+    \rho(\vec{D}) = \rho(\vec{A})
 \end{align}
 \end{proof}
 
-Now,using \eqref{eq1} ,
+\begin{definition}
+Rank of a diagonal matrix is equal to the number of its non-zero eigen values. \label{def1}
+\end{definition}
+
+Now,in case of parabola, 
 \begin{align}
-    \rho(\vec{V}) = \rho(\vec{V}^T\vec{V})
+    \lambda_1 =0 
     \\
-    \implies \rho(\vec{V}) = \rho(\vec{V}^{-1}\vec{V}) 
-    \\
-    \implies \rho(\vec{V}) = \rho(\vec{I})
-    \\
-    \implies \rho(\vec{V}) = 2
+    \lambda_2 \neq 0 
 \end{align}
-In case of parabola where $\vec{V}$ is singular,
+
+And,in case of ellipse,hyperbola and circle, \label{result2}
 \begin{align}
-    \rho(\vec{V}) < 2
+    \lambda_1 \neq 0 
     \\
-    \implies \rho(\vec{V}) =1
+    \lambda_2 \neq 0 
 \end{align}
-In case of ellipse,hyperbola and circle where $\vec{V}$ is non-singular,
+$\therefore$
+Using def.\ref{def1} , \eqref{eq1} and values of $\lambda_1$ and $\lambda_2$ ,
+
+For a parabola,
 \begin{align}
-    \rho(\vec{V}) = 2
+    \rho(\vec{V}) = \rho(\vec{D}) = 1
+\end{align}
+
+For ellipse,hyperbola and circle,
+\begin{align}
+    \rho(\vec{V}) = \rho(\vec{D}) = 2
 \end{align}
 \end{document}
 
