@@ -152,12 +152,20 @@ https://github.com/ka-raja-babu/Matrix-Theory/tree/main/Assignment6
 \hline
 Para-\newline meter  & Sym\newline bol  & General \newline Formula & Value \\ 
 \hline
-Vertex & $\vec{c}$ & $\myvec{\vec{u}^T + \eta\vec{p_1}^T \\ \vec{V}}\vec{c}$ \newline $= \myvec{-f \\ \eta\vec{p_1} - \vec{u}}$ \newline & $\myvec{0\\0}$ \\ 
+Vertex &  $\vec{c}$ & 1)For $\norm{\vec{V}} \neq 0$ \newline $\vec{c}=-\vec{V}^{-1}\vec{u}$ \newline &$\myvec{0\\0}$ \\ \cline{3-3} 
+
+& & 2)For $\norm{\vec{V}}=0$ \newline $\myvec{\vec{u}^T + \eta\vec{p_1}^T \\ \vec{V}}\vec{c}$ \newline $= \myvec{-f \\ \eta\vec{p_1} - \vec{u}}$ \newline  & \\ 
 \hline
-Focal \newline Length & $\beta$ & $\frac{1}{2}\abs{\frac{(\vec{c}^T\vec{V}+\vec{u}^T)\vec{p}_1}{(\lambda_1+\lambda_2)}}$  & 2 
-\\ 
+
+Focal \newline Length & $\beta$ & 1)For $\norm{\vec{V}} \neq 0$ \newline $\frac{1}{2}\abs{\frac{(\vec{c}^T\vec{V}+\vec{u}^T)\vec{p}_1}{(\lambda_1+\lambda_2)}}$ \newline & 2 \\ \cline{3-3} 
+
+& &  2)For $\norm{\vec{V}}=0$ \newline $\frac{1}{2}\abs{\frac{\vec{u}^T\vec{p}_1}{\lambda_2}}$ \newline & \\
 \hline
-Focus \newline & $\vec{F}$ & $\sqrt{\frac{(\vec{u}^T\vec{V}^{-1}\vec{u}-f)(\lambda_2-\lambda_1)}{\lambda_1\lambda_2}}$  & $\myvec{2\\0}$ \\
+
+Focus \newline & $\vec{F}$ & 1)For $\norm{\vec{V}} \neq 0$ \newline $\sqrt{\frac{(\vec{u}^T\vec{V}^{-1}\vec{u}-f)(\lambda_2-\lambda_1)}{\lambda_1\lambda_2}}$ \newline & $\myvec{2\\0}$ \\ \cline{3-3}   
+
+& & 2)For $\norm{\vec{V}}=0$ \newline $\vec{F}= \vec{c}$  + \newline ${\frac{-2\eta\myvec{1 & 0}}{4}}^{T}$\newline &
+\\
 \hline
 Axis &  & $(\vec{V}\vec{c}+\vec{u})^{T}\vec{x} = 0$  & $\myvec{0 & 1}\vec{x}=0$ \\
 \hline
@@ -174,8 +182,6 @@ Length \newline of latus \newline rectum & $l$ & $\norm{\beta(\vec{V}\vec{c}+\ve
 \caption{Parameters of parabola $y^2=8x$}
 \label{tab:table1}
 \end{table}
-
-All parameters of parabola $y^2=8x$ can be summarised in table \ref{tab:table1}.
 
 \begin{lemma}
 General equation of a conic is given by
