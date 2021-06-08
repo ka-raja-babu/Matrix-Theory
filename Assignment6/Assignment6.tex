@@ -148,16 +148,16 @@ https://github.com/ka-raja-babu/Matrix-Theory/tree/main/Assignment6
 \numberwithin{table}{section}
 \begin{table}[!ht]
 \begin{center}
-\begin{tabular}{ | m{1.3cm} | m{0.9cm}| m{2.5cm} | m{2.4cm} | } 
+\begin{tabular}{ | m{1.25cm} | m{0.8cm}| m{2.7cm} | m{2.35cm} | } 
 \hline
 Para-\newline meter  & Sym\newline bol  & General \newline Formula & Value \\ 
 \hline
 Vertex & $\vec{c}$ & $\myvec{\vec{u}^T + \eta\vec{p_1}^T \\ \vec{V}}\vec{c}$ \newline $= \myvec{-f \\ \eta\vec{p_1} - \vec{u}}$ \newline & $\myvec{0\\0}$ \\ 
 \hline
-Focal \newline Length & $\beta$ & $\frac{1}{2}\abs{\frac{(\vec{c}^T\vec{V}+\vec{u}^T)\vec{p}_1}{(\lambda_1+\lambda_2)}}$ \newline & 2 
+Focal \newline Length & $\beta$ & $\frac{1}{2}\abs{\frac{(\vec{c}^T\vec{V}+\vec{u}^T)\vec{p}_1}{(\lambda_1+\lambda_2)}}$  & 2 
 \\ 
 \hline
-Focus \newline & $\vec{F}$ & $\vec{F}$ = -$\vec{V}^{-1}\vec{u}$ +  $\frac{(\vec{u}^T\vec{V}^{-1}\vec{u} - f)\myvec{1 & 0}^T}{4}$  \newline & $\myvec{2\\0}$ \\
+Focus \newline & $\vec{F}$ & $\sqrt{\frac{(\vec{u}^T\vec{V}^{-1}\vec{u}-f)(\lambda_2-\lambda_1)}{\lambda_1\lambda_2}}$  & $\myvec{2\\0}$ \\
 \hline
 Axis &  & $(\vec{V}\vec{c}+\vec{u})^{T}\vec{x} = 0$  & $\myvec{0 & 1}\vec{x}=0$ \\
 \hline
@@ -243,17 +243,16 @@ Vertex of a conic is given by
 \begin{lemma}
 Focus of a conic is given by 
 \begin{align}
-\vec{F} &= -\vec{V}^{-1}\vec{u} + \frac{(\vec{u}^T\vec{V}^{-1}\vec{u} - f)\myvec{1 & 0}^T}{4} \quad \brak{\abs{\vec{V}} \neq 0}
+\vec{F} &= \sqrt{\frac{(\vec{u}^T\vec{V}^{-1}\vec{u}-f)(\lambda_2-\lambda_1)}{\lambda_1\lambda_2}} \quad \brak{\abs{\vec{V}} \neq 0} \label{eq:focusneq}
 \\
 \vec{F} &= \myvec{-f \\ \eta\vec{p_1} - \vec{u}}{\myvec{\vec{u}^T + \eta\vec{p_1}^T \\ \vec{V}}}^{-1}+{\frac{-2\eta\myvec{1 & 0}}{4}}^{T} \brak{\abs{\vec{V}} = 0} \label{eq:focus}
 \end{align}
 \end{lemma}
 
 \begin{proof}
-From \eqref{eq:stdvecneq} and \eqref{eq:vertexneq},focus $\vec{F}$ is given by
+From \eqref{eq:stdvecneq} ,focus $\vec{F}$ is given by
 \begin{align}
-\vec{F} &= \vec{c} + \frac{(\vec{u}^T\vec{V}^{-1}\vec{u} - f)\myvec{1 & 0}^T}{4} \quad \brak{\abs{\vec{V}} = 0}\\
-\implies \vec{F} &= -\vec{V}^{-1}\vec{u} + \frac{(\vec{u}^T\vec{V}^{-1}\vec{u} - f)\myvec{1 & 0}^T}{4} 
+\vec{F} &= \sqrt{\frac{(\vec{u}^T\vec{V}^{-1}\vec{u}-f)(\lambda_2-\lambda_1)}{\lambda_1\lambda_2}} \quad \brak{\abs{\vec{V}} \neq 0}
 \end{align}
 
 From \eqref{eq:stdveceq} and \eqref{eq:vertex},focus $\vec{F}$ is given by
@@ -514,8 +513,34 @@ From \eqref{eq:stdvecneq},
     \sqrt{\frac{\vec{u}^T\vec{V}^{-1}\vec{u}-f}{\lambda_2}}
 \end{cases}
 \end{align}
-\subsection{Hyperbola}
+\subsubsection{Focus}
+From \eqref{eq:focusneq},
+\begin{align}
+    \vec{F} &= \sqrt{\frac{(\vec{u}^T\vec{V}^{-1}\vec{u}-f)(\lambda_2-\lambda_1)}{\lambda_1\lambda_2}}
+\end{align}
+\subsubsection{Focal Length}
+From \eqref{eq:foclenneq},
+\begin{align}
+    \beta &= \frac{1}{2}\abs{\frac{(\vec{c}^T\vec{V}+\vec{u}^T)\vec{p}_1}{(\lambda_1+\lambda_2)}} 
+\end{align}
+\subsubsection{Latus Rectum}
+From \eqref{eq:latus},
+\begin{align}
+    (\vec{V}\vec{c}+\vec{u})^T(\vec{x} -\beta) + \vec{u}^T\vec{c} + \vec{f} = 0
+\end{align}
+\subsubsection{End points of latus rectum}
+From \eqref{eq:endpt},
+\begin{align}
+    \vec{u}^T\kappa = -\frac{(\kappa^T\vec{V}\kappa + f )}{2}
+\end{align}
+\subsubsection{Length of latus rectum}
+From \eqref{eq:length},
+\begin{align}
+   l=\norm{\beta(\vec{V}\vec{c}+\vec{u})^T} 
+\end{align}
 
+
+\subsection{Hyperbola}
 \subsubsection{Property}
 \begin{align}
     \abs{\vec{V}} < 0
@@ -540,6 +565,31 @@ From \eqref{eq:stdvecneq},
     \\
     \sqrt{\frac{f-\vec{u}^T\vec{V}^{-1}\vec{u}}{\lambda_2}}
 \end{cases}
+\end{align}
+\subsubsection{Focus}
+From \eqref{eq:focusneq},
+\begin{align}
+    \vec{F} &= \sqrt{\frac{(\vec{u}^T\vec{V}^{-1}\vec{u}-f)(\lambda_2-\lambda_1)}{\lambda_1\lambda_2}}
+\end{align}
+\subsubsection{Focal Length}
+From \eqref{eq:foclenneq},
+\begin{align}
+    \beta &= \frac{1}{2}\abs{\frac{(\vec{c}^T\vec{V}+\vec{u}^T)\vec{p}_1}{(\lambda_1+\lambda_2)}} 
+\end{align}
+\subsubsection{Latus Rectum}
+From \eqref{eq:latus},
+\begin{align}
+    (\vec{V}\vec{c}+\vec{u})^T(\vec{x} -\beta) + \vec{u}^T\vec{c} + \vec{f} = 0
+\end{align}
+\subsubsection{End points of latus rectum}
+From \eqref{eq:endpt},
+\begin{align}
+    \vec{u}^T\kappa = -\frac{(\kappa^T\vec{V}\kappa + f )}{2}
+\end{align}
+\subsubsection{Length of latus rectum}
+From \eqref{eq:length},
+\begin{align}
+   l=\norm{\beta(\vec{V}\vec{c}+\vec{u})^T} 
 \end{align}
 
 \subsection{Parabola}
@@ -595,6 +645,8 @@ From \eqref{eq:length},
    l=\norm{\beta(\vec{V}\vec{c}+\vec{u})^T} 
 \end{align}
 
+Generalisation of conic is summarised in table \ref{tab:table2}.
+
 \numberwithin{table}{section}
 \begin{table*}[!ht]
 \begin{tabular}{ | m{1.8cm} | m{3.0cm}| m{4.0cm} | m{7.5cm} | } 
@@ -606,15 +658,14 @@ Circle & $\vec{V}=\vec{D}=\vec{P}=\vec{I}$ & $\vec{x}^T\vec{x}+2\vec{u}^T\vec{x}
 Ellipse & $\abs{\vec{V}} > 0$ \newline $\lambda_1>0,\lambda_2<0$ &   $\frac{\vec{y}^T\vec{D}\vec{y}}{\vec{u}^T\vec{V}^{-1}\vec{u}-f}=1$ & 1)Centre : $\vec{c} = -\vec{V}^{-1}\vec{u}$ \newline 2)Axes : $\begin{cases}
     \sqrt{\frac{\vec{u}^T\vec{V}^{-1}\vec{u}-f}{\lambda_1}}
     \\
-    \sqrt{\frac{\vec{u}^T\vec{V}^{-1}\vec{u}-f}{\lambda_2}}\end{cases}$ \newline \\ 
+    \sqrt{\frac{\vec{u}^T\vec{V}^{-1}\vec{u}-f}{\lambda_2}}\end{cases}$ \newline 3)Focus : $\vec{F} = \sqrt{\frac{(\vec{u}^T\vec{V}^{-1}\vec{u}-f)(\lambda_2-\lambda_1)}{\lambda_1\lambda_2}}$ \newline 4)Focal Length : $\beta = \frac{1}{2}\abs{\frac{(\vec{c}^T\vec{V}+\vec{u}^T)\vec{p}_1}{(\lambda_1+\lambda_2)}}$ \newline  \\
+\cline{1-2}
+
+Hyperbola & $\abs{\vec{V}} < 0$ \newline $\lambda_1>0,\lambda_2<0$ & & 5)Latus Rectum: \newline $(\vec{V}\vec{c}+\vec{u})^T(\vec{x} -\beta) + \vec{u}^T\vec{c} + \vec{f} = 0$ \newline 6)End points of latus rectum : \newline $\vec{u}^T\kappa = -\frac{(\kappa^T\vec{V}\kappa + f )}{2}$ \newline 7)Length of latus rectum: \newline $l=\norm{\beta(\vec{V}\vec{c}+\vec{u})^T}$ \newline  \\
 \hline
-Hyperbola & $\abs{\vec{V}} < 0$ \newline $\lambda_1>0,\lambda_2<0$ & $\frac{\vec{y}^T\vec{D}\vec{y}}{\vec{u}^T\vec{V}^{-1}\vec{u}-f}=1$ & 1)Centre : $\vec{c} = -\vec{V}^{-1}\vec{u}$ \newline 2)Axes : $\begin{cases}
-    \sqrt{\frac{\vec{u}^T\vec{V}^{-1}\vec{u}-f}{\lambda_1}}
-    \\
-    \sqrt{\frac{f-\vec{u}^T\vec{V}^{-1}\vec{u}}{\lambda_2}}\end{cases}$ \newline \\
-\hline
+
 Parabola &  $\abs{\vec{V}} = 0$ \newline $\lambda_1=0$ &  $\vec{y}^T\vec{D}\vec{y} = -2\eta\myvec{1 & 0}\vec{y}$ & 1)Centre:\newline $\myvec{\vec{u}^T + \eta\vec{p_1}^T \\ \vec{V}}\vec{c} = \myvec{-f \\ \eta\vec{p_1} - \vec{u}}$ \newline 2)Focal Length: \newline $\beta = \frac{1}{2}\abs{\frac{\vec{u}^T\vec{p}_1}{\lambda_2}}$ \newline 3)Focus:\newline
-$\vec{F} = \myvec{-f \\ \eta\vec{p_1} - \vec{u}}{\myvec{\vec{u}^T +$ \newline $\eta\vec{p_1}^T \\ \vec{V}}}^{-1} + {\frac{-2\eta\myvec{1 & 0}}{4}}^{T} $ \newline 4)Axis: \newline $ k(\vec{V}\vec{c}+\vec{u})^{T}\vec{x} = 0 $ \newline 5)Directrix: \newline $(\vec{V}\vec{c}+\vec{u})^T(\vec{x} +\beta) + \vec{u}^T\vec{c} + \vec{f} = 0$ \newline 6)Latus Rectum: \newline $(\vec{V}\vec{c}+\vec{u})^T(\vec{x} -\beta) + \vec{u}^T\vec{c} + \vec{f} = 0$ \newline 7)End points of latus rectum : \newline $\vec{u}^T\kappa = -\frac{(\kappa^T\vec{V}\kappa + f )}{2}$ \newline 8)Length of latus rectum: \newline $l=\norm{\beta(\vec{V}\vec{c}+\vec{u})^T}$ \newline\\
+$\vec{F} = \myvec{-f \\ \eta\vec{p_1} - \vec{u}}{\myvec{\vec{u}^T +$ \newline $\eta\vec{p_1}^T \\ \vec{V}}}^{-1} + {\frac{-2\eta\myvec{1 & 0}}{4}}^{T} $ \newline 4)Axis: \newline $ (\vec{V}\vec{c}+\vec{u})^{T}\vec{x} = 0 $ \newline 5)Directrix: \newline $(\vec{V}\vec{c}+\vec{u})^T(\vec{x} +\beta) + \vec{u}^T\vec{c} + \vec{f} = 0$ \newline 6)Latus Rectum: \newline $(\vec{V}\vec{c}+\vec{u})^T(\vec{x} -\beta) + \vec{u}^T\vec{c} + \vec{f} = 0$ \newline 7)End points of latus rectum : \newline $\vec{u}^T\kappa = -\frac{(\kappa^T\vec{V}\kappa + f )}{2}$ \newline 8)Length of latus rectum: \newline $l=\norm{\beta(\vec{V}\vec{c}+\vec{u})^T}$ \newline\\
 \hline
 \end{tabular}
 \captionsetup{justification=centering}
