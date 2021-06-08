@@ -146,15 +146,20 @@ Let
     \vec{V} = (t\vec{I}-\vec{n}\vec{n}^T) 
 \end{align}
 
-For any conic, $ax^2 + 2bxy + cy^2 + 2dx + 2ey + f = 0$,
+Now,
 \begin{align}
-    \vec{V} = \myvec{a & b \\ b & c}
+    \vec{V}^T &= (t\vec{I}-\vec{n}\vec{n}^T)^T
+    \\
+    \implies \vec{V}^T &= (t\vec{I})^T-(\vec{n}\vec{n}^T)^T
+    \\
+    \implies \vec{V}^T &= t(\vec{I}^T) - ((\vec{n}^T)^T\vec{n}^T)
+    \\
+    \implies \vec{V}^T &= (t\vec{I}-\vec{n}\vec{n}^T)
+    \\
+    \implies \vec{V}^T &= \vec{V}    \label{symm}
 \end{align}
 
-So,$\vec{V}$ is a symmetric matrix such that
-\begin{align}
-    \vec{V} = \vec{V}^T \label{symm}
-\end{align}
+So,using \eqref{symm},$\vec{V}$ is a symmetric matrix .
 
 \begin{theorem}
 \label{theorem1}
