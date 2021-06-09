@@ -150,86 +150,7 @@ where,
     t &= \frac{\norm{\vec{n}}^2}{e^2}
 \end{align}
 
-Let rank of matrix be represented by $\rho$.
-
-\begin{theorem}
-\label{theorem1}
-A matrix $\vec{A}$ is orthogonally diagonizable if and only if $\vec{A}$ is symmetric.
-\end{theorem}
-
-\begin{proof}
-Let us assume that $\vec{A}$ is orthogonally diagonizable such that 
-\begin{align}
-    \vec{D} &= \vec{P}^{-1}\vec{A}\vec{P}
-    \\
-    \vec{P}^T &= \vec{P}^{-1}
-\end{align}
-Now,
-\begin{align}
-    \vec{A} &= \vec{P}\vec{D}\vec{P}^{-1}
-    \\
-    \implies \vec{A} &= \vec{P}\vec{D}\vec{P}^T \label{eqr1}
-\end{align}
-Now,
-\begin{align}
-    \vec{A}^T &= (\vec{P}\vec{D}\vec{P}^T)^T
-    \\
-    \implies \vec{A}^T &= (\vec{P}^T)^T\vec{D}^T\vec{P}^T
-    \\
-    \implies \vec{A}^T &= \vec{P}\vec{D}\vec{P}^T \label{eqr2}
-\end{align}
-$\therefore$ From \eqref{eqr1} and \eqref{eqr2},
-\begin{align}
-    \vec{A} = \vec{A}^T
-\end{align}
-Hence,$\vec{A}$ is orthogonally diagonizable only when $\vec{A}$ is symmetric.
-\end{proof}
-
-\begin{lemma}
-\label{lemma1}
-Let $\vec{A}$ be a mxn diagonizable matrix.Then,
-\begin{align}
-   \rho(\vec{A}) = \rho(\vec{B}^{-1}\vec{A}\vec{B}) = \rho(\vec{D}) \label{eqq1}
-\end{align}
-\end{lemma}
-
-\begin{proof}
-Here , $\vec{A}$ and $\vec{D}$ are similar matrices such that 
-\begin{align}
-    \vec{D} = \vec{B}^{-1}\vec{A}\vec{B}
-\end{align}
-Now,
-\begin{align}
-    \vec{B}\vec{D} &= (\vec{B}\vec{B}^{-1})\vec{A}\vec{B}
-    \\
-    \implies \vec{B}\vec{D} &= \vec{I}\vec{A}\vec{B}
-    \\
-    \implies \vec{B}\vec{D} &= \vec{A}\vec{B}
-\end{align}
-So,
-\begin{align}
-    \rho(\vec{A}\vec{B}) = \rho(\vec{B}\vec{D}) \label{eq1}
-\end{align}
-\\
-Since $\vec{B}$ is an invertible matrix and hence a full rank matrix.
-\\
-So,
-\begin{align}
-    \rho(\vec{A}\vec{B}) = \rho(\vec{A}) \label{eq2}
-    \\
-    \rho(\vec{B}\vec{D}) = \rho(\vec{D}) \label{eq3}
-\end{align}
-$\therefore$ Using \eqref{eq1},\eqref{eq2} and \eqref{eq3},
-\begin{align}
-    \rho(\vec{A}) = \rho(\vec{D})
-\end{align}
-\end{proof}
-
-\begin{definition}
-Rank of a diagonal matrix is equal to the number of its non-zero eigen values. \label{def1}
-\end{definition}
-
-Let trace of matrix be represented by $tr$
+Let rank of matrix be represented by $\rho$ and trace of matrix be represented by $tr$
 
 Now,
 \begin{align}
@@ -242,73 +163,51 @@ Now,
     \implies tr(\vec{V}) &= \frac{\norm{\vec{n}}^2(2-e^2)}{e^2} \label{trace}
 \end{align}
 
-\begin{lemma}
-\label{eigen}
-Eigen values of a 2x2 matrix $\vec{A}$ are :
-\begin{align}
-    \lambda &= \frac{tr(\vec{A}) \pm \sqrt{tr(\vec{A})^{2}-4\abs{\vec{A}}}}{2}
-\end{align}
-\end{lemma}
-\begin{proof}
-Let $\vec{A}$ = \myvec{a & b\\  c & d}.
-\\
-Then,characteristic polynomial $p(\lambda)$ is
-\begin{align}
-    p(t) &= \abs{\vec{A-\lambda\vec{I}}}
-    \\
-    &= (a-\lambda)(d-\lambda)-bc
-    \\
-    &= \lambda^2 -(a+d)\lambda + ad-bc
-    \\
-    &= \lambda^2 -tr(\vec{A})\lambda + \abs{\vec{V}}
-\end{align}
-
-So,eigen values which are roots of $p(\lambda)$ are
-\begin{align}
-    \lambda &= \frac{tr(\vec{A}) \pm \sqrt{tr(\vec{A})^{2}-4\abs{\vec{A}}}}{2}
-\end{align}
-
-\end{proof}
-
-$\therefore$ Using \eqref{trace}, for a parabola where $e$=1,
-\begin{align}
-    tr(\vec{V}) &=\norm{\vec{n}}^2
-\end{align}
-
-$\therefore$ Using lemma \ref{eigen}, eigen values are:
-\begin{align}
-    \lambda_1 &= 0
-    \\
-    \lambda_2 &= \norm{\vec{n}}^2
-\end{align}
-
 Now,
 \begin{align}
-    \vec{V}^T &= (\norm{\vec{n}}^2\vec{I}-\vec{n}\vec{n}^T)^T
+    \vec{V}^T &= (t\vec{I}-\vec{n}\vec{n}^T)^T
     \\
-    \implies \vec{V}^T &= (\norm{\vec{n}}^2\vec{I})^T-(\vec{n}\vec{n}^T)^T
+    \implies \vec{V}^T &= (t\vec{I})^T-(\vec{n}\vec{n}^T)^T
     \\
-    \implies \vec{V}^T &= \norm{\vec{n}}^2(\vec{I}^T) - ((\vec{n}^T)^T\vec{n}^T)
+    \implies \vec{V}^T &= t(\vec{I}^T) - ((\vec{n}^T)^T\vec{n}^T)
     \\
-    \implies \vec{V}^T &= (\norm{\vec{n}}^2\vec{I}-\vec{n}\vec{n}^T)
+    \implies \vec{V}^T &= (t\vec{I}-\vec{n}\vec{n}^T)
     \\
     \implies \vec{V}^T &= \vec{V}    \label{symm}
 \end{align}
 So,using \eqref{symm},$\vec{V}$ is a symmetric matrix .
 
-
-$\therefore$ Using \eqref{symm} and theorem \ref{theorem1}, $\vec{V}$ is a diagonizable matrix such that
+\begin{theorem}
+\label{theorem1}
+Rank of a 2x2 symmetric matrix $\vec{A}$ is given by
 \begin{align}
-    \vec{P}^{-1}\vec{V}\vec{P} &= \vec{D} 
+    \rho(\vec{A}) &= \frac{(tr(\vec{A}))^2}{tr(\vec{A}^2)}
+\end{align}
+\end{theorem}
+
+\begin{theorem}
+For a 2x2 matrix $\vec{A}$
+\label{theorem2}
+\begin{align}
+    tr(\vec{A}^2) &= (tr(\vec{A}))^2 - 2\abs{\vec{A}}
+\end{align}
+\end{theorem}
+
+Using theorem \ref{theorem2}
+\begin{align}
+    tr(\vec{V}^2) &= (\frac{\norm{\vec{n}}^2(2-e^2)}{e^2})^2 - 2\abs{\vec{V}}
+\end{align}
+
+Using theorem \ref{theorem1}
+\begin{align}
+    \rho(\vec{V}) &= \frac{(\frac{\norm{\vec{n}}^2(2-e^2)}{e^2})^2}{(\frac{\norm{\vec{n}}^2(2-e^2)}{e^2})^2 - 2\abs{\vec{V}}}
+\end{align}
+
+For a parabola where $e$=1 and $\abs{\vec{V}}$=0,
+\begin{align}
+    \rho(\vec{V}) &= \frac{\norm{\vec{n}}^4}{\norm{\vec{n}}^4}
     \\
-    \vec{D} &= \myvec{0 & 0 \\ 0 & \norm{\vec{n}}^2} \label{diag}
+    \implies \rho(\vec{V}) &= 1
 \end{align}
-
-$\therefore$
-Using def.\ref{def1},lemma \ref{lemma1} and \eqref{diag}.
-\begin{align}
-    \rho(\vec{V}) = \rho(\vec{D}) = 1
-\end{align}
-
 \end{document}
 
