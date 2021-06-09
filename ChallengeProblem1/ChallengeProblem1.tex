@@ -150,64 +150,69 @@ where,
     t &= \frac{\norm{\vec{n}}^2}{e^2}
 \end{align}
 
-Let rank of matrix be represented by $\rho$ and trace of matrix be represented by $tr$
-
-Now,
-\begin{align}
-    tr(\vec{V}) &= tr(t\vec{I}-\vec{n}\vec{n}^T)
-    \\
-    \implies tr(\vec{V}) &= tr(t\vec{I}) - tr(\vec{n}\vec{n}^T)
-    \\
-    \implies tr(\vec{V}) &= 2t - \norm{\vec{n}}^2
-    \\
-    \implies tr(\vec{V}) &= \frac{\norm{\vec{n}}^2(2-e^2)}{e^2} \label{trace}
-\end{align}
-
-Now,
-\begin{align}
-    \vec{V}^T &= (t\vec{I}-\vec{n}\vec{n}^T)^T
-    \\
-    \implies \vec{V}^T &= (t\vec{I})^T-(\vec{n}\vec{n}^T)^T
-    \\
-    \implies \vec{V}^T &= t(\vec{I}^T) - ((\vec{n}^T)^T\vec{n}^T)
-    \\
-    \implies \vec{V}^T &= (t\vec{I}-\vec{n}\vec{n}^T)
-    \\
-    \implies \vec{V}^T &= \vec{V}    \label{symm}
-\end{align}
-So,using \eqref{symm},$\vec{V}$ is a symmetric matrix .
-
 \begin{theorem}
 \label{theorem1}
-Rank of a 2x2 symmetric matrix $\vec{A}$ is given by
+For any square matrix $\vec{A}$ of order $nxn$ having rank 1
 \begin{align}
-    \rho(\vec{A}) &= \frac{(tr(\vec{A}))^2}{tr(\vec{A}^2)}
+    \vec{A}^2 &= c\vec{A}
 \end{align}
+where $c$ is any scalar.
 \end{theorem}
 
-\begin{theorem}
-For a 2x2 matrix $\vec{A}$
-\label{theorem2}
+\begin{proof}
+Let $\vec{A}$ = $(c_1 \hspace{0.2cm}  c_2 \hspace{0.2cm} ..... c_n)$ where $c_i$ is the $i$-th column of $\vec{A}$ . 
+\\
+$\because$ $\vec{A}$ has the rank 1,then 
 \begin{align}
-    tr(\vec{A}^2) &= (tr(\vec{A}))^2 - 2\abs{\vec{A}}
-\end{align}
-\end{theorem}
-
-Using theorem \ref{theorem2}
-\begin{align}
-    tr(\vec{V}^2) &= (\frac{\norm{\vec{n}}^2(2-e^2)}{e^2})^2 - 2\abs{\vec{V}}
-\end{align}
-
-Using theorem \ref{theorem1}
-\begin{align}
-    \rho(\vec{V}) &= \frac{(\frac{\norm{\vec{n}}^2(2-e^2)}{e^2})^2}{(\frac{\norm{\vec{n}}^2(2-e^2)}{e^2})^2 - 2\abs{\vec{V}}}
-\end{align}
-
-For a parabola where $e$=1 and $\abs{\vec{V}}$=0,
-\begin{align}
-    \rho(\vec{V}) &= \frac{\norm{\vec{n}}^4}{\norm{\vec{n}}^4}
+    c_i &\neq 0
     \\
-    \implies \rho(\vec{V}) &= 1
+    c_i &= \alpha_ic_1 , i\geq 2
+\end{align}
+Hence,
+\begin{align}
+    \vec{A} &= c_1(1 \hspace{0.2cm} \alpha_2 .....\alpha_n) = \vec{C}\vec{R}
+\end{align}
+Now,
+\begin{align}
+    \vec{A}^2 &= (\vec{C}\vec{R})(\vec{C}\vec{R})
+    \\
+    &= \vec{C}(\vec{R}\vec{C})\vec{R}
+    \\
+    &= (\vec{R}\vec{C})\vec{C}\vec{R}
+    \\
+    &= c(\vec{C}\vec{R})
+    \\
+    &= c\vec{A}
+\end{align}
+\end{proof}
+Now,
+\begin{align}
+    \vec{V}^2 &= (t\vec{I}-\vec{n}\vec{n}^T)(t\vec{I}-\vec{n}\vec{n}^T) 
+    \\
+    &= (t\vec{I})^2 +(\vec{n}\vec{n}^T)^2 - 2t\vec{I}\vec{n}\vec{n}^T
+    \\
+    &= t^2\vec{I} + \norm{\vec{n}}^2\vec{n}\vec{n}^T - 2t\vec{n}\vec{n}^T
+    \\
+    &= \frac{\norm{\vec{n}}^4}{e^4}\vec{I} + \vec{n}\vec{n}^T(\norm{\vec{n}}^2-2t)
+    \\
+    &= \frac{\norm{\vec{n}}^4}{e^4}\vec{I} + \norm{\vec{n}}^2\vec{n}\vec{n}^T(1-\frac{2}{e^2})
+    \\
+    &= \frac{\norm{\vec{n}}^4}{e^4}\vec{I} + \norm{\vec{n}}^2\vec{n}\vec{n}^T(\frac{e^2-2}{e^2})
+    \\
+    &= \frac{\norm{\vec{n}}^2}{e^2}(\frac{\norm{\vec{n}}^2}{e^2}\vec{I} + \vec{n}\vec{n}^T(e^2-2))
+\end{align}
+
+Now,for $e$ = 1
+\begin{align}
+    \vec{V}^2 &= \norm{\vec{n}}^2(\norm{\vec{n}}^2\vec{I} - \vec{n}\vec{n}^T)
+    \\
+    \implies \vec{V}^2 &= c\vec{V}
+\end{align}
+where scalar $c$ = $\norm{\vec{n}}^2$ .
+\\
+Hence,using theorem \ref{theorem1} ,
+\begin{align}
+    rank(\vec{V}) &= 1
 \end{align}
 \end{document}
 
