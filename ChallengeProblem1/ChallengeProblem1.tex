@@ -160,30 +160,25 @@ where $c$ is any scalar.
 \end{theorem}
 
 \begin{proof}
-Let $\vec{A}$ = $(c_1 \hspace{0.2cm}  c_2 \hspace{0.2cm} ..... c_n)$ where $c_i$ is the $i$-th column of $\vec{A}$ . 
+According to Cayley Hamilton Theorem,
 \\
-$\because$ $\vec{A}$ has the rank 1,then 
+characteristic polynomial $p(\vec{A})$ for a  $nxn$ matrix $\vec{A}$ is given by
 \begin{align}
-    c_1 &\neq 0
-    \\
-    c_i &= \alpha_ic_1 , i\geq 2
+    p(\vec{A}) &= \vec{A}^n + c_{n-1}\vec{A}^{n-1} + .....+ c_1\vec{A} + (-1)^n\abs{\vec{A}}\vec{I}_n = 0
 \end{align}
-Hence,
+For n=2,
 \begin{align}
-    \vec{A} &= c_1(1 \hspace{0.2cm} \alpha_2 .....\alpha_n) = \vec{C}\vec{R}
+    p(\vec{A}) &= \vec{A}^2 + c_1\vec{A} + (-1)^2\abs{\vec{A}}\vec{I}_2=0
 \end{align}
-Now,
+Rank = 1 implies $\abs{\vec{A}}$= 0 
+\\
+$\therefore$
 \begin{align}
-    \vec{A}^2 &= (\vec{C}\vec{R})(\vec{C}\vec{R})
+    \vec{A}^2 + c_1\vec{A} &= 0
     \\
-    &= \vec{C}(\vec{R}\vec{C})\vec{R}
-    \\
-    &= (\vec{R}\vec{C})\vec{C}\vec{R}
-    \\
-    &= c(\vec{C}\vec{R})
-    \\
-    &= c\vec{A}
+    \implies \vec{A}^2 &= c\vec{A}
 \end{align}
+where $c$ = $-c_1$
 \end{proof}
 Now,
 \begin{align}
