@@ -166,20 +166,20 @@ On comparing it with standard form
 
 $\therefore$  Semi major and minor axes of ellipse are
 \begin{align}
-    \sqrt{\frac{ \vec{u}^T\vec{V}^{-1}\vec{u} - f}{\lambda_1}} &= \sqrt{\frac{36}{9}} = 2
+    a &= \sqrt{\frac{ \vec{u}^T\vec{V}^{-1}\vec{u} - f}{\lambda_2}} = \sqrt{\frac{36}{1}} = 6
     \\
-    \sqrt{\frac{ \vec{u}^T\vec{V}^{-1}\vec{u} - f}{\lambda_2}} &= \sqrt{\frac{36}{1}} = 6
+    b &= \sqrt{\frac{ \vec{u}^T\vec{V}^{-1}\vec{u} - f}{\lambda_1}} = \sqrt{\frac{36}{9}} = 2
 \end{align}
 $\therefore$ Equation of ellipse can be written as
 \begin{align}
-    \frac{x^2}{(\sqrt{\frac{ \vec{u}^T\vec{V}^{-1}\vec{u} - f}{\lambda_1}})^2} + \frac{y^2}{(\sqrt{\frac{ \vec{u}^T\vec{V}^{-1}\vec{u} - f}{\lambda_2}})^2} &= 1
+    \frac{x^2}{a^2} + \frac{y^2}{b^2} &= 1
     \\
     \implies \frac{x^2}{4} + \frac{y^2}{36} &= 1
 \end{align}
 
 Now,area of ellipse is given by
 \begin{align}
-    A &= \pi \sqrt{\frac{ \vec{u}^T\vec{V}^{-1}\vec{u} - f}{\lambda_1}}\sqrt{\frac{ \vec{u}^T\vec{V}^{-1}\vec{u} - f}{\lambda_2}} 
+    A &= \pi ab
     \\
     \implies A &= 12\pi
 \end{align}
@@ -191,16 +191,13 @@ $\therefore$ Area of a quadrant of ellipse is given by
 
 Now,from fig. \ref{fig:ellipse} , $AOBA$ is a right angled triangle whose area is given by 
 \begin{align}
-    A_2 &= \frac{1}{2} \sqrt{\frac{ \vec{u}^T\vec{V}^{-1}\vec{u} - f}{\lambda_1}}\sqrt{\frac{ \vec{u}^T\vec{V}^{-1}\vec{u} - f}{\lambda_2}} = 6
+    A_2 &= \frac{1}{2}ab = 6
 \end{align}
 
 $\therefore$ Area between arc $AB$ and chord $AB$ is given by
 \begin{align}
     A_3 &= A_1 - A_2 = 3\pi -6
-    \\
-    \implies A_3 &\approx 3.424
 \end{align}
-
 
 \numberwithin{figure}{section}
 \begin{figure}[!ht]
