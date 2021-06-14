@@ -148,18 +148,19 @@ A fighter plane flying horizontally at an altitude of 1.5 $km$ with speed 720 $k
 \section{Solution}
 %
 
-Velocity of plane is given by
+Velocity of the plane is given by
 \begin{align}
     \vec{v_p} &= \myvec{200 \\ 0} \quad \brak{\because 720 kmh^{-1}=200 ms^{-1}}
 \end{align}
 
-Velocity of bullet is given by
+Velocity of the bullet is given by
 \begin{align}
     \vec{v_b} &= 600\myvec{\text{sin} \theta \\ \text{cos} \theta}
 \end{align}
+
 where $\theta$ is the angle made by $\vec{v_b}$ with the vertical .
-\\
-Let after time $t$ ,bullet hits plane such that horizontal distance travelled by plane and bullet are equal.
+
+Let after time $t$ ,the bullet hits the plane such that the horizontal distance travelled by the plane and the bullet are equal.
 \\
 $\therefore$
 \begin{align}
@@ -169,27 +170,13 @@ $\therefore$
     \\
     \implies \theta &= 19.5\degree
 \end{align}
-So,gun should be fired at $\boxed{\theta=19.5\degree}$ from vertical to hit the plane.
+
+So,the gun should be fired at $\boxed{\theta=19.5\degree}$ from the vertical to hit the plane.
 
 Acceleration of the bullet due to gravity is
 \begin{align}
     \vec{g} &= \myvec{0 \\ -10}
 \end{align}
-
-Velocity of the bullet at maximum height is
-\begin{align}
-    \vec{v_m} &= \myvec{0 \\ 0}
-\end{align}
-
-Now,the maximum height $h_{max}$ achieved by the bullet is given by
-\begin{align}
-    (\vec{v_m}\myvec{0 & 1})^2- (\vec{v_b}\myvec{0 & 1})^2 &= 2\vec{g}\myvec{0 & 1}h_{max} 
-    \\
-    \implies -(600\text{cos}19.5\degree)^2 &= -20h_{max}
-    \\
-    \implies h_{max} &= 16 km
-\end{align}
-So,the pilot must fly above the maximum height of the bullet , $\boxed{h_{max} = 16 km}$ to avoid being hit.
 
 \numberwithin{figure}{section}
 \begin{figure}[!ht]
@@ -206,5 +193,21 @@ So,the pilot must fly above the maximum height of the bullet , $\boxed{h_{max} =
 \caption{2D Analysis of Plane and Bullet}
 \label{fig:2D}	
 \end{figure}
+
+Velocity of the bullet at the maximum height is
+\begin{align}
+    \vec{v_m} &= \myvec{0 \\ 0}
+\end{align}
+
+Now,the maximum height $h_{max}$ achieved by the bullet is given by
+\begin{align}
+    (\vec{v_m}\myvec{0 & 1})^2- (\vec{v_b}\myvec{0 & 1})^2 &= 2\vec{g}\myvec{0 & 1}h_{max} 
+    \\
+    \implies -(600\text{cos}19.5\degree)^2 &= -20h_{max}
+    \\
+    \implies h_{max} &= 16 km
+\end{align}
+
+So,the pilot must fly above the maximum height of the bullet , $\boxed{h_{max} = 16 km}$ to avoid being hit.
 
 \end{document}
