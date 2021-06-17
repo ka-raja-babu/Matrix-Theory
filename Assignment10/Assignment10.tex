@@ -32,6 +32,7 @@
 \usepackage{graphicx}
 \usepackage{tkz-euclide}
 \usepackage{float}
+\usepackage{blkarray}
 
 \usetikzlibrary{calc,math}
 \usepackage{listings}
@@ -148,46 +149,76 @@ Two farmers Ramkishan and Gurcharan Singh cultivates only three varieties of ric
 \begin{center}
 September Sales(in Rupees)
 \end{center}
-\hspace{0.8cm} Basmati \hspace{0.02cm} Permal \hspace{0.01cm} Naura
 \begin{align}
-    \vec{A} &= \myvec{10000 & 20000 & 30000 \\ 50000 & 30000 & 10000}\myvec{\text{Ramkishan} \\ \text{Gurucharan Singh}}
+    \vec{A}=
+    \begin{blockarray}{cccc}
+    \text{Basmati} & \text{Permal} & \text{Naura} \\
+    \begin{block}{(ccc)(c)}
+    10000 & 20000 & 30000 & \text{Ramkishan}\\
+    50000 & 30000 & 10000 & \text{Gurucharan} \\
+    \end{block}
+    \end{blockarray}
 \end{align}
 
 \begin{center}
 October Sales(in Rupees)
 \end{center}
-\hspace{0.8cm} Basmati \hspace{0.02cm} Permal \hspace{0.01cm} Naura
 \begin{align}
-    \vec{B} &= \myvec{5000 & 10000 & 6000 \\ 20000 & 10000 & 10000}\myvec{\text{Ramkishan} \\ \text{Gurucharan Singh}}
+    \vec{B} =
+    \begin{blockarray}{cccc}
+    \text{Basmati} & \text{Permal} & \text{Naura} \\
+    \begin{block}{(ccc)(c)}
+    5000 & 10000 & 6000 & \text{Ramkishan}\\
+    20000 & 10000 & 10000 & \text{Gurucharan} \\
+    \end{block}
+    \end{blockarray}
 \end{align}
-(i) Find the combined sales in September and October for each farmer in each variety.\\
-(ii) Find the decrease in sales from September to October.\\
-(iii) If both farmers receive 2\% profit on gross sales, compute the profit for each farmer and for each variety sold in October.
+
+\begin{enumerate}
+    \item Find the combined sales in September and October for each farmer in each variety.
+    \item Find the decrease in sales from September to October.
+    \item If both farmers receive 2\% profit on gross sales, compute the profit for each farmer and for each variety sold in October.
+\end{enumerate}
 %
 \section{Solution}
 %
 \begin{enumerate}
     \item Combined sales in September and October is given by
-    
-    \hspace{1.4cm} Basmati \hspace{0.02cm} Permal \hspace{0.01cm} Naura
     \begin{align}
-    \vec{A}+\vec{B}=\myvec{15000 & 30000 & 36000 \\ 70000 & 40000 & 20000}\myvec{\text{Ramkishan} \\ \text{Gurucharan}} 
+    \vec{A}+\vec{B}=
+    \begin{blockarray}{cccc}
+    \text{Basmati} & \text{Permal} & \text{Naura} \\
+    \begin{block}{(ccc)(c)}
+    15000 & 30000 & 36000 & \text{Ram}\\
+    70000 & 40000 & 20000 & \text{Guru} \\
+    \end{block}
+    \end{blockarray}
     \end{align}
-    
-    \item Decrease in sales from September to October is given by
 
-    \hspace{1.4cm} Basmati \hspace{0.02cm} Permal \hspace{0.01cm} Naura
+    \item Decrease in sales from September to October is given by
     \begin{align}
-    \vec{A}-\vec{B} = \myvec{5000 & 10000 & 24000 \\ 30000 & 20000 & 0}\myvec{\text{Ramkishan} \\ \text{Gurucharan}} 
+    \vec{A}-\vec{B}=
+    \begin{blockarray}{cccc}
+    \text{Basmati} & \text{Permal} & \text{Naura} \\
+    \begin{block}{(ccc)(c)}
+    5000 & 10000 & 24000 & \text{Ram}\\
+    30000 & 20000 & 0 & \text{Guru} \\
+    \end{block}
+    \end{blockarray}
     \end{align}
     
     \item Profit for sales in October is given by
-
-    \hspace{0.6cm} Basmati \hspace{0.001cm} Permal \hspace{0.001cm} Naura
     \begin{align}
-    \frac{2}{100}\vec{B} = \myvec{100 & 200 & 120 \\ 400 & 200 & 200}\myvec{\text{Ramkishan} \\ \text{Gurucharan Singh}} 
-    \end{align} 
-
+    \frac{2}{100}\vec{B} =
+    \begin{blockarray}{cccc}
+    \text{Basmati} & \text{Permal} & \text{Naura} \\
+    \begin{block}{(ccc)(c)}
+    100 & 200 & 120 & \text{Ram}\\
+    400 & 200 & 200 & \text{Guru} \\
+    \end{block}
+    \end{blockarray}
+    \end{align}
+    
 \end{enumerate}
 
 \numberwithin{figure}{section}
