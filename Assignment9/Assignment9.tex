@@ -192,20 +192,34 @@ Acceleration of the bullet due to gravity is
 \label{fig:2D}	
 \end{figure}
 
-Velocity of the bullet at the maximum height is
+Position vector of the bullet's trajectory is given by
 \begin{align}
-    \vec{v_m} &= \myvec{0 \\ 0}
+    \vec{r} &= \vec{v_b}t+\frac{1}{2}\vec{g}t^2  \label{eq:1}
 \end{align}
 
-Now,the maximum height $h_{max}$ achieved by the bullet is given by
+And,velocity vector of the bullet's trajectory is given by
 \begin{align}
-    \sbrak{\vec{v_m}\myvec{0 & 1}}^2- \sbrak{\vec{v_b}\myvec{0 & 1}}^2 &= 2\vec{g}\myvec{0 & 1}h_{max} 
-    \\
-    \implies -(600\text{cos}19.5\degree)^2 &= -20h_{max}
-    \\
-    \implies h_{max} &= 16 km
+    \vec{v} &= \vec{v_b}+\vec{g}t
 \end{align}
 
-Hence,the gun should be fired at $\boxed{\theta=19.5\degree}$ from the vertical to hit the plane and the pilot must fly above the maximum height of the bullet , $\boxed{h_{max} = 16 km}$ to avoid being hit.
+At the maximum height,$\theta=0\degree$ and $\vec{v}=\myvec{0\\0}$.
+\\
+$\therefore$ Time to reach the maximum height is given by
+\begin{align}
+    \myvec{0\\0} &= 600\myvec{0\\\text{cos}19.5\degree}+\myvec{0\\-10}t_m
+    \\
+    \implies 0 &= 600\text{cos}19.5\degree - 10t_m
+    \\
+    \implies t_m &= 56.558 s  \label{eq:2}
+\end{align}
+
+Substituting the value of $t_m$ from eq.\eqref{eq:2} into eq.\eqref{eq:1},position vector at the maximum height is
+\begin{align}
+    \myvec{x_m\\y_m} &= 600\myvec{\text{sin}19.5\degree\\ \text{cos}19.5\degree}56.558 + \frac{1}{2}\myvec{0\\-10}(56.558)^2
+    \\
+     &= \myvec{11.32 \\ 16}km
+\end{align}
+
+Hence,the gun should be fired at $\boxed{\theta=19.5\degree}$ from the vertical to hit the plane and the pilot must fly above the maximum height of the bullet , $\boxed{y_m = 16 km}$ to avoid being hit.
 
 \end{document}
