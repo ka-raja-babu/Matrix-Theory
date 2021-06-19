@@ -149,22 +149,24 @@ Solve 5(2x-7) - 3(2x+3) $\leq$ 0 , 2x+19 $\leq$ 6x+47 .
 \section{Solution}
 
 \begin{enumerate}
-    \item Solving first inequality
+    \item Solving first inequality by taking slack variable $s_1 \geq$ 0 .
     \begin{align}
-        5(2x-7) - 3(2x+3) &\leq 0 \\
-        \implies 10x-35-6x-9 &\leq 0 \\
-        \implies 4x-44 &\leq 0 \\
-        \implies x &\leq 11 \label{eq:1} \\
-        \implies x &\in (-\infty,11]
+        5(2x-7) - 3(2x+3) \leq 0 \\
+        \implies 10x-35-6x-9 + s_1 = 0 \\
+        \implies 4x-44 +s_1 = 0 \\
+        \implies x = 11 - \frac{s_1}{4} \\
+        \implies x \leq 11 \label{eq:1} \\
+        \implies x \in (-\infty,11]
     \end{align}
     
-    \item Solving second inequality
+    \item Solving second inequality by taking slack variable $s_2 \geq 0$
     \begin{align}
-       2x+19 &\leq 6x+47 \\
-       \implies -4x &\leq 28 \\
-       \implies -x &\leq 7 \\
-       \implies x &\geq -7 \label{eq:2} \\
-       \implies x &\in [-7,\infty)
+       2x+19 \leq 6x+47 \\
+       \implies 2x+19+s_2 = 6x+47 \\
+       \implies -4x-28+s_2 = 0 \\
+       \implies x = -7 + \frac{s_2}{4} \\
+       \implies x \geq -7 \label{eq:2} \\
+       \implies x \in [-7,\infty)
     \end{align}
 \end{enumerate}
 
