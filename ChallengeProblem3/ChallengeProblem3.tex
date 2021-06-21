@@ -131,7 +131,12 @@ columns=fullflexible
 \bigskip
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
-Download latex-tikz codes from 
+Download all python codes from 
+\begin{lstlisting}
+https://github.com/ka-raja-babu/Matrix-Theory/tree/main/ChallengeProblem3/Codes
+\end{lstlisting}
+%
+and latex-tikz codes from 
 %
 \begin{lstlisting}
 https://github.com/ka-raja-babu/Matrix-Theory/tree/main/ChallengeProblem3
@@ -169,7 +174,7 @@ Using eigenvalue decomposition,
     \vec{P} &= \myvec{0 & 1 \\ 1 & 0}
 \end{align}
 
-and 
+Also,
 \begin{align}
     \eta &= \vec{u}^T\vec{p_1}
     \\
@@ -184,7 +189,7 @@ Now,for y coordinate to be always positive,two conditions need to be satisfied:
 
 $\therefore$ For condition 1:
 \begin{align}
-    \vec{c} &= \myvec{\vec{u}^T + \eta\vec{p_1}^T \\ \vec{V}}^{-1}\myvec{-f \\ \eta\vec{p_1}-\vec{u}} \\
+    \myvec{\vec{u}^T + \eta\vec{p_1}^T \\ \vec{V}}\vec{c} &= \myvec{-f \\ \eta\vec{p_1}-\vec{u}} \\
     \vec{p_1}^T\vec{c} &> 0
 \end{align}
 
@@ -197,5 +202,99 @@ Hence,condition for non-real roots in terms of matrix/vector parameters of the p
 \begin{align}
     \myvec{\vec{p_1}^T\vec{c} \\ \vec{p_2}^T\vec{V}\vec{p_2} } \succ 0
 \end{align}
+
+\section{Examples}
+\begin{enumerate}
+    \item 
+    \begin{align}
+        y &= 21x^2-28x+10
+    \end{align}
+    Here,
+    \begin{align}
+        \vec{V} = \myvec{21 & 0 \\ 0 & 0},\vec{u}=-\myvec{14 \\ \frac{1}{2}},f=10
+    \end{align}
+    Using eigenvalue decomposition,
+    \begin{align}
+        \vec{D} = \myvec{0 & 0\\0 & 21} ,\vec{P}=\myvec{0 & 1\\1 & 0}
+    \end{align}
+    $\therefore$Vertex $\vec{c}$ is given by
+    \begin{align}
+        \myvec{-14 & -1 \\ 21 & 0 \\ 0 & 0}\vec{c} &= \myvec{-10 \\ 14 \\ 0} \\
+        \implies  \myvec{-14 & -1 \\ 21 & 0}\vec{c} &= \myvec{-10 \\ 14}
+        \\
+        \implies \vec{c} &= \myvec{\frac{2}{3} \\ \frac{2}{3}}
+    \end{align}
+    Now,
+    \begin{align}
+        \vec{p_1}^T\vec{c} &= \myvec{0 & 1}\myvec{\frac{2}{3} \\ \frac{2}{3}}
+        \\
+        &= \frac{2}{3}
+    \end{align}
+    and,
+    \begin{align}
+        \vec{p_2}^T\vec{V}\vec{p_2} &= \myvec{1 & 0}\myvec{21 & 0\\0& 0}\myvec{1 \\ 0}
+        \\
+        &= 21
+    \end{align}
+    $\because$
+    \begin{align}
+    \myvec{\vec{p_1}^T\vec{c} \\ \vec{p_2}^T\vec{V}\vec{p_2}} = \myvec{\frac{2}{3} \\ 21} \succ 0
+    \end{align}
+    Hence,the given equation does not have any real roots.
+    
+    \numberwithin{figure}{section}
+    \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\columnwidth]{ChallengeProblem3_2.png}
+    \caption{$y=21x^2-28x+10$}
+    \label{ex1}	
+    \end{figure}
+    
+    \item
+    \begin{align}
+        y &= 6x^2-x-2
+    \end{align}
+    Here,
+    \begin{align}
+        \vec{V} = \myvec{6 & 0 \\ 0 & 0},\vec{u}=-\myvec{\frac{1}{2} \\ \frac{1}{2}},f=-2
+    \end{align}
+    Using eigenvalue decomposition,
+    \begin{align}
+        \vec{D} = \myvec{0 & 0\\0 & 6} ,\vec{P}=\myvec{0 & 1\\1 & 0}
+    \end{align}
+    $\therefore$Vertex $\vec{c}$ is given by
+    \begin{align}
+        \myvec{\frac{-1}{2} & -1 \\ 6 & 0 \\ 0 & 0}\vec{c} &= \myvec{2 \\ \frac{1}{2} \\ 0} \\
+        \implies  \myvec{\frac{-1}{2} & -1 \\ 6 & 0}\vec{c} &= \myvec{2 \\ \frac{1}{2}}
+        \\
+        \implies \vec{c} &= \myvec{\frac{1}{12} \\ \frac{-49}{24}}
+    \end{align}
+    Now,
+    \begin{align}
+        \vec{p_1}^T\vec{c} &= \myvec{0 & 1}\myvec{\frac{1}{12} \\ \frac{-49}{24}}
+        \\
+        &= \frac{-49}{24}
+    \end{align}
+    and,
+    \begin{align}
+        \vec{p_2}^T\vec{V}\vec{p_2} &= \myvec{1 & 0}\myvec{6 & 0\\0& 0}\myvec{1 \\ 0}
+        \\
+        &= 6
+    \end{align}
+    $\because$
+    \begin{align}
+    \myvec{\vec{p_1}^T\vec{c} \\ \vec{p_2}^T\vec{V}\vec{p_2}} = \myvec{\frac{-49}{24} \\ 6} \nsucc 0
+    \end{align}
+    Hence,the given equation has real roots.
+    
+    \numberwithin{figure}{section}
+    \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\columnwidth]{ChallengeProblem3_1.png}
+    \caption{$y=6x^2-x-2$}
+    \label{ex2}	
+    \end{figure}
+
+\end{enumerate}
 
 \end{document}
