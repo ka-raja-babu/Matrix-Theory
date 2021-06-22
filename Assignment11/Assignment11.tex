@@ -142,62 +142,77 @@ and latex-tikz codes from
 https://github.com/ka-raja-babu/Matrix-Theory/tree/main/Assignment11
 \end{lstlisting}
 %
-\section{Question No. 2.68}
+\section{Question No. 2.57}
 
-Solve 5(2x-7) - 3(2x+3) $\leq$ 0 , 2x+19 $\leq$ 6x+47 .
+Solve 4x+3y $\leq$ 60,y $\geq$ 2x,x $\geq$ 3,x,y $\geq$ 0 
 
 \section{Solution}
 
+The given system of inequality can be written in matrix form as
+\begin{align}
+    \myvec{-4 & -3 \\ -2 & 1 \\ 1 & 0 \\ 1 & 0 \\ 0 & 1}\vec{x} \succeq \myvec{-60\\0\\3\\0\\0}
+\end{align}
+which can be further simplified into 
+\begin{align}
+    \myvec{-4 & -3 \\ 1 & 0 \\ 0 & 1}\vec{x} \succeq \myvec{-60\\3\\6}
+\end{align}
+
+Let the surplus vector be
+\begin{align}
+    \vec{u} &= \myvec{u_1\\u_2} \succeq 0
+\end{align}
+
 \begin{enumerate}
-    \item Solving first inequality by taking slack variable $s_1 \geq$ 0 .
+    \item 
     \begin{align}
-        5(2x-7) - 3(2x+3) \leq 0 \\
-        \implies 10x-35-6x-9 + s_1 = 0 \\
-        \implies 4x-44 +s_1 = 0 \\
-        \implies x = 11 - \frac{s_1}{4} \\
-        \implies x \leq 11 \label{eq:1} \\
-        \implies x \in (-\infty,11]
+        \myvec{-4 & -3 \\ 1 & 0}\vec{x} &\succeq \myvec{-60 \\ 3}
+        \\
+        \implies  \myvec{-4 & -3 \\ 1 & 0}\vec{x} &= \myvec{-60 \\ 3} + \vec{u}
     \end{align}
-    
-    \item Solving second inequality by taking slack variable $s_2 \geq 0$
+    resulting in 
     \begin{align}
-       2x+19 \leq 6x+47 \\
-       \implies 2x+19+s_2 = 6x+47 \\
-       \implies -4x-28+s_2 = 0 \\
-       \implies x = -7 + \frac{s_2}{4} \\
-       \implies x \geq -7 \label{eq:2} \\
-       \implies x \in [-7,\infty)
+        \vec{x} &= \myvec{-4 & -3 \\1 & 0}^{-1}\myvec{-60 \\ 3} + \myvec{-4 & -3 \\1 & 0}^{-1}\vec{u}
+        \\
+        \implies \vec{x} &= \myvec{3 \\16} + \myvec{0 & 1\\ \frac{-1}{3} & \frac{-4}{3}}\vec{u}   \label{eq1}
+    \end{align}
+
+    \item 
+    \begin{align}
+        \myvec{-4 & -3 \\ 0 & 1}\vec{x} &\succeq \myvec{-60 \\ 6}
+        \\
+        \implies  \myvec{-4 & -3 \\ 0 & 1}\vec{x} &= \myvec{-60 \\ 6} + \vec{u}
+    \end{align}
+    resulting in 
+    \begin{align}
+        \vec{x} &= \myvec{-4 & -3 \\0 & 1}^{-1}\myvec{-60 \\ 6} + \myvec{-4 & -3 \\0 & 1}^{-1}\vec{u}
+        \\
+        \implies \vec{x} &= \myvec{\frac{21}{2} \\6} + \myvec{\frac{-1}{4} & \frac{-3}{4}\\ 0 & 1}\vec{u} \label{eq2}
     \end{align}
 \end{enumerate}
 
-From \eqref{eq:1} and \eqref{eq:2},solution of the given system of inequality is given by
+Now,solution region which is common to regions of eq. \eqref{eq1} and eq. \eqref{eq2},is given by
+
 \begin{align}
-    -7 &\leq x \leq 11 \\
-    \implies x &\in [-7,11]
+    \boxed{\vec{x} = \myvec{3 \\ 6}+\myvec{0 & 1\\\frac{1}{12} & \frac{-13}{12}}\vec{u}}
 \end{align}
 
 \numberwithin{figure}{section}
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{Figure11_1}
-\caption{x $\leq$ 11}
-\label{fig:inequality1}	
+\caption{Solution Region}
+\label{fig:fig1}	
 \end{figure}
 
 \numberwithin{figure}{section}
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{Figure11_2}
-\caption{x $\geq$ -7}
-\label{fig:inequality2}	
+\caption{Magnified Solution Region}
+\label{fig:fig2}	
 \end{figure}
 
-\numberwithin{figure}{section}
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{Figure11_3}
-\caption{-7 $\leq$ x $\leq$ 11}
-\label{fig:inequality3}	
-\end{figure}
+
+
 
 \end{document}
