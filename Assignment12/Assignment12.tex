@@ -209,24 +209,24 @@ Lagrangian function is given by
 
 Now,
 \begin{align}
-    \nabla L(\vec{x},\lambda) &= \myvec{6-4\lambda_1-\lambda_2+3\lambda_3-\lambda_4 \\ 3-\lambda_1-5\lambda_2+2\lambda_3-\lambda_5 \\ \myvec{-4 & -1}\vec{x}+80 \\ \myvec{-1 & -5}\vec{x}+115 \\ \myvec{3 & 2}\vec{x}-150 \\ \myvec{-1 & 0}\vec{x} \\ \myvec{0 & -1}\vec{x}}
+    \nabla L(\vec{x},\lambda) &= \myvec{6+ \myvec{-4 & -1 & 3 & -1 & 0 }\lambda_i\\ 3+\myvec{-1 & -5 & 2 & 0 & -1}\lambda_i \\ \myvec{-4 & -1}\vec{x}+80 \\ \myvec{-1 & -5}\vec{x}+115 \\ \myvec{3 & 2}\vec{x}-150 \\ \myvec{-1 & 0}\vec{x} \\ \myvec{0 & -1}\vec{x}}
 \end{align}
 
 $\therefore$ Lagrangian matrix is given by
 \begin{align}
-    \myvec{0 & 0 & -4 & -1 & 3 & -1 & 0 \\ 0 & 0 & -1 & -5 & 2 & 0 & -1 \\ -4 & -1 & 0 & 0 & 0 & 0 & 0 \\ -1 & -5 & 0 & 0 & 0 & 0 & 0 \\ 3 & 2 & 0 & 0 & 0 & 0 & 0 \\ -1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & -1 & 0 & 0 & 0 & 0 & 0 }\myvec{\vec{x} \\ \lambda_1 \\ \lambda_2 \\ \lambda_3 \\ \lambda_4 \\ \lambda_5 } &= \myvec{-6 \\ -3 \\ -80 \\ -115 \\ 150 \\ 0 \\0 }
+    \myvec{0 & 0 & -4 & -1 & 3 & -1 & 0 \\ 0 & 0 & -1 & -5 & 2 & 0 & -1 \\ -4 & -1 & 0 & 0 & 0 & 0 & 0 \\ -1 & -5 & 0 & 0 & 0 & 0 & 0 \\ 3 & 2 & 0 & 0 & 0 & 0 & 0 \\ -1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & -1 & 0 & 0 & 0 & 0 & 0 }\myvec{\vec{x} \\ \lambda_i } &= \myvec{-6 \\ -3 \\ -80 \\ -115 \\ 150 \\ 0 \\0 }
 \end{align}
 Considering $\lambda_1,\lambda_2$ as only active multiplier,
 \begin{align}
-    \myvec{0 & 0 & -4 & -1 \\ 0 & 0 & -1 & -5 \\ -4 & -1 & 0 & 0 \\ -1 & -5 & 0 & 0}\myvec{\vec{x}\\ \lambda_1 \\ \lambda_2} &= \myvec{-6 \\ -3 \\ -80 \\ -115}
+    \myvec{0 & 0 & -4 & -1 \\ 0 & 0 & -1 & -5 \\ -4 & -1 & 0 & 0 \\ -1 & -5 & 0 & 0}\myvec{\vec{x}\\ \lambda_i} &= \myvec{-6 \\ -3 \\ -80 \\ -115}
 \end{align}
 resulting in,
 \begin{align}
-    \myvec{\vec{x} \\ \lambda_1 \\ \lambda_2} &= \myvec{0 & 0 & -4 & -1 \\ 0 & 0 & -1 & -5 \\ -4 & -1 & 0 & 0 \\ -1 & -5 & 0 & 0}^{-1}\myvec{-6 \\ -3 \\ -80 \\ -115}
+    \myvec{\vec{x} \\ \lambda_i} &= \myvec{0 & 0 & -4 & -1 \\ 0 & 0 & -1 & -5 \\ -4 & -1 & 0 & 0 \\ -1 & -5 & 0 & 0}^{-1}\myvec{-6 \\ -3 \\ -80 \\ -115}
     \\
-    \implies   \myvec{\vec{x} \\ \lambda_1 \\ \lambda_2} &= \myvec{0 & 0 & \frac{-5}{19} & \frac{1}{19} \\ 0 & 0 & \frac{1}{19} & \frac{-4}{19} \\ \frac{-5}{19} & \frac{1}{19} & 0 & 0 \\ \frac{1}{19} & \frac{-4}{19} & 0 & 0}\myvec{-6 \\ -3 \\ -80 \\ -115}
+    \implies   \myvec{\vec{x} \\ \lambda_i} &= \myvec{0 & 0 & \frac{-5}{19} & \frac{1}{19} \\ 0 & 0 & \frac{1}{19} & \frac{-4}{19} \\ \frac{-5}{19} & \frac{1}{19} & 0 & 0 \\ \frac{1}{19} & \frac{-4}{19} & 0 & 0}\myvec{-6 \\ -3 \\ -80 \\ -115}
     \\
-    \implies \myvec{\vec{x} \\ \lambda_1 \\ \lambda_2 } &= \myvec{15 \\ 20 \\ \frac{27}{19} \\ \frac{6}{19} }
+    \implies \myvec{\vec{x} \\ \lambda_i} &= \myvec{15 \\ 20 \\ \frac{27}{19} \\ \frac{6}{19} }
 \end{align}
 $\because \lambda_1,\lambda_2 > 0 $
 \\
