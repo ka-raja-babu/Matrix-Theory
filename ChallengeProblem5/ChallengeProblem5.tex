@@ -149,6 +149,14 @@ Express the axis of a parabola in terms of $\vec{V},\vec{u},f$ in general .
 
 \section{Solution}
 
+\begin{lemma}
+Axis of any conic is given by
+\begin{align}
+    \boxed{-\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} = \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c}}
+\end{align}
+Note:-This will give the minor axis in case of conics having two axes.
+\end{lemma}
+\begin{proof}
 The general equation of a conic is
 \begin{align}
   ax^2+2bxy+cy^2+2dx+2ey+f=0
@@ -191,20 +199,48 @@ By condition 2:
 
 Hence,the axis of a parabola and the minor axis of an ellipse and a hyperbola ,is given by
 \begin{align}
-    \boxed{-\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} = \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c}}
+    -\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} = \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c}
 \end{align}
+\end{proof}
 
-And,the major axis of an ellipse and a hyperbola is given by:
+\begin{lemma}
+Major axis of any conic having two axes is given by
 \begin{align}
      \boxed{\vec{n}^T\vec{x} = \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c}}
 \end{align}
-
-where,$\vec{n}$ is the normal vector passing through vertex $\vec{c}$ such that it satisfies these two conditions:
+where,
 \begin{align}
     -\myvec{\vec{v_1} - \vec{v_2}}^T\vec{n} = 0 
     \\
-    \vec{n}^T\vec{c} = 0
+    \vec{n}^T\vec{c} = \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c}
 \end{align}
+\end{lemma}
+
+\begin{proof}
+Major axis of any conic must satisfies two conditions:
+
+\begin{enumerate}
+    \item It must be perpendicular to the minor axis.
+    \item It must passes through the vertex of conic.
+\end{enumerate}
+
+By using condition 1:
+\begin{align}
+    -\myvec{\vec{v_1} - \vec{v_2}}^T\vec{n} = 0 
+\end{align}
+
+By using condition 2:
+\begin{align}
+    \vec{n}^T\vec{c} = \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c}
+\end{align}
+
+Hence,the major axis is given by
+\begin{align}
+    \vec{n}^T\vec{x} = \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c}
+\end{align}
+
+where $\vec{n}$ is the normal vector passing through the vertex.
+\end{proof}
 
 \section{Examples}
 
@@ -232,6 +268,14 @@ where,$\vec{n}$ is the normal vector passing through vertex $\vec{c}$ such that 
     \\
     \implies \vec{c} &= \myvec{\frac{-29}{25} \\ \frac{22}{25}}
     \end{align}
+    
+    \numberwithin{figure}{section}
+    \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\columnwidth]{ChallengeProblem5_1.png}
+    \caption{9$x^2$-24xy+16$y^2$-18x-101y+19=0}
+    \label{ex1}	
+    \end{figure}
 
     So,
     \begin{align}
@@ -251,14 +295,6 @@ where,$\vec{n}$ is the normal vector passing through vertex $\vec{c}$ such that 
     \implies \boxed{\myvec{-3 & 4}\vec{x} = 7}
     \end{align}
     
-    \numberwithin{figure}{section}
-    \begin{figure}[!ht]
-    \centering
-    \includegraphics[width=\columnwidth]{ChallengeProblem5_1.png}
-    \caption{9$x^2$-24xy+16$y^2$-18x-101y+19=0}
-    \label{ex1}	
-    \end{figure}
-    
     \item Parabola
     \begin{align}
     y^2-4x+2y+4 = 0
@@ -275,7 +311,14 @@ where,$\vec{n}$ is the normal vector passing through vertex $\vec{c}$ such that 
     \begin{align}
     -\myvec{\vec{v_1}-\vec{v_2}}^T &= \myvec{0 & 1}
     \end{align}
-
+    
+    \numberwithin{figure}{section}
+    \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\columnwidth]{ChallengeProblem5_2.png}
+    \caption{$y^2$-4x+2y+4=0}
+    \label{ex2}	
+    \end{figure}
     Now,
     \begin{align}
     \myvec{-4 & 1 \\ 0 & 0 \\ 0 & 1}\vec{c} &= \myvec{-4 \\ 0 \\ -1}
@@ -299,14 +342,6 @@ where,$\vec{n}$ is the normal vector passing through vertex $\vec{c}$ such that 
     \implies \boxed{\myvec{0 & 1}\vec{x} = -1}
     \end{align}
     
-    \numberwithin{figure}{section}
-    \begin{figure}[!ht]
-    \centering
-    \includegraphics[width=\columnwidth]{ChallengeProblem5_2.png}
-    \caption{$y^2$-4x+2y+4=0}
-    \label{ex2}	
-    \end{figure}
-    
     \item Parabola
     \begin{align}
         y^2 &= 8x
@@ -325,6 +360,14 @@ where,$\vec{n}$ is the normal vector passing through vertex $\vec{c}$ such that 
     \begin{align}
     -\myvec{\vec{v_1}-\vec{v_2}}^T &= \myvec{0 & 1}
     \end{align}
+    
+    \numberwithin{figure}{section}
+    \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\columnwidth]{ChallengeProblem5_3.png}
+    \caption{$y^2$=8x}
+    \label{ex3}	
+    \end{figure}
 
     Now,
     \begin{align}
@@ -348,14 +391,6 @@ where,$\vec{n}$ is the normal vector passing through vertex $\vec{c}$ such that 
     -\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} &= \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c} \\
     \implies \boxed{\myvec{0 & 1}\vec{x} = 0}
     \end{align}
-    
-    \numberwithin{figure}{section}
-    \begin{figure}[!ht]
-    \centering
-    \includegraphics[width=\columnwidth]{ChallengeProblem5_3.png}
-    \caption{$y^2$=8x}
-    \label{ex3}	
-    \end{figure}
     
     \item Ellipse
     \begin{align}
