@@ -152,7 +152,7 @@ Express the axis of a parabola in terms of $\vec{V},\vec{u},f$ in general .
 \begin{lemma}
 Axis of any conic is given by
 \begin{align}
-    \boxed{-\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} = \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c}}
+    \boxed{-\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} = \vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}}}
 \end{align}
 Note:-This will give the minor axis in case of conics having two axes.
 \end{lemma}
@@ -194,25 +194,29 @@ By condition 1:
 
 By condition 2:
 \begin{align}
-    B &= \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c}
+    B &= \vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}}
+\end{align}
+where,$\vec{e_1}$ and $\vec{e_2}$ are standard basis vector such that
+\begin{align}
+    \vec{e_1}=\myvec{1 \\0},\vec{e_2}=\myvec{0 \\ 1}
 \end{align}
 
 Hence,the axis of a parabola and the minor axis of an ellipse and a hyperbola ,is given by
 \begin{align}
-    -\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} = \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c}
+    -\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} = \vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}}
 \end{align}
 \end{proof}
 
 \begin{lemma}
 Major axis of any conic having two axes is given by
 \begin{align}
-     \boxed{\vec{n}^T\vec{x} = \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c}}
+     \boxed{\vec{n}^T\vec{x} = \vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}}}
 \end{align}
 where,
 \begin{align}
     -\myvec{\vec{v_1} - \vec{v_2}}^T\vec{n} = 0 
     \\
-    \vec{n}^T\vec{c} = \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c}
+    \vec{n}^T\vec{c} = \vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}}
 \end{align}
 \end{lemma}
 
@@ -231,12 +235,12 @@ By using condition 1:
 
 By using condition 2:
 \begin{align}
-    \vec{n}^T\vec{c} = \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c}
+    \vec{n}^T\vec{c} = \vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}}
 \end{align}
 
 Hence,the major axis is given by
 \begin{align}
-    \vec{n}^T\vec{x} = \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c}
+    \vec{n}^T\vec{x} = \vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}}
 \end{align}
 
 where $\vec{n}$ is the normal vector passing through the vertex.
@@ -284,12 +288,12 @@ where $\vec{n}$ is the normal vector passing through the vertex.
 
     and,
     \begin{align}
-    \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1&0}\vec{V}\vec{c} &= 28+21=49
+    \vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}} &= 28+21=49
     \end{align}
 
     Hence,the axis is given by
     \begin{align}
-    -\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} &= \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c} \\
+    -\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} &=\vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}}\\
     \implies \myvec{-21 & 28}\vec{x} &= 49
     \\
     \implies \boxed{\myvec{-3 & 4}\vec{x} = 7}
@@ -333,12 +337,12 @@ where $\vec{n}$ is the normal vector passing through the vertex.
 
     and,
     \begin{align}
-    \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1&0}\vec{V}\vec{c} &= -1-0=-1
+    \vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}} &= -1-0=-1
     \end{align}
 
     Hence,the axis is given by
     \begin{align}
-    -\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} &= \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c} \\
+    -\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} &= \vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}} \\
     \implies \boxed{\myvec{0 & 1}\vec{x} = -1}
     \end{align}
     
@@ -383,12 +387,12 @@ where $\vec{n}$ is the normal vector passing through the vertex.
 
     and,
     \begin{align}
-    \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1&0}\vec{V}\vec{c} &= 0
+    \vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}} &= 0
     \end{align}
 
     Hence,the axis is given by
     \begin{align}
-    -\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} &= \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c} \\
+    -\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} &=\vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}} \\
     \implies \boxed{\myvec{0 & 1}\vec{x} = 0}
     \end{align}
     
@@ -422,12 +426,12 @@ where $\vec{n}$ is the normal vector passing through the vertex.
 
     and,
     \begin{align}
-    \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1&0}\vec{V}\vec{c} &= 0
+    \vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}} &= 0
     \end{align}
 
     Hence,the minor axis is given by
     \begin{align}
-    -\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} &= \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c} \\
+    -\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} &= \vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}} \\
     \implies \myvec{\frac{-1}{2} & \frac{1}{2}}\vec{x} &= 0 \\
     \implies \boxed{\myvec{-1 & 1}\vec{x} = 0}
     \end{align}
@@ -443,7 +447,7 @@ where $\vec{n}$ is the normal vector passing through the vertex.
     
     Hence,the major axis is given by
     \begin{align}
-        \vec{n}^T\vec{x} &= \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c} 
+        \vec{n}^T\vec{x} &= \vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}}
         \\
         \implies \boxed{\myvec{1 & 1}\vec{x} = 0}
     \end{align}
@@ -486,12 +490,12 @@ where $\vec{n}$ is the normal vector passing through the vertex.
 
     and,
     \begin{align}
-    \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1&0}\vec{V}\vec{c} &= \frac{3}{2}
+    \vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}} &= \frac{3}{2}
     \end{align}
 
     Hence,the minor axis is given by
     \begin{align}
-    -\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} &= \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c} \\
+    -\myvec{\vec{v_1}-\vec{v_2}}^T\vec{x} &=\vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}} \\
     \implies \myvec{\frac{1}{2} & \frac{-1}{2}}\vec{x} &= \frac{3}{2} \\
     \implies \boxed{\myvec{1 & -1}\vec{x} = 3}
     \end{align}
@@ -507,7 +511,7 @@ where $\vec{n}$ is the normal vector passing through the vertex.
     
     Hence,the major axis is given by
     \begin{align}
-        \vec{n}^T\vec{x} &= \myvec{0 & 1}\vec{V}\vec{c} - \myvec{1 & 0}\vec{V}\vec{c} 
+        \vec{n}^T\vec{x} &= \vec{e_2}^T\brak{\vec{V}\vec{c}} - \vec{e_1}^T\brak{\vec{V}\vec{c}}
         \\
         \implies \myvec{\frac{1}{2} & \frac{1}{2}}\vec{x} &= \frac{3}{2}
         \\
