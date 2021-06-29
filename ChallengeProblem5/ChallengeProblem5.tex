@@ -152,10 +152,12 @@ Express the axis of a parabola in terms of $\vec{V},\vec{u},f$ in general .
 \begin{lemma}
 Axis of any conic is given by
 \begin{align}
-    \boxed{\brak{\vec{e_2} \pm \vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0}
+    \boxed{\frac{\vec{e_2}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_2}^T\vec{p}}} = \frac{\vec{e_1}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_1}^T\vec{p}}}}
 \end{align}
-
+where,$\vec{c}$ is the vertex of conic and $\vec{p}$ is the eigen vector of $\vec{V}$.\\
+\textbf{Note-}Eigen vector having the smallest eigen value corresponds to the major axis.
 \end{lemma}
+
 \begin{proof}
 The general equation of a conic is
 \begin{align}
@@ -174,39 +176,30 @@ where,
     \vec{u} &= \myvec{d & e}
 \end{align}
 
-Axis of a conic can be written as :
+Let the vertex be
 \begin{align}
-    \vec{A}\vec{x} &= B
+    \vec{c} &= \myvec{x_1 \\ y_1}
 \end{align}
 
-where,$\vec{A}$ is the direction vector of the axis and $B$ is a constant.
+and,the eigen vector of $\vec{V}$ be
+\begin{align}
+    \vec{p} &= \myvec{p_1 \\ p_2}
+\end{align}
 
-Axis of a conic must satisfies two conditions:
+Now,according to the principal axis theorem,
 \begin{enumerate}
-    \item  It must divide the conic into two symmetrical parts. 
-    \item  It must pass through the vertex.
+    \item Each eigen vector of $\vec{V}$ is parallel to either major axis or minor axis.
+    \item Eigen vectors of $\vec{V}$ are orthogonal to each other.
+    \item Principal axes pass through the vertex $\vec{c}$ .
 \end{enumerate}
 
-By condition 1:
+Hence,using point-slope formula,axis is given by
 \begin{align}
-    \vec{A} &= \brak{\vec{e_2} \pm \vec{e_1}}^T\vec{V}
+    y-y_1 &= \frac{p_2}{p_1}\brak{x-x_1} \\
+    \implies \frac{y-y_1}{p_2} &= \frac{x-x_1}{p_1} \\
+    \implies \frac{\vec{e_2}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_2}^T\vec{p}}} &= \frac{\vec{e_1}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_1}^T\vec{p}}}
 \end{align}
 
-By condition 2:
-\begin{align}
-    B &= \brak{\vec{e_2} \pm \vec{e_1}}^T\vec{V}\vec{c}
-\end{align}
-where,$\vec{e_1}$ and $\vec{e_2}$ are standard basis vector such that
-\begin{align}
-    \vec{e_1}=\myvec{1 \\0},\vec{e_2}=\myvec{0 \\ 1}
-\end{align}
-
-Hence,the axis of a parabola is given by
-\begin{align}
-    \brak{\vec{e_2} \pm \vec{e_1}}^T\vec{V}\vec{x} = \brak{\vec{e_2} \pm \vec{e_1}}^T\vec{V}\vec{c}
-    \\
-    \implies \brak{\vec{e_2} \pm \vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0
-\end{align}
 \end{proof}
 
 \section{Examples}
@@ -235,32 +228,34 @@ Hence,the axis of a parabola is given by
     \begin{align}
     \brak{\vec{x}-\vec{c}} &= \myvec{x+\frac{29}{25} \\ y-\frac{22}{25}}=\frac{1}{25}\myvec{25x+29 \\ 25y-22}
     \end{align}
-
-    and,
+    
+    Now,
     \begin{align}
-    \vec{V}\brak{\vec{x}-\vec{c}} &= \myvec{9x-12y+21 \\ -12x+16y-28}
-    \end{align}
-
-    Hence,the axis is given by
-    \begin{enumerate}
-    \item Approach 1
-    \begin{align}
-    \brak{\vec{e_2} - \vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0\\
-    \implies \myvec{-1 & 1}\myvec{9x-12y+21 \\ -12x+16y-28} = 0
-    \\
-    \implies -21x + 28y = 49 \\
-    \implies \boxed{\myvec{-3 & 4}\vec{x} = 7}
+        \mydet{\vec{V}-\lambda\vec{I}} &= 0 \\
+        \implies \mydet{9-\lambda & -12 \\ -12 & 16-\lambda} &= 0 \\
+        \implies \lambda^2-25\lambda &= 0 \\
+        \implies \lambda_1 =0,\lambda_2 &= 25
     \end{align}
     
-    \item Approach 2
+    For $\lambda_1=0$,
     \begin{align}
-    \brak{\vec{e_2} + \vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0\\
-    \implies \myvec{1 & 1}\myvec{9x-12y+21 \\ -12x+16y-28} = 0
-    \\
-    \implies -3x + 4y = 7 \\
-    \implies \boxed{\myvec{-3 & 4}\vec{x} = 7}
+        \vec{V}-\lambda_1\vec{I} &= \myvec{9 & -12 \\ -12 & 16} \\
+        \implies \vec{V}-\lambda_1\vec{I} &= \myvec{1 & \frac{-4}{3} \\ 0 & 0} \\
+        \implies \vec{p_1} &=\frac{3}{5}\myvec{\frac{4}{3} \\ 1}
     \end{align}
-    \end{enumerate}
+    
+    Similarly for $\lambda_2=25$,
+    \begin{align}
+        \vec{p_2} &= \frac{4}{5}\myvec{\frac{-3}{4} \\ 1}
+    \end{align}
+    $\because \lambda_1<\lambda_2$ \\
+    Hence,the axis using $\vec{p_1}$ is given by
+    \begin{align}
+        \frac{\vec{e_2}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_2}^T\vec{p_1}}} &= \frac{\vec{e_1}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_1}^T\vec{p_1}}}\\
+        \implies \frac{y-\frac{22}{25}}{\frac{3}{5}} &= \frac{x+\frac{29}{25}}{\frac{4}{5}} \\
+        \implies -75x+100y &= 175 \\
+        \implies \boxed{\myvec{-3 & 4}\vec{x} = 7}
+    \end{align}
     
     \numberwithin{figure}{section}
     \begin{figure}[!ht]
@@ -293,10 +288,31 @@ Hence,the axis of a parabola is given by
     \begin{align}
     \brak{\vec{x}-\vec{c}} &= \myvec{x-\frac{3}{4} \\  y+1}
     \end{align}
-
-    and,
+    
+    Now,
     \begin{align}
-    \vec{V}\brak{\vec{x}-\vec{c}} &= \myvec{0 \\ y+1}
+        \mydet{\vec{V}-\lambda\vec{I}} &= 0 \\
+        \implies \mydet{-\lambda & 0 \\ 0 & 1-\lambda} &= 0 \\
+        \implies \lambda_1 =0,\lambda_2 &= 1
+    \end{align}
+    
+    For $\lambda_1=0$,
+    \begin{align}
+        \vec{V}-\lambda_1\vec{I} &= \myvec{0 & 0 \\ 0 & 1} \\
+        \implies \vec{p_1} &= \myvec{1 \\ 0}
+    \end{align}
+    
+    Similarly for $\lambda_2=1$,
+    \begin{align}
+        \vec{p_2} &=\myvec{0 \\ 1}
+    \end{align}
+    $\because \lambda_1<\lambda_2$ \\
+    Hence,the axis using $\vec{p_1}$ is given by
+    \begin{align}
+        \frac{\vec{e_2}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_2}^T\vec{p_1}}} &= \frac{\vec{e_1}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_1}^T\vec{p_1}}}\\
+        \implies \frac{y+1}{0} &= \frac{x-\frac{3}{4}}{1} \\
+        \implies y+1 &= 0 \\
+        \implies \boxed{\myvec{0 & -1}\vec{x} = -1}
     \end{align}
     
     \numberwithin{figure}{section}
@@ -306,26 +322,7 @@ Hence,the axis of a parabola is given by
     \caption{$y^2$-4x+2y+4=0}
     \label{ex2}	
     \end{figure}
-    
-    Hence,the axis is given by
-    \begin{enumerate}
-    \item Approach 1
-    \begin{align}
-    \brak{\vec{e_2} - \vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0\\
-    \implies \myvec{-1 & 1}\myvec{0 \\ y+1} = 0 \\
-    \implies y+1 = 0 \\
-    \implies \boxed{\myvec{0 & 1}\vec{x} = -1}
-    \end{align}
-    
-    \item Approach 2
-    \begin{align}
-    \brak{\vec{e_2} + \vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0\\
-    \implies \myvec{1 & 1}\myvec{0 \\ y+1} = 0 \\
-    \implies y+1 = 0 \\
-    \implies \boxed{\myvec{0 & 1}\vec{x} = -1}
-    \end{align}
-    \end{enumerate}
-    
+   
     \item Parabola
     \begin{align}
         y^2 &= 8x
@@ -347,6 +344,37 @@ Hence,the axis of a parabola is given by
     \implies \vec{c} &= \myvec{0 \\ 0}
     \end{align}
     
+    So,
+    \begin{align}
+    \brak{\vec{x}-\vec{c}} &= \myvec{x \\ y}
+    \end{align}
+    
+    Now,
+    \begin{align}
+        \mydet{\vec{V}-\lambda\vec{I}} &= 0 \\
+        \implies \mydet{-\lambda & 0 \\ 0 & 1-\lambda} &= 0 \\
+        \implies \lambda_1 =0,\lambda_2 &= 1
+    \end{align}
+    
+    For $\lambda_1=0$,
+    \begin{align}
+        \vec{V}-\lambda_1\vec{I} &= \myvec{0 & 0 \\ 0 & 1} \\
+        \implies \vec{p_1} &= \myvec{1 \\ 0}
+    \end{align}
+    
+    Similarly for $\lambda_2=1$,
+    \begin{align}
+        \vec{p_2} &=\myvec{0 \\ 1}
+    \end{align}
+    $\because \lambda_1<\lambda_2$ \\
+    Hence,the axis using $\vec{p_1}$ is given by
+    \begin{align}
+        \frac{\vec{e_2}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_2}^T\vec{p_1}}} &= \frac{\vec{e_1}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_1}^T\vec{p_1}}}\\
+        \implies \frac{y}{0} &= \frac{x}{1} \\
+        \implies y &= 0 \\
+        \implies \boxed{\myvec{0 & 1}\vec{x} = 0}
+    \end{align}
+
     \numberwithin{figure}{section}
     \begin{figure}[!ht]
     \centering
@@ -354,35 +382,6 @@ Hence,the axis of a parabola is given by
     \caption{$y^2$=8x}
     \label{ex3}	
     \end{figure}
-    
-    So,
-    \begin{align}
-    \brak{\vec{x}-\vec{c}} &= \myvec{x \\ y}
-    \end{align}
-
-    and,
-    \begin{align}
-    \vec{V}\brak{\vec{x}-\vec{c}} &= \myvec{0 \\ y}
-    \end{align}
-    
-    Hence,the axis is given by
-    \begin{enumerate}
-    \item Approach 1
-    \begin{align}
-    \brak{\vec{e_2} - \vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0\\
-    \implies \myvec{-1 & 1}\myvec{0 \\ y} = 0 \\
-    \implies y = 0  \\
-    \implies \boxed{\myvec{0 & 1}\vec{x} = 0}
-    \end{align}
-    
-    \item Approach 2
-    \begin{align}
-    \brak{\vec{e_2} + \vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0\\
-    \implies \myvec{1 & 1}\myvec{0 \\ y} = 0 \\
-    \implies y = 0  \\
-    \implies \boxed{\myvec{0 & 1}\vec{x} = 0} 
-    \end{align}
-    \end{enumerate}
     
     \item Ellipse
     \begin{align}
@@ -406,30 +405,41 @@ Hence,the axis of a parabola is given by
     \begin{align}
     \brak{\vec{x}-\vec{c}} &= \myvec{x \\ y}
     \end{align}
-
-    and,
+    
+    Now,
     \begin{align}
-    \vec{V}\brak{\vec{x}-\vec{c}} &= \myvec{x+\frac{y}{2} \\ \frac{x}{2} + y}
-    \end{align}
-
-    Hence,the axes are given by
-    \begin{enumerate}
-    \item Minor Axis 
-    \begin{align}
-    \brak{\vec{e_2}-\vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0 \\
-    \implies \myvec{-1 & 1}\myvec{x+\frac{y}{2} \\ \frac{x}{2} + y} = 0 \\
-    \implies -x + y = 0 \\
-    \implies \boxed{\myvec{-1 & 1}\vec{x} = 0}
+        \mydet{\vec{V}-\lambda\vec{I}} &= 0 \\
+        \implies \mydet{1-\lambda & \frac{1}{2} \\ \frac{1}{2} & 1-\lambda} &= 0 \\
+        \implies \lambda^2-2\lambda+\frac{3}{4} &= 0 \\
+        \implies \lambda_1 =\frac{1}{2},\lambda_2 &= \frac{3}{2}
     \end{align}
     
-    \item Major Axis
+    For $\lambda_1=\frac{1}{2}$,
     \begin{align}
-    \brak{\vec{e_2}+\vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0 \\
-    \implies \myvec{1 & 1}\myvec{x+\frac{y}{2} \\ \frac{x}{2} + y} = 0 \\
-    \implies x + y = 0 \\
-    \implies \boxed{\myvec{1 & 1}\vec{x} = 0}
+        \vec{V}-\lambda_1\vec{I} &= \myvec{\frac{1}{2} & \frac{1}{2} \\ \frac{1}{2} & \frac{1}{2}} \\
+        \implies \vec{p_1} &= \frac{1}{\sqrt{2}}\myvec{-1 \\ 1}
     \end{align}
-    \end{enumerate}
+    
+    Similarly for $\lambda_2=\frac{3}{2}$,
+    \begin{align}
+        \vec{p_2} &= \frac{1}{\sqrt{2}}\myvec{1 \\ 1}
+    \end{align}
+    $\because \lambda_1<\lambda_2$ \\
+    Hence,the major axis using $\vec{p_1}$ is given by
+    \begin{align}
+        \frac{\vec{e_2}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_2}^T\vec{p_1}}} &= \frac{\vec{e_1}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_1}^T\vec{p_1}}}\\
+        \implies \frac{y}{\frac{1}{\sqrt{2}}} &= \frac{x}{\frac{-1}{\sqrt{2}}} \\
+        \implies y &= -x \\
+        \implies \boxed{\myvec{1 & 1}\vec{x} = 0}
+    \end{align}
+    
+    And,the minor axis using $\vec{p_2}$ is given by
+    \begin{align}
+        \frac{\vec{e_2}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_2}^T\vec{p_2}}} &= \frac{\vec{e_1}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_1}^T\vec{p_2}}}\\
+        \implies \frac{y}{\frac{1}{\sqrt{2}}} &= \frac{x}{\frac{1}{\sqrt{2}}} \\
+        \implies y &= x \\
+        \implies \boxed{\myvec{-1 & 1}\vec{x} = 0}
+    \end{align}
     
     \numberwithin{figure}{section}
     \begin{figure}[!ht]
@@ -462,30 +472,41 @@ Hence,the axis of a parabola is given by
     \brak{\vec{x}-\vec{c}} &= \myvec{x-3 \\ y}
     \end{align}
 
-    and,
+    Now,
     \begin{align}
-    \vec{V}\brak{\vec{x}-\vec{c}} &= \frac{1}{2}\myvec{y \\ x-3}
-    \end{align}
-
-    Hence,the axes are given by
-    \begin{enumerate}
-    \item Minor Axis
-    \begin{align}
-    \brak{\vec{e_2}-\vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0 \\
-    \implies \myvec{-1 & 1}\frac{1}{2}\myvec{y \\ x-3} = 0 \\
-    \implies x-y = 3 \\
-    \implies \boxed{\myvec{1 & -1}\vec{x} = 3}
+        \mydet{\vec{V}-\lambda\vec{I}} &= 0 \\
+        \implies \mydet{-\lambda & \frac{1}{2} \\ \frac{1}{2} & -\lambda} &= 0 \\
+        \implies \lambda^2-\frac{1}{4} &= 0 \\
+        \implies \lambda_1 =\frac{-1}{2},\lambda_2 &= \frac{1}{2}
     \end{align}
     
-    \item Major Axis
+    For $\lambda_1=\frac{-1}{2}$,
     \begin{align}
-    \brak{\vec{e_2}+\vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0 \\
-    \implies \myvec{1 & 1}\frac{1}{2}\myvec{y \\ x-3} = 0 \\
-    \implies x+y = 3 \\
-    \implies \boxed{\myvec{1 & 1}\vec{x} = 3}
+        \vec{V}-\lambda_1\vec{I} &= \myvec{\frac{1}{2} & \frac{1}{2} \\ \frac{1}{2} & \frac{1}{2}} \\
+        \implies \vec{p_1} &= \frac{1}{\sqrt{2}}\myvec{-1 \\ 1}
     \end{align}
-    \end{enumerate}
-
+    
+    Similarly for $\lambda_2=\frac{1}{2}$,
+    \begin{align}
+        \vec{p_2} &= \frac{1}{\sqrt{2}}\myvec{1 \\ 1}
+    \end{align}
+    $\because \lambda_1<\lambda_2$ \\
+    Hence,the major axis using $\vec{p_1}$ is given by
+    \begin{align}
+        \frac{\vec{e_2}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_2}^T\vec{p_1}}} &= \frac{\vec{e_1}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_1}^T\vec{p_1}}}\\
+        \implies \frac{y}{\frac{1}{\sqrt{2}}} &= \frac{x-3}{\frac{-1}{\sqrt{2}}} \\
+        \implies x+y &= 3\\
+        \implies \boxed{\myvec{1 & 1}\vec{x} = 3}
+    \end{align}
+    
+    And,the minor axis using $\vec{p_2}$ is given by
+    \begin{align}
+        \frac{\vec{e_2}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_2}^T\vec{p_2}}} &= \frac{\vec{e_1}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_1}^T\vec{p_2}}}\\
+        \implies \frac{y}{\frac{1}{\sqrt{2}}} &= \frac{x-3}{\frac{1}{\sqrt{2}}} \\
+        \implies -x+y &= 3 \\
+        \implies \boxed{\myvec{-1 & 1}\vec{x} = 3}
+    \end{align}
+   
     \numberwithin{figure}{section}
     \begin{figure}[!ht]
     \centering
