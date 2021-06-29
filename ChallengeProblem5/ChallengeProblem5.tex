@@ -152,9 +152,9 @@ Express the axis of a parabola in terms of $\vec{V},\vec{u},f$ in general .
 \begin{lemma}
 Axis of any conic is given by
 \begin{align}
-    \boxed{\brak{\vec{e_2}-\vec{e_1}}^T\sbrak{\vec{V}\brak{\vec{x}-\vec{c}}} = 0}
+    \boxed{\brak{\vec{e_2} \pm \vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0}
 \end{align}
-Note:-This will give the minor axis in case of conics having two axes.
+
 \end{lemma}
 \begin{proof}
 The general equation of a conic is
@@ -189,63 +189,24 @@ Axis of a conic must satisfies two conditions:
 
 By condition 1:
 \begin{align}
-    \vec{A} &= \brak{\vec{e_2}-\vec{e_1}}^T\vec{V}
+    \vec{A} &= \brak{\vec{e_2} \pm \vec{e_1}}^T\vec{V}
 \end{align}
 
 By condition 2:
 \begin{align}
-    B &= \brak{\vec{e_2}-\vec{e_1}}^T\brak{\vec{V}\vec{c}}
+    B &= \brak{\vec{e_2} \pm \vec{e_1}}^T\vec{V}\vec{c}
 \end{align}
 where,$\vec{e_1}$ and $\vec{e_2}$ are standard basis vector such that
 \begin{align}
     \vec{e_1}=\myvec{1 \\0},\vec{e_2}=\myvec{0 \\ 1}
 \end{align}
 
-Hence,the axis of a parabola and the minor axis of an ellipse and a hyperbola ,is given by
+Hence,the axis of a parabola is given by
 \begin{align}
-    \sbrak{\brak{\vec{e_2}-\vec{e_1}}^T\vec{V}}\vec{x} = \brak{\vec{e_2}-\vec{e_1}}^T\brak{\vec{V}\vec{c}}
+    \brak{\vec{e_2} \pm \vec{e_1}}^T\vec{V}\vec{x} = \brak{\vec{e_2} \pm \vec{e_1}}^T\vec{V}\vec{c}
     \\
-    \implies \brak{\vec{e_2}-\vec{e_1}}^T\sbrak{\vec{V}\brak{\vec{x}-\vec{c}}} = 0
+    \implies \brak{\vec{e_2} \pm \vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0
 \end{align}
-\end{proof}
-
-\begin{lemma}
-Major axis of any conic having two axes is given by
-\begin{align}
-    \boxed{\vec{n}^T\vec{x} = \brak{\vec{e_2}-\vec{e_1}}^T\brak{\vec{V}\vec{c}}}
-\end{align}
-where,
-\begin{align}
-    \sbrak{\brak{\vec{e_2}-\vec{e_1}}^T\vec{V}}\vec{n} = 0 
-    \\
-    \vec{n}^T\vec{c} = \brak{\vec{e_2}-\vec{e_1}}^T\brak{\vec{V}\vec{c}}
-\end{align}
-\end{lemma}
-
-\begin{proof}
-Major axis of any conic must satisfies two conditions:
-
-\begin{enumerate}
-    \item It must be perpendicular to the minor axis.
-    \item It must passes through the vertex of conic.
-\end{enumerate}
-
-By using condition 1:
-\begin{align}
-    \sbrak{\brak{\vec{e_2}-\vec{e_1}}^T\vec{V}}\vec{n} = 0 
-\end{align}
-
-By using condition 2:
-\begin{align}
-    \vec{n}^T\vec{c} = \brak{\vec{e_2}-\vec{e_1}}^T\brak{\vec{V}\vec{c}}
-\end{align}
-
-Hence,the major axis is given by
-\begin{align}
-   \vec{n}^T\vec{x} = \brak{\vec{e_2}-\vec{e_1}}^T\brak{\vec{V}\vec{c}}
-\end{align}
-
-where $\vec{n}$ is the normal vector passing through the vertex.
 \end{proof}
 
 \section{Examples}
@@ -270,14 +231,6 @@ where $\vec{n}$ is the normal vector passing through the vertex.
     \implies \vec{c} &= \myvec{\frac{-29}{25} \\ \frac{22}{25}}
     \end{align}
     
-    \numberwithin{figure}{section}
-    \begin{figure}[!ht]
-    \centering
-    \includegraphics[width=\columnwidth]{ChallengeProblem5_1.png}
-    \caption{9$x^2$-24xy+16$y^2$-18x-101y+19=0}
-    \label{ex1}	
-    \end{figure}
-
     So,
     \begin{align}
     \brak{\vec{x}-\vec{c}} &= \myvec{x+\frac{29}{25} \\ y-\frac{22}{25}}=\frac{1}{25}\myvec{25x+29 \\ 25y-22}
@@ -289,13 +242,33 @@ where $\vec{n}$ is the normal vector passing through the vertex.
     \end{align}
 
     Hence,the axis is given by
+    \begin{enumerate}
+    \item Approach 1
     \begin{align}
-    \brak{\vec{e_2}-\vec{e_1}}^T\sbrak{\vec{V}\brak{\vec{x}-\vec{c}}} &= 0\\
-    \implies \myvec{-1 & 1}\myvec{9x-12y+21 \\ -12x+16y-28} &= 0
+    \brak{\vec{e_2} - \vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0\\
+    \implies \myvec{-1 & 1}\myvec{9x-12y+21 \\ -12x+16y-28} = 0
     \\
-    \implies -21x + 28y &= 49 \\
+    \implies -21x + 28y = 49 \\
     \implies \boxed{\myvec{-3 & 4}\vec{x} = 7}
     \end{align}
+    
+    \item Approach 2
+    \begin{align}
+    \brak{\vec{e_2} + \vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0\\
+    \implies \myvec{1 & 1}\myvec{9x-12y+21 \\ -12x+16y-28} = 0
+    \\
+    \implies -3x + 4y = 7 \\
+    \implies \boxed{\myvec{-3 & 4}\vec{x} = 7}
+    \end{align}
+    \end{enumerate}
+    
+    \numberwithin{figure}{section}
+    \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\columnwidth]{ChallengeProblem5_1.png}
+    \caption{9$x^2$-24xy+16$y^2$-18x-101y+19=0}
+    \label{ex1}	
+    \end{figure}
     
     \item Parabola
     \begin{align}
@@ -309,13 +282,6 @@ where $\vec{n}$ is the normal vector passing through the vertex.
     f &= 4
     \end{align}
 
-    \numberwithin{figure}{section}
-    \begin{figure}[!ht]
-    \centering
-    \includegraphics[width=\columnwidth]{ChallengeProblem5_2.png}
-    \caption{$y^2$-4x+2y+4=0}
-    \label{ex2}	
-    \end{figure}
     Now,
     \begin{align}
     \myvec{-4 & 1 \\ 0 & 0 \\ 0 & 1}\vec{c} &= \myvec{-4 \\ 0 \\ -1}
@@ -332,14 +298,33 @@ where $\vec{n}$ is the normal vector passing through the vertex.
     \begin{align}
     \vec{V}\brak{\vec{x}-\vec{c}} &= \myvec{0 \\ y+1}
     \end{align}
-
+    
+    \numberwithin{figure}{section}
+    \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\columnwidth]{ChallengeProblem5_2.png}
+    \caption{$y^2$-4x+2y+4=0}
+    \label{ex2}	
+    \end{figure}
+    
     Hence,the axis is given by
+    \begin{enumerate}
+    \item Approach 1
     \begin{align}
-    \brak{\vec{e_2}-\vec{e_1}}^T\sbrak{\vec{V}\brak{\vec{x}-\vec{c}}} &= 0\\
-    \implies \myvec{-1 & 1}\myvec{0 \\ y+1} &= 0 \\
-    \implies y+1 &= 0 \\
+    \brak{\vec{e_2} - \vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0\\
+    \implies \myvec{-1 & 1}\myvec{0 \\ y+1} = 0 \\
+    \implies y+1 = 0 \\
     \implies \boxed{\myvec{0 & 1}\vec{x} = -1}
     \end{align}
+    
+    \item Approach 2
+    \begin{align}
+    \brak{\vec{e_2} + \vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0\\
+    \implies \myvec{1 & 1}\myvec{0 \\ y+1} = 0 \\
+    \implies y+1 = 0 \\
+    \implies \boxed{\myvec{0 & 1}\vec{x} = -1}
+    \end{align}
+    \end{enumerate}
     
     \item Parabola
     \begin{align}
@@ -355,6 +340,13 @@ where $\vec{n}$ is the normal vector passing through the vertex.
     f &= 0
     \end{align}
 
+    Now,
+    \begin{align}
+    \myvec{-8 & 1 \\ 0 & 0 \\ 0 & 1}\vec{c} &= \myvec{0 \\ 0 \\ 0}
+    \\
+    \implies \vec{c} &= \myvec{0 \\ 0}
+    \end{align}
+    
     \numberwithin{figure}{section}
     \begin{figure}[!ht]
     \centering
@@ -362,14 +354,7 @@ where $\vec{n}$ is the normal vector passing through the vertex.
     \caption{$y^2$=8x}
     \label{ex3}	
     \end{figure}
-
-    Now,
-    \begin{align}
-    \myvec{-8 & 1 \\ 0 & 0 \\ 0 & 1}\vec{c} &= \myvec{0 \\ 0 \\ 0}
-    \\
-    \implies \vec{c} &= \myvec{0 \\ 0}
-    \end{align}
-
+    
     So,
     \begin{align}
     \brak{\vec{x}-\vec{c}} &= \myvec{x \\ y}
@@ -379,14 +364,25 @@ where $\vec{n}$ is the normal vector passing through the vertex.
     \begin{align}
     \vec{V}\brak{\vec{x}-\vec{c}} &= \myvec{0 \\ y}
     \end{align}
-
+    
     Hence,the axis is given by
+    \begin{enumerate}
+    \item Approach 1
     \begin{align}
-    \brak{\vec{e_2}-\vec{e_1}}^T\sbrak{\vec{V}\brak{\vec{x}-\vec{c}}} &= 0\\
-    \implies \myvec{-1 & 1}\myvec{0 \\ y} &= 0 \\
-    \implies y &= 0  \\
+    \brak{\vec{e_2} - \vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0\\
+    \implies \myvec{-1 & 1}\myvec{0 \\ y} = 0 \\
+    \implies y = 0  \\
     \implies \boxed{\myvec{0 & 1}\vec{x} = 0}
     \end{align}
+    
+    \item Approach 2
+    \begin{align}
+    \brak{\vec{e_2} + \vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0\\
+    \implies \myvec{1 & 1}\myvec{0 \\ y} = 0 \\
+    \implies y = 0  \\
+    \implies \boxed{\myvec{0 & 1}\vec{x} = 0} 
+    \end{align}
+    \end{enumerate}
     
     \item Ellipse
     \begin{align}
@@ -416,29 +412,24 @@ where $\vec{n}$ is the normal vector passing through the vertex.
     \vec{V}\brak{\vec{x}-\vec{c}} &= \myvec{x+\frac{y}{2} \\ \frac{x}{2} + y}
     \end{align}
 
-    Hence,the minor axis is given by
+    Hence,the axes are given by
+    \begin{enumerate}
+    \item Minor Axis 
     \begin{align}
-    \brak{\vec{e_2}-\vec{e_1}}^T\sbrak{\vec{V}\brak{\vec{x}-\vec{c}}} &= 0\\
-    \implies \myvec{-1 & 1}\myvec{x+\frac{y}{2} \\ \frac{x}{2} + y} &= 0 \\
-    \implies -x + y &= 0 \\
+    \brak{\vec{e_2}-\vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0 \\
+    \implies \myvec{-1 & 1}\myvec{x+\frac{y}{2} \\ \frac{x}{2} + y} = 0 \\
+    \implies -x + y = 0 \\
     \implies \boxed{\myvec{-1 & 1}\vec{x} = 0}
     \end{align}
     
-    The normal vector $\vec{n}$ is given by
+    \item Major Axis
     \begin{align}
-       \sbrak{\brak{\vec{e_2}-\vec{e_1}}^T\vec{V}}\vec{n} &= 0
-        \\
-        \implies \myvec{\frac{-1}{2} & \frac{1}{2}}\vec{n} &= 0
-        \\
-        \implies \vec{n} &= \myvec{1 \\ 1}
+    \brak{\vec{e_2}+\vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0 \\
+    \implies \myvec{1 & 1}\myvec{x+\frac{y}{2} \\ \frac{x}{2} + y} = 0 \\
+    \implies x + y = 0 \\
+    \implies \boxed{\myvec{1 & 1}\vec{x} = 0}
     \end{align}
-    
-    Hence,the major axis is given by
-    \begin{align}
-        \vec{n}^T\vec{x} &= \brak{\vec{e_2}- \vec{e_1}}^T\brak{\vec{V}\vec{c}}
-        \\
-        \implies &\boxed{\myvec{1 & 1}\vec{x} = 0}
-    \end{align}
+    \end{enumerate}
     
     \numberwithin{figure}{section}
     \begin{figure}[!ht]
@@ -476,32 +467,25 @@ where $\vec{n}$ is the normal vector passing through the vertex.
     \vec{V}\brak{\vec{x}-\vec{c}} &= \frac{1}{2}\myvec{y \\ x-3}
     \end{align}
 
-    Hence,the minor axis is given by
+    Hence,the axes are given by
+    \begin{enumerate}
+    \item Minor Axis
     \begin{align}
-    \brak{\vec{e_2}-\vec{e_1}}^T\sbrak{\vec{V}\brak{\vec{x}-\vec{c}}} &= 0 \\
-    \implies \myvec{-1 & 1}\frac{1}{2}\myvec{y \\ x-3} &= 0 \\
-    \implies x-y &= 3 \\
+    \brak{\vec{e_2}-\vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0 \\
+    \implies \myvec{-1 & 1}\frac{1}{2}\myvec{y \\ x-3} = 0 \\
+    \implies x-y = 3 \\
     \implies \boxed{\myvec{1 & -1}\vec{x} = 3}
     \end{align}
     
-    The normal vector $\vec{n}$ is given by
+    \item Major Axis
     \begin{align}
-        \sbrak{\brak{\vec{e_2}-\vec{e_1}}^T\vec{V}}\vec{n} &= 0
-        \\
-        \implies \myvec{\frac{1}{2} & \frac{-1}{2}}\vec{n} &= 0
-        \\
-        \implies \vec{n} &= \myvec{\frac{1}{2} \\ \frac{1}{2}}
+    \brak{\vec{e_2}+\vec{e_1}}^T\vec{V}\brak{\vec{x}-\vec{c}} = 0 \\
+    \implies \myvec{1 & 1}\frac{1}{2}\myvec{y \\ x-3} = 0 \\
+    \implies x+y = 3 \\
+    \implies \boxed{\myvec{1 & 1}\vec{x} = 3}
     \end{align}
-    
-    Hence,the major axis is given by
-    \begin{align}
-        \vec{n}^T\vec{x} &=\brak{\vec{e_2}- \vec{e_1}}^T\brak{\vec{V}\vec{c}}
-        \\
-        \implies \myvec{\frac{1}{2} & \frac{1}{2}}\vec{x} &= \frac{3}{2}
-        \\
-        \implies \boxed{\myvec{1 & 1}\vec{x} = 3}
-    \end{align}
-    
+    \end{enumerate}
+
     \numberwithin{figure}{section}
     \begin{figure}[!ht]
     \centering
