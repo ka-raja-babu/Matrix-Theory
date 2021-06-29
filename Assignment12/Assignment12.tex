@@ -189,7 +189,7 @@ and,
 and,
 \begin{align}
      6x+4y &\leq 300 \\
-    \implies 3x+2y &\leq 150 \\
+    \implies 3x+2y &\leq 150 
 \end{align}
 
 $\therefore$ Our problem is
@@ -222,17 +222,17 @@ $\therefore$ Lagrangian matrix is given by
 \end{align}
 Considering $\lambda_1,\lambda_2$ as only active multiplier,
 \begin{align}
-    \myvec{0 & 0 & -4 & -1 \\ 0 & 0 & -1 & -5 \\ -4 & -1 & 0 & 0 \\ -1 & -5 & 0 & 0}\myvec{\vec{x}\\ \lambda_1 \\ \lambda_2} &= \myvec{-6 \\ -3 \\ -80 \\ -115}
+    \myvec{0 & 0 & -4 & -1 \\ 0 & 0 & -1 & -5 \\ -4 & -1 & 0 & 0 \\ -1 & -5 & 0 & 0}\myvec{\vec{x}\\ \boldsymbol{\lambda}} &= \myvec{-6 \\ -3 \\ -80 \\ -115}
 \end{align}
 resulting in,
 \begin{align}
-    \myvec{\vec{x} \\ \lambda_1 \\ \lambda_2} &= \myvec{0 & 0 & -4 & -1 \\ 0 & 0 & -1 & -5 \\ -4 & -1 & 0 & 0 \\ -1 & -5 & 0 & 0}^{-1}\myvec{-6 \\ -3 \\ -80 \\ -115}
+    \myvec{\vec{x} \\ \boldsymbol{\lambda}} &= \myvec{0 & 0 & -4 & -1 \\ 0 & 0 & -1 & -5 \\ -4 & -1 & 0 & 0 \\ -1 & -5 & 0 & 0}^{-1}\myvec{-6 \\ -3 \\ -80 \\ -115}
     \\
-    \implies   \myvec{\vec{x} \\ \lambda_1 \\ \lambda_2} &= \myvec{0 & 0 & \frac{-5}{19} & \frac{1}{19} \\ 0 & 0 & \frac{1}{19} & \frac{-4}{19} \\ \frac{-5}{19} & \frac{1}{19} & 0 & 0 \\ \frac{1}{19} & \frac{-4}{19} & 0 & 0}\myvec{-6 \\ -3 \\ -80 \\ -115}
+    \implies   \myvec{\vec{x} \\ \boldsymbol{\lambda}} &= \myvec{0 & 0 & \frac{-5}{19} & \frac{1}{19} \\ 0 & 0 & \frac{1}{19} & \frac{-4}{19} \\ \frac{-5}{19} & \frac{1}{19} & 0 & 0 \\ \frac{1}{19} & \frac{-4}{19} & 0 & 0}\myvec{-6 \\ -3 \\ -80 \\ -115}
     \\
-    \implies \myvec{\vec{x} \\ \lambda_1 \\ \lambda_2} &= \myvec{15 \\ 20 \\ \frac{27}{19} \\ \frac{6}{19} }
+    \implies \myvec{\vec{x} \\ \boldsymbol{\lambda}} &= \myvec{15 \\ 20 \\ \frac{27}{19} \\ \frac{6}{19} }
 \end{align}
-$\because \lambda_1,\lambda_2 > 0 $
+$\because \boldsymbol{\lambda} \succ \vec{0} $
 \\
 $\therefore$ Optimal solution is given by
 \begin{align}
