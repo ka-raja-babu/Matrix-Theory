@@ -154,8 +154,7 @@ Axis of any conic is given by
 \begin{align}
     \boxed{\frac{\vec{e_2}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_2}^T\vec{p}}} = \frac{\vec{e_1}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_1}^T\vec{p}}}}
 \end{align}
-where,$\vec{c}$ is the vertex of conic and $\vec{p}$ is the eigen vector of $\vec{V}$.\\
-\textbf{Note-}Eigen vector having the smallest eigen value corresponds to the major axis.
+where,$\vec{c}$ is the vertex of conic and $\vec{p}$ is the eigen vector of $\vec{V}$ having smaller eigen value.
 \end{lemma}
 
 \begin{proof}
@@ -178,10 +177,15 @@ where,
 
 Let the vertex be
 \begin{align}
-    \vec{c} &= \myvec{x_1 \\ y_1}
+    \vec{c} &= \myvec{x_c \\ y_c}
 \end{align}
 
-and,the eigen vector of $\vec{V}$ be
+and,the origin be
+\begin{align}
+    \vec{O} &= \myvec{0 \\ 0}
+\end{align}
+
+and,the eigen vector of $\vec{V}$ having smaller eigen value be
 \begin{align}
     \vec{p} &= \myvec{p_1 \\ p_2}
 \end{align}
@@ -193,10 +197,30 @@ Now,according to the principal axis theorem,
     \item Principal axes pass through the vertex $\vec{c}$ .
 \end{enumerate}
 
-Hence,using point-slope formula,axis is given by
+Now,direction vector of eigen vector $\vec{p}$ is 
 \begin{align}
-    y-y_1 &= \frac{p_2}{p_1}\brak{x-x_1} \\
-    \implies \frac{y-y_1}{p_2} &= \frac{x-x_1}{p_1} \\
+    \vec{m_1} &= \vec{p}-\vec{O} \\
+    \implies \vec{m_1} &= \myvec{p_1 \\ p_2} \\
+    \implies \vec{m_1} &= p_1\myvec{1 \\ \frac{p_2}{p_1}} \\
+    \implies \vec{m_1} &= \myvec{1 \\ \frac{p_2}{p_1}} \quad \brak{\because k\vec{m} \equiv \vec{m}} \\
+    \implies \vec{m_1} &= \myvec{1 \\ \frac{\vec{e_2}^T\vec{p}}{\vec{e_1}^T\vec{p}}}
+\end{align}
+
+and,direction vector of axis is
+\begin{align}
+    \vec{m_2} &= \vec{x}-\vec{c}
+    \\
+    \implies \vec{m_2} &= \myvec{x-x_c \\ y-y_c} \\
+    \implies \vec{m_2} &= \brak{x-x_c}\myvec{1 \\ \frac{y-y_c}{x-x_c}} \\
+    \implies \vec{m_2} &= \myvec{1 \\ \frac{y-y_c}{x-x_c}}  \quad \brak{\because k\vec{m} \equiv \vec{m}} \\
+    \implies \vec{m_2} &= \myvec{1 \\ \frac{\vec{e_2}^T\brak{\vec{x}-\vec{c}}}{\vec{e_1}^T\brak{\vec{x}-\vec{c}}}}
+\end{align}
+$\because$ Eigen vector is parallel to axis. \\
+$\therefore$ Axis is given by
+\begin{align}
+    \vec{m_1} &= \vec{m_2} \\
+    \implies \myvec{1 \\ \frac{\vec{e_2}^T\vec{p}}{\vec{e_1}^T\vec{p}}} &= \myvec{1 \\ \frac{\vec{e_2}^T\brak{\vec{x}-\vec{c}}}{\vec{e_1}^T\brak{\vec{x}-\vec{c}}}} \\ 
+    \implies \frac{\vec{e_2}^T\vec{p}}{\vec{e_1}^T\vec{p}} &= \frac{\vec{e_2}^T\brak{\vec{x}-\vec{c}}}{\vec{e_1}^T\brak{\vec{x}-\vec{c}}} \\
     \implies \frac{\vec{e_2}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_2}^T\vec{p}}} &= \frac{\vec{e_1}^T\brak{\vec{x}-\vec{c}}}{{\vec{e_1}^T\vec{p}}}
 \end{align}
 
