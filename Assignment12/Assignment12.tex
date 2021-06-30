@@ -30,6 +30,7 @@
 \usepackage{tfrupee}
 \usepackage[breaklinks=true]{hyperref}
 \usepackage{graphicx}
+\usepackage{graphics}
 \usepackage{tkz-euclide}
 \usepackage{float}
 
@@ -151,8 +152,8 @@ https://github.com/ka-raja-babu/Matrix-Theory/tree/main/Assignment12
 
 \numberwithin{table}{section}
 \begin{table}[!ht]
-\begin{center}
-\begin{tabular}{ | m{2.1cm} | m{1.4cm}| m{1.4cm} | m{2.2cm} | } 
+\centering
+\resizebox{\columnwidth}{!}{\begin{tabular}{|c|c|c|c|} 
 \hline
 Component & P & Q & Requirement \\
 \hline
@@ -164,8 +165,7 @@ Cholesterol & 6 units & 4 units & $\leq 300$ units\\
 \hline
 Vitamin A & 6 units & 3 units & \\ 
 \hline
-\end{tabular}
-\end{center}
+\end{tabular}}
 \caption{Diet Requirements}
 \label{tab:table1}
 \end{table}
