@@ -150,16 +150,49 @@ population actually has the disease, what is the probability that a person has t
 
 \section{Solution}
 
-Let $X \in \{0,1\}$ represent the test result and $Y \in \{0,1\}$ represent the actual status of the disease where 0 and 1 denotes absence and presence of the disease respectively .
-\\
-According to the question,
-\begin{align}
-    \text{Pr}(X=1|Y=1) &= \frac{99}{100} \\
-    \text{Pr}(X=1|Y=0) &= \frac{0.5}{100} = \frac{1}{200} \\
-    \text{Pr}(Y=1) &= \frac{0.1}{100} = \frac{1}{1000}\\
-    \text{Pr}(Y=0) &= \frac{99.9}{100} = \frac{999}{1000}
-\end{align}
-$\therefore$ Probability that a person has the disease given that his test result is positive ,is given by
+Let the input variables $X$ and $Y$ be defined according to the table \ref{tab:table1} .
+
+\renewcommand{\arraystretch}{1.7}
+\numberwithin{table}{section}
+\begin{table}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{\begin{tabular}{|c|c|c|} 
+\hline
+Input Variable & Value & Description \\
+\hline
+\multirow{2}{*}{X} & 0 & Absence of disease in test \\ \cline{2-3} 
+                   & 1  & Presence of disease in test \\ \hline
+\multirow{2}{*}{Y} & 0 & Absence of disease in reality \\ \cline{2-3} 
+                   & 1 & Presence of disease in reality \\ \hline
+\end{tabular}}
+\caption{Input Variables}
+\label{tab:table1}
+\end{table}
+
+Given data of the question is presented in the table \ref{tab:table2} .
+
+\renewcommand{\arraystretch}{1.7}
+\numberwithin{table}{section}
+\begin{table}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{\begin{tabular}{|c|c|c|} 
+\hline
+S.No. & Expression & Value \\
+\hline 
+1. &  Pr$(X=1|Y=1)$ & $\frac{99}{100}$ \\ 
+\hline 
+2. & Pr$(X=1|Y=0)$ & $\frac{0.5}{100} = \frac{1}{200}$ \\ 
+\hline 
+3. & Pr(Y=1) & $\frac{0.1}{100} = \frac{1}{1000}$ \\ 
+\hline 
+4. & Pr(Y=0) & $\frac{99.9}{100} = \frac{999}{1000}$ \\ 
+\hline 
+\end{tabular}}
+\caption{Given Data}
+\label{tab:table2}
+\end{table}
+
+Hence,probability that a person has the disease given that his test result is positive ,is given by
 \begin{align}
     \text{Pr}(Y=1|X=1) &= \frac{\text{Pr}(X=1|Y=1)\text{Pr}(Y=1)}{ \sum_{i=0}^{1}\text{Pr}(X=1|Y=i)\text{Pr}(Y=i)}
     \\
