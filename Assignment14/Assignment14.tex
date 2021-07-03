@@ -150,56 +150,67 @@ A person plays a game of tossing a coin thrice. For each head, he is given Rs 2 
 \section{Solution}
 
 \begin{axiom}
-A random variable $X$ is a real-valued function whose domain is sample space $S$ . \label{axiom1}
+A discrete random variable $X$ is said to be a Bernoulli random variable if \label{axiom}
+\begin{align}
+\text{Pr}(X)=
+\begin{cases}
+p & X=1 \\ q=1-p & X=0 \\ 0 & \text{otherwise}
+\end{cases}
+\end{align}
 \end{axiom}
 
-Let head and tail of coin be denoted by $H$ and $T$ respectively.
-
-$\therefore$ Sample space for tossing a coin thrice is 
-\begin{align}
-    S= \{ &HHH,HHT,HTH,THH, \\
-    &TTH,THT,HTT,TTT \}
-\end{align}
-
-According to the question,$X$ is the amount gained or lost by the person such that 
-\begin{align}
-    \text{Each} \hspace{0.2cm} H &= \text{Rs} \hspace{0.2cm} 2 \\
-    \text{Each} \hspace{0.2cm} T &= -\text{Rs} \hspace{0.2cm} 1.5
-\end{align}
-
-From table \ref{tab:table1},
-\begin{align}
-    X=\{6,2.5,-1,-4.5\}
-\end{align}
-
-$\because$ All values of $X$ are real. 
-
-$\therefore$ According to axiom \ref{axiom1},$X$ is a random variable. 
-
-Probability of $X$ is calculated in table \ref{tab:table2} and probability distribution of $X$ is shown in fig. \ref{fig:fig1} .
+Let success($X$=1) and failure($X$=0) be defined as in table \ref{tab:table3} .
 
 \numberwithin{table}{section}
 \begin{table}[!ht]
 \centering
 \begin{tabular}{|c|c|} 
 \hline
- & $X$ \\
+Success($X$=1) & Total Amount $\geq$ 0 \\
 \hline
-$X(HHH)$ & 2+2+2=6 \\
+Failure($X$=0) & Total Amount $<$ 0 \\
 \hline
-$X(HHT)$ & 2+2-1.5=2.5 \\
+\end{tabular}
+\caption{Assumption for $X$}
+\label{tab:table3}
+\end{table}
+
+Values of $X$ are calculated with this assumption in table \ref{tab:table1} .
+
+From table \ref{tab:table2} ,probability of $X$ can be defined as
+\begin{align}
+\text{Pr}(X)=
+\begin{cases}
+p=\frac{1}{2} & X=1 \\ q=1-p=\frac{1}{2} & X=0 \\ 0 & \text{otherwise}
+\end{cases}
+\end{align}
+
+Hence,according to axiom \ref{axiom},$X$ is a Bernoulli random variable.
+\\
+Probability distribution of $X$ is shown in fig. \ref{fig:fig1} .
+
+\numberwithin{table}{section}
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|c|c|c|} 
 \hline
-$X(HTH)$ & 2-1.5+2=2.5 \\
+Sample Space & Total Amount & $X$\\
 \hline
-$X(THH)$ & -1.5+2+2=2.5 \\
+$HHH$ & 2+2+2=6 & 1\\
 \hline
-$X(TTH)$ & -1.5-1.5+2=-1 \\
+$HHT$ & 2+2-1.5=2.5 & 1\\
 \hline
-$X(THT)$ & -1.5+2-1.5=-1 \\
+$HTH$ & 2-1.5+2=2.5 & 1\\
 \hline
-$X(HTT)$ & 2-1.5-1.5=-1 \\
+$THH$ & -1.5+2+2=2.5 & 1\\
 \hline
-$X(TTT)$ & -1.5-1.5-1.5=-4.5 \\
+$TTH$ & -1.5-1.5+2=-1 & 0\\
+\hline
+$THT$ & -1.5+2-1.5=-1 & 0\\
+\hline
+$HTT$ & 2-1.5-1.5=-1 & 0\\
+\hline
+$TTT$ & -1.5-1.5-1.5=-4.5 & 0\\
 \hline
 \end{tabular}
 \caption{Values of $X$}
@@ -213,13 +224,9 @@ $X(TTT)$ & -1.5-1.5-1.5=-4.5 \\
 \hline
 Expression & Value \\
 \hline
-Pr($X$=6) & $\frac{1}{8}$ \\
+Pr($X$=0) & $\frac{1}{2}$ \\
 \hline
-Pr($X$=2.5) & $\frac{3}{8}$ \\
-\hline
-Pr($X$=-1) & $\frac{3}{8}$ \\
-\hline
-Pr($X$=-4.5) & $\frac{1}{8}$ \\
+Pr($X$=1) & $\frac{1}{2}$ \\
 \hline
 \end{tabular}
 \caption{Probability of $X$}

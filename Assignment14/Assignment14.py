@@ -9,18 +9,20 @@ Original file is located at
 
 #Probability Distribution of X
 #Code by K.A. Raja Babu
-#July 01 ,2021
+#July 03 ,2021
+
+import numpy as np
+import matplotlib.pyplot as plt
 
 # creating the dataset
-data = {'X=6':1/8, 'X=2.5':3/8, 'X=-1':3/8,
-        'X=-4.5':1/8}
+data = {'X=0':1/2, 'X=1':1/2}
 X = list(data.keys())
 prob = list(data.values())
   
 fig = plt.figure()
  
 # creating the bar plot
-plt.bar(X,prob,width = 0.4)
+plt.bar(X,prob,width = 0.3)
  
 plt.xlabel("X")
 plt.ylabel("Pr(X)")
