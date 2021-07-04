@@ -149,95 +149,59 @@ A person plays a game of tossing a coin thrice. For each head, he is given Rs 2 
 
 \section{Solution}
 
-\begin{axiom}
-A discrete random variable $X$ is said to be a Bernoulli random variable if \label{axiom}
-\begin{align}
-\text{Pr}(X)=
-\begin{cases}
-p & X=1 \\ q=1-p & X=0 \\ 0 & \text{otherwise}
-\end{cases}
-\end{align}
-\end{axiom}
-
-Let success($X$=1) and failure($X$=0) be defined as in table \ref{tab:table3} .
+Let $X_0,X_1,X_2$ be the three tosses of coin such that head and tail represent success and failure respectively .
 
 \numberwithin{table}{section}
 \begin{table}[!ht]
 \centering
-\begin{tabular}{|c|c|} 
+\begin{tabular}{|c|c|c|c|} 
 \hline
-Success($X$=1) & Total Amount $\geq$ 0 \\
+Sample Space & $X_0$ & $X_1$ & $X_2$ \\
 \hline
-Failure($X$=0) & Total Amount $<$ 0 \\
+$HHH$ & 1 & 1 & 1 \\
 \hline
-\end{tabular}
-\caption{Assumption for $X$}
-\label{tab:table3}
-\end{table}
-
-Values of $X$ are calculated with this assumption in table \ref{tab:table1} .
-
-From table \ref{tab:table2} ,probability of $X$ can be defined as
-\begin{align}
-\text{Pr}(X)=
-\begin{cases}
-p=\frac{1}{2} & X=1 \\ q=1-p=\frac{1}{2} & X=0 \\ 0 & \text{otherwise}
-\end{cases}
-\end{align}
-
-Hence,according to axiom \ref{axiom},$X$ is a Bernoulli random variable.
-\\
-Probability distribution of $X$ is shown in fig. \ref{fig:fig1} .
-
-\numberwithin{table}{section}
-\begin{table}[!ht]
-\centering
-\begin{tabular}{|c|c|c|} 
+$HHT$ & 1 & 1 & 0 \\
 \hline
-Sample Space & Total Amount & $X$\\
+$HTH$ & 1 & 0 & 1 \\
 \hline
-$HHH$ & 2+2+2=6 & 1\\
+$THH$ & 0 & 1 & 1 \\
 \hline
-$HHT$ & 2+2-1.5=2.5 & 1\\
+$TTH$ & 0 & 0 & 1 \\
 \hline
-$HTH$ & 2-1.5+2=2.5 & 1\\
+$THT$ & 0 & 1 & 0 \\
 \hline
-$THH$ & -1.5+2+2=2.5 & 1\\
+$HTT$ & 1 & 0 & 0 \\
 \hline
-$TTH$ & -1.5-1.5+2=-1 & 0\\
-\hline
-$THT$ & -1.5+2-1.5=-1 & 0\\
-\hline
-$HTT$ & 2-1.5-1.5=-1 & 0\\
-\hline
-$TTT$ & -1.5-1.5-1.5=-4.5 & 0\\
+$TTT$ & 0 & 0 & 0 \\
 \hline
 \end{tabular}
-\caption{Values of $X$}
+\caption{Values of $X_{i=0,1,2}$}
 \label{tab:table1}
 \end{table}
 
 \numberwithin{table}{section}
 \begin{table}[!ht]
 \centering
-\begin{tabular}{|c|c|} 
+\begin{tabular}{|c|c|c|c|} 
 \hline
-Expression & Value \\
+ & $X_0$ & $X_1$ & $X_2$ \\
 \hline
-Pr($X$=0) & $\frac{1}{2}$ \\
+Pr($X_i$=0) & $\frac{1}{2}$ & $\frac{1}{2}$ & $\frac{1}{2}$ \\
 \hline
-Pr($X$=1) & $\frac{1}{2}$ \\
+Pr($X_i$=1) & $\frac{1}{2}$ & $\frac{1}{2}$ & $\frac{1}{2}$ \\
 \hline
 \end{tabular}
-\caption{Probability of $X$}
+\caption{Probability of $X_{i=0,1,2}$}
 \label{tab:table2}
 \end{table}
+
+From table \ref{tab:table1} and table \ref{tab:table2}, it can be inferred that $X_0,X_1,X_2$ represents a sequence of independent Bernoulli random variables and hence,it represents a Bernoulli process.
 
 \numberwithin{figure}{section}
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{Figure14}
-\caption{Probability Distribution of X}
+\caption{Probability Distribution of $X_{i=0,1,2}$}
 \label{fig:fig1}	
 \end{figure}
 
