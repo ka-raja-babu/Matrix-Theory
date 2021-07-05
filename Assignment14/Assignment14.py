@@ -17,18 +17,18 @@ import matplotlib.pyplot as plt
 #Defining input values
 n=3
 p=0.5
-r_values=list(range(n+1))
+k=list(range(n+1))
 
 #Calculating pmf
-dist=[binom.pmf(r,n,p) for r in r_values]
+dist=[binom.pmf(k1,n,p) for k1 in k]
 
 #Printing pmf values
-print("r \t P(r)")
+print("k \t p(k)")
 for i in range(n+1) :
-  print(str(r_values[i]) + "\t" + str(dist[i]))
+  print(str(k[i]) + "\t" + str(dist[i]))
 
 #Plotting the pmf graph
-plt.stem(r_values,dist,use_line_collection = True)
+plt.stem(k,dist,use_line_collection = True)
 plt.xlabel("$k$")
 plt.ylabel("$p_{X}(k)$")
 plt.title("PMF of $X$")
