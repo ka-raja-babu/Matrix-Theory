@@ -9,23 +9,23 @@ Original file is located at
 
 #Probability Distribution of X
 #Code by K.A. Raja Babu
-#July 04 ,2021
+#July 05 ,2021
 
 import numpy as np
 import matplotlib.pyplot as plt
 
 # creating the dataset
-data = {'$X_i$=0':1/2, '$X_i$=1':1/2}
+data = {'$X$=0':1/8, '$X$=1':3/8, '$X$=2':3/8, '$X$=3':1/8}
 X = list(data.keys())
 prob = list(data.values())
   
 fig = plt.figure()
  
 # creating the bar plot
-plt.bar(X,prob,width = 0.3)
+plt.bar(X,prob,width = 0.4)
  
-plt.xlabel("$X_i$")
-plt.ylabel("Pr($X_i$)")
-plt.title("Probability Distribution of $X_{i=0,1,2}$")
+plt.xlabel("$X$")
+plt.ylabel("Pr($X$)")
+plt.title("Probability Distribution of $X$")
 
 plt.show()
