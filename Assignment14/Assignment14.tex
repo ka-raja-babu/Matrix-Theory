@@ -76,7 +76,9 @@ columns=fullflexible
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}{Example}[section]
 \newtheorem{definition}[problem]{Definition}
-
+\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
@@ -158,28 +160,18 @@ where
     X_i &= \{2,-1.5\}
 \end{align}
 
-Assuming a fair coin,the probability mass function of $X$ is given by
+$\because$ Tossing a coin three times is said to have binomial distribution .
+
+$\therefore$ $X$ has binomial distribution .
+
+Now,assuming a fair coin,the probability mass function of $X$ is given by
 \begin{align}
-   \pr{r,n,p} &= \frac{n!}{r!(n-r)!}p^r (1-p)^{n-r}
+   p_{X}(k) &= \comb{n}{k} p^k (1-p)^{n-k} 
 \end{align}
 where
 \begin{align}
-    n=3,p=\frac{1}{2},r=0,1,2,3
+    n=3,p=\frac{1}{2},k=0,1,2,3
 \end{align}
-
-\numberwithin{table}{section}
-\begin{table}[!ht]
-\centering
-\begin{tabular}{|c|c|c|c|c|} 
-\hline
-$r$ & 0 & 1 & 2 & 3 \\
-\hline
-\pr{r} & $\frac{1}{8}$ & $\frac{3}{8}$ & $\frac{3}{8}$ & $\frac{1}{8}$ \\
-\hline
-\end{tabular}
-\caption{PMF of $X$}
-\label{tab:table1}
-\end{table}
 
 \numberwithin{figure}{section}
 \begin{figure}[!ht]

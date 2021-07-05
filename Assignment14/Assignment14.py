@@ -28,11 +28,8 @@ for i in range(n+1) :
   print(str(r_values[i]) + "\t" + str(dist[i]))
 
 #Plotting the pmf graph
-data = {'0':1/8, '1':3/8, '2':3/8, '3':1/8}
-key = list(data.keys())
-value = list(data.values())
-plt.bar(key,value)
-plt.xlabel("$r$")
-plt.ylabel("Pr($r$)")
+plt.stem(r_values,dist,use_line_collection = True)
+plt.xlabel("$k$")
+plt.ylabel("$p_{X}(k)$")
 plt.title("PMF of $X$")
 plt.show()
