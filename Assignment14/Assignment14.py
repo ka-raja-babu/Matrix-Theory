@@ -7,25 +7,32 @@ Original file is located at
     https://colab.research.google.com/drive/1_aHaRl-HMGWRpozCm5YhEOHs3KudJ8y3
 """
 
-#Probability Distribution of X
+#PMF of X
 #Code by K.A. Raja Babu
 #July 05 ,2021
 
-import numpy as np
+from scipy.stats import binom
 import matplotlib.pyplot as plt
 
-# creating the dataset
-data = {'$X$=0':1/8, '$X$=1':3/8, '$X$=2':3/8, '$X$=3':1/8}
-X = list(data.keys())
-prob = list(data.values())
-  
-fig = plt.figure()
- 
-# creating the bar plot
-plt.bar(X,prob,width = 0.4)
- 
-plt.xlabel("$X$")
-plt.ylabel("Pr($X$)")
-plt.title("Probability Distribution of $X$")
+#Defining input values
+n=3
+p=0.5
+r_values=list(range(n+1))
 
+#Calculating pmf
+dist=[binom.pmf(r,n,p) for r in r_values]
+
+#Printing pmf values
+print("r \t P(r)")
+for i in range(n+1) :
+  print(str(r_values[i]) + "\t" + str(dist[i]))
+
+#Plotting the pmf graph
+data = {'0':1/8, '1':3/8, '2':3/8, '3':1/8}
+key = list(data.keys())
+value = list(data.values())
+plt.bar(key,value)
+plt.xlabel("$r$")
+plt.ylabel("P($r$)")
+plt.title("PMF of $X$")
 plt.show()

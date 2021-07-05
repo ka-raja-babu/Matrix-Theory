@@ -149,49 +149,43 @@ A person plays a game of tossing a coin thrice. For each head, he is given Rs 2 
 
 \section{Solution}
 
-Let $X_1,X_2,X_3$ be the three tosses of coin such that head and tail represent success and failure respectively and let $X=X_1+X_2+X_3$ .
-
-$\therefore$ Value of $X$ is given by
+Let $X_1,X_2,X_3$ be the three tosses of the coin and $X$ be the total amount such that
 \begin{align}
-    X(HHH) &= X_1+X_2+X_3 = 1+1+1 = 3 \\
-    X(HHT) &= X_1+X_2+X_3 = 1+1+0 = 2 \\
-    X(HTH) &= X_1+X_2+X_3 = 1+0+1 = 2 \\
-    X(THH) &= X_1+X_2+X_3 = 0+1+1 = 2 \\
-    X(TTH) &= X_1+X_2+X_3 = 0+0+1 = 1 \\
-    X(THT) &= X_1+X_2+X_3 = 0+1+0 = 1 \\
-    X(HTT) &= X_1+X_2+X_3 = 1+0+0 = 1 \\
-    X(TTT) &= X_1+X_2+X_3 = 0+0+0 = 0 
+    X &= X_1+X_2+X_3
+\end{align}
+where
+\begin{align}
+    X_i &= \{2,-1.5\}
 \end{align}
 
-$\because X=\{0,1,2,3\}$ is a real valued function with sample space as domain.
-
-Hence , $X$ is a random variable.
+Assuming a fair coin,the probability mass function of $X$ is given by
+\begin{align}
+    P(r,n,p) &= \frac{n!}{r!(n-r)!}p^r q^{n-r}
+\end{align}
+where
+\begin{align}
+    n=3,p=\frac{1}{2},q=\frac{1}{2},r=0,1,2,3
+\end{align}
 
 \numberwithin{table}{section}
 \begin{table}[!ht]
 \centering
-\begin{tabular}{|c|c|} 
+\begin{tabular}{|c|c|c|c|c|} 
 \hline
-Expression & Value \\
+$r$ & 0 & 1 & 2 & 3 \\
 \hline
-Pr($X$=0) & $\frac{1}{8}$ \\
-\hline
-Pr($X$=1) & $\frac{3}{8}$ \\
-\hline
-Pr($X$=2) & $\frac{3}{8}$ \\
-\hline
-Pr($X$=3) & $\frac{1}{8}$ \\
+P($r$) & $\frac{1}{8}$ & $\frac{3}{8}$ & $\frac{3}{8}$ & $\frac{1}{8}$ \\
 \hline
 \end{tabular}
-\caption{Probability Distribution of $X$}
-\label{tab:table2}
+\caption{PMF of $X$}
+\label{tab:table1}
 \end{table}
 
 \numberwithin{figure}{section}
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{Figure14}
-\caption{Probability Distribution of $X$}
+\caption{PMF of $X$}
 \label{fig:fig1}	
 \end{figure}
 
