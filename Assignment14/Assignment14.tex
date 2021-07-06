@@ -153,7 +153,7 @@ A person plays a game of tossing a coin thrice. For each head, he is given Rs 2 
 
 Let $X_1,X_2,X_3$ be the three tosses of the coin and $X$ be the total amount such that
 \begin{align}
-    X &= X_1+X_2+X_3
+    X &= X_1+X_2+X_3 \label{eq1}
 \end{align}
 where
 \begin{align}
@@ -173,14 +173,14 @@ where
     n=3,p=\frac{1}{2},k=0,1,2,3
 \end{align}
 
-For $k \in \{0,1,2,3\}$,value of $X$ in terms of a new random variable $Y$ is given by
+From eq.\eqref{eq1},value of $X$ is given by
 \begin{align}
-    Y &= r \in \{-4.5,-1,2.5,6\}
+    X &= x \in \{-4.5,-1,2.5,6\}
 \end{align}
 
-So
+Now,using least square method of curve fitting,PMF of $X$ in terms of $x$ is given by 
 \begin{align}
-    \pr{X=r} &= p_{X}(k)
+    p_{X}(x) &= 0.4005 + 0.0153x - 0.0102x^2
 \end{align}
 
 \numberwithin{figure}{section}

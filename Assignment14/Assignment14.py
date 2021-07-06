@@ -18,21 +18,34 @@ import matplotlib.pyplot as plt
 n=3
 p=0.5
 k=list(range(n+1))
+x=[-4.5,-1,2.5,6]
 
-#Calculating pmf
-dist=[binom.pmf(k1,n,p) for k1 in k]
+#Calculating pmf in terms of k
+p_k=[binom.pmf(k1,n,p) for k1 in k]
 
-#Printing pmf values
+#Printing pmf values in terms of k
+print("PMF in terms of k")
 print("k \t p(k)")
 for i in range(n+1) :
-  print(str(k[i]) + "\t" + str(dist[i]))
+  print(str(k[i]) + "\t" + str(p_k[i]))
+
+#Calculating pmf in terms of x
+p_x=[0.4005+0.0153*x1-0.0102*x1*x1 for x1 in x]
+
+#Print pmf values in terms of x
+print("\n")
+print("PMF in terms of x")
+print("x \t p(x)")
+for i in k :
+  print(str(x[i]) + "\t" + str(p_x[i]))
+
 
 #Plotting the pmf graph
 data = {'-4.5':1/8, '-1':3/8, '2.5':3/8, '6':1/8}
 key = list(data.keys())
 value = list(data.values())
 plt.stem(key,value,use_line_collection = True)
-plt.xlabel("$r$")
-plt.ylabel("Pr($X=r$)")
+plt.xlabel("$x$")
+plt.ylabel("$p_{X}(x)$")
 plt.title("PMF of $X$")
 plt.show()
