@@ -28,8 +28,11 @@ for i in range(n+1) :
   print(str(k[i]) + "\t" + str(dist[i]))
 
 #Plotting the pmf graph
-plt.stem(k,dist,use_line_collection = True)
-plt.xlabel("$k$")
+data = {'-4.5':1/8, '-1':3/8, '2.5':3/8, '6':1/8}
+key = list(data.keys())
+value = list(data.values())
+plt.stem(key,value,use_line_collection = True)
+plt.xlabel("$X$")
 plt.ylabel("$p_{X}(k)$")
 plt.title("PMF of $X$")
 plt.show()
