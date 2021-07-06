@@ -15,30 +15,16 @@ from scipy.stats import binom
 import matplotlib.pyplot as plt
 
 #Defining input values
-n=3
-p=0.5
-k=list(range(n+1))
+v=[0,1,2,3]
 x=[-4.5,-1,2.5,6]
 
-#Calculating pmf in terms of k
-p_k=[binom.pmf(k1,n,p) for k1 in k]
-
-#Printing pmf values in terms of k
-print("PMF in terms of k")
-print("k \t p(k)")
-for i in range(n+1) :
-  print(str(k[i]) + "\t" + str(p_k[i]))
-
-#Calculating pmf in terms of x
+#Calculating pmf 
 p_x=[0.4005+0.0153*x1-0.0102*x1*x1 for x1 in x]
 
-#Print pmf values in terms of x
-print("\n")
-print("PMF in terms of x")
+#Print pmf values 
 print("x \t p(x)")
-for i in k :
+for i in v :
   print(str(x[i]) + "\t" + str(p_x[i]))
-
 
 #Plotting the pmf graph
 data = {'-4.5':1/8, '-1':3/8, '2.5':3/8, '6':1/8}
