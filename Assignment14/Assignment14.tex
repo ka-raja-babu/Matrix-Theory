@@ -165,9 +165,37 @@ From eq.\eqref{eq1},value of $X$ is given by
     X &= x \in \{-4.5,-1,2.5,6\}
 \end{align}
 
-Now,probability mass function(PMF) of $X$ using curve fitting ,is given by 
+Let PMF of $X$ be
 \begin{align}
-    \boxed{p_{X}(x) = 0.4005 + 0.0153x - 0.0102x^2}
+    p_{X}(x) &= ax^2+bx+c
+\end{align}
+
+Now,$\pr{X=x}$ satisfies PMF such that
+\begin{align}
+    a\brak{-4.5}^2+b\brak{-4.5}+c &= \frac{1}{8} \\
+    \implies 162a-36b+8c &= 1 \label{eq2}
+\end{align}
+and
+\begin{align}
+    a\brak{-1}^2+b\brak{-1}+c &= \frac{3}{8} \\
+    \implies 8a-8b+8c &= 3 \label{eq3}
+\end{align}
+and
+\begin{align}
+    a\brak{6}^2+b\brak{6}+c &= \frac{1}{8} \\
+    \implies 288a+48b+8c &= 1 \label{eq4}
+\end{align}
+
+From eq.\eqref{eq2},eq.\eqref{eq3} and eq.\eqref{eq4},
+\begin{align}
+    \myvec{162 & -36 & 8 \\ 8 & -8 & 8 \\288 & 48 & 8}\vec{a} &= \myvec{1 \\ 3 \\ 1} \\
+    \implies \vec{a} &= \myvec{\frac{-1}{98} \\ \frac{3}{196} \\ \frac{157}{392} }
+\end{align}
+
+Hence,PMF of $X$ is given by 
+\begin{align}
+    p_{X}(x) = \brak{\frac{-1}{98}}x^2 + \brak{\frac{3}{196}}x + \brak{\frac{157}{392}} \\
+    \implies  \boxed{p_{X}(x) = \frac{1}{392}\brak{-4x^2+6x+157}}
 \end{align}
 
 \numberwithin{figure}{section}
