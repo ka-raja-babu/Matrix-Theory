@@ -144,77 +144,99 @@ and latex-tikz codes from
 https://github.com/ka-raja-babu/Matrix-Theory/tree/main/Assignment15
 \end{lstlisting}
 %
-\section{Question No. 1.4(Optimization)}
+\section{Question No. 2.1(a)(Optimization)}
 
-Maximize $Z=3x+4y$ subject to constraints : $x+y \leq 4,x \geq 0,y \geq 0$ .
+Find the absolute maximum and absolute minimum value of $f(x)=4x-\frac{1}{2}x^2,x \in \brak{-2,\frac{9}{2}}$ .
 
 \section{Solution}
 
-Our problem can be interpreted as
+\begin{lemma}
+A function f(x) is said to be convex if following inequality is true for $\lambda \in [0,1] :$  \label{lemma1}
 \begin{align}
-        \max_{\vec{x}} Z &= \myvec{3 & 4}\vec{x}\\
-        s.t. \quad 
-        \myvec{1 & 1 }\vec{x} &\preceq 4 \\
-        -\vec{x} &\preceq \vec{0}
+    \lambda f(x_1) + (1-\lambda)f(x_2) \geq f(\lambda x_1 + (1-\lambda)x_2)
+\end{align}
+\end{lemma}
+
+Given :
+\begin{align}
+    f(x) &= 4x-\frac{1}{2}x^2 , x \in \brak{-2,\frac{9}{2}}
 \end{align}
 
-Lagrangian function is given by
+Checking convexity of $f(x)$ :
 \begin{equation}
 \begin{aligned}
-    &L(\vec{x},\boldsymbol{\lambda}) \\ &= \myvec{-3 & -4}\vec{x}+\lcbrak{\sbrak{\myvec{1 & 1}\vec{x}-4}} \\ &+\sbrak{\myvec{-1 & 0}\vec{x}} +\rcbrak{\sbrak{\myvec{0 & -1}\vec{x}}}\boldsymbol{\lambda}
+    &\lambda\brak{4x_1-\frac{1}{2}x_1^2} + (1-\lambda)\brak{4x_2-\frac{1}{2}x_2^2} \geq \\
+    &4\brak{\lambda x_1 + (1-\lambda)x_2} - \frac{1}{2}\brak{\lambda x_1 + (1-\lambda)x_2}^2
 \end{aligned}
 \end{equation}
-where,
+
+resulting in
 \begin{align}
-    \boldsymbol{\lambda} &= \myvec{\lambda_1 \\ \lambda_2 \\ \lambda_3 }
+    x_1^2\brak{\frac{\lambda^2-\lambda}{2}}+x_2^2\brak{\frac{\lambda^2-\lambda}{2}}+ 2x_1x_2\brak{\frac{\lambda-\lambda^2}{2}} &\geq 0 \\
+    \implies \brak{\frac{\lambda^2-\lambda}{2}}\brak{x_1^2+x_2^2-2x_1x_2} &\geq 0 \\
+    \implies -\frac{1}{2}\lambda\brak{1-\lambda}\brak{x_1-x_2}^2 &\geq 0 \\
+    \implies \frac{1}{2}\lambda\brak{1-\lambda}\brak{x_1-x_2}^2 &\leq 0
 \end{align}
 
-Now,
-\begin{align}
-    \nabla L(\vec{x},\boldsymbol{\lambda}) &= \myvec{-3 + \myvec{1 & -1 & 0 }\boldsymbol{\lambda}\\ -4+\myvec{1 & 0 & -1 }\boldsymbol{\lambda} \\ \myvec{1 & 1}\vec{x}-4 \\ \myvec{-1 & 0}\vec{x} \\ \myvec{0 & -1}\vec{x}}
-\end{align}
+Hence,using lemma \ref{lemma1}, given $f(x)$ is a concave function .
 
-$\therefore$ Lagrangian matrix is given by
-\begin{align}
-    \myvec{0 & 0 & 1 & -1 & 0 \\ 0 & 0 & 1 & 0 & -1 \\ 1 & 1 & 0 & 0 & 0 \\ -1 & 0 & 0 & 0 & 0  \\ 0 & -1 & 0 & 0 & 0 }\myvec{\vec{x} \\ \boldsymbol{\lambda} } &= \myvec{3 \\ 4 \\ 4 \\ 0 \\ 0 }
-\end{align}
-Considering $\lambda_1,\lambda_2$ as only active multiplier,
-\begin{align}
-    \myvec{0 & 0 & 1 & -1  \\ 0 & 0 & 1 & 0  \\ 1 & 1 & 0 & 0 \\ -1 & 0 & 0 & 0 }\myvec{\vec{x}\\ \boldsymbol{\lambda}} &= \myvec{3 \\ 4 \\ 4 \\ 0}
-\end{align}
-resulting in,
-\begin{align}
-    \myvec{\vec{x} \\ \boldsymbol{\lambda}} &= \myvec{0 & 0 & 1 & -1\\ 0 & 0 & 1 & 0 \\ 1 & 1 & 0 & 0 \\ -1 & 0 & 0 & 0}^{-1}\myvec{3 \\ 4 \\ 4 \\ 0}
-    \\
-    \implies   \myvec{\vec{x} \\ \boldsymbol{\lambda}} &= \myvec{0 & 0 & 0 & -1 \\ 0 & 0 & 1 & 1 \\  0 & 1 & 0 & 0 \\ -1 & 1 & 0 & 0}\myvec{3 \\ 4 \\ 4 \\ 0}
-    \\
-    \implies \myvec{\vec{x} \\ \boldsymbol{\lambda}} &= \myvec{0 \\ 4 \\ 4 \\ 1 }
-\end{align}
-$\because \boldsymbol{\lambda}=\myvec{4 \\ 1} \succ \vec{0} $
-\\
-$\therefore$ Optimal solution is given by
-\begin{align}
-    \vec{x} &= \myvec{0\\4} \\
-    Z &= \myvec{3 & 4}\vec{x} \\
-    &= \myvec{3 & 4}\myvec{0 \\ 4} \\
-    &= 16
-\end{align}
+\begin{enumerate}
+    \item For Maxima : \\
+    Using gradient ascent method,
+    \begin{align}
+        x_{n+1} &= x_n + \alpha \nabla f(x_n) \\
+        \implies x_{n+1} &= x_n + \alpha \brak{4-x}
+    \end{align}
+    
+    Taking $x_0=-2,\alpha=0.001$ and precision= \\ 0.00000001,values obtained using python are:
+    \begin{align}
+        \boxed{\text{Maxima} = 7.999999999950196 \approx 8 }\\
+        \boxed{\text{Maxima Point} = 3.9999900196756437 \approx 4}
+    \end{align}
+    
+    \numberwithin{figure}{section}
+    \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\columnwidth]{Figure15}
+    \caption{$f(x)=4x-0.5x^2$}
+    \label{f(x)}	
+    \end{figure}
 
-By using cvxpy in python ,
-\begin{align}
-    \vec{x} &= \myvec{2.25279985e-08\\3.99999997e+00} \approx \myvec{0 \\ 4} \\
-    Z &= 15.99999994 \approx 16
-\end{align}
-
-Hence, \boxed{x=0} and \boxed{y=4} will maximize $Z$ and the maximum value of $Z$ is \boxed{Z=16} .
-
-\numberwithin{figure}{section}
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{Figure15}
-\caption{Feasible Region}
-\label{fig:Feasible Region}	
-\end{figure}
+    \item For Minima : \\
+    
+    \numberwithin{table}{section}
+    \begin{table}[!ht]
+    \centering
+    \begin{tabular}{|c|c|} 
+    \hline
+    $x$ & $f(x)$ \\
+    \hline
+    -2 & -10 \\
+    \hline
+    4 & 8 \\
+    \hline
+    4.5 & 7.875 \\
+    \hline
+    \end{tabular}
+    \caption{Value of $f(x)$}
+    \label{tab:table1}
+    \end{table}
+    
+    Critical point is given by
+    \begin{align}
+        \nabla f(x) &= 0 \\
+        \implies x &= 4
+    \end{align}
+    
+    and,end points are $x=-2$ and $x=4.5$ .
+    
+    Using table \ref{tab:table1},
+    \begin{align}
+        \boxed{\text{Minima} = -10}\\
+        \boxed{\text{Minima Point} = -2}
+    \end{align}
+    
+\end{enumerate}
 
 \end{document}
 
