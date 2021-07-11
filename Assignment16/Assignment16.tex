@@ -135,7 +135,7 @@ columns=fullflexible
 \renewcommand{\thetable}{\theenumi}
 Download all python codes from 
 \begin{lstlisting}
-https://github.com/ka-raja-babu/Matrix-Theory/tree/main/Assignment16
+https://github.com/ka-raja-babu/Matrix-Theory/tree/main/Assignment16/Codes
 \end{lstlisting}
 %
 and latex-tikz codes from 
@@ -160,70 +160,78 @@ Consider a binary digital communication system with equally likely 0â€™s and 1â€
 
 \section{Solution}
 
-Let the random variable representing input voltage, for bit 0 and bit 1 be $X \in \sbrak{-0.25,0.25}$  and $Y \in \sbrak{0,1} $ respectively .
+Let $X \in \{0,1\}$ be the transmitted symbol and $Y \in \{0,1\}$ be the detected symbol.
 
-It is given that input voltages have equal probability i.e. $X$ and $Y$ follow uniform distribution .
-
-$\therefore$ PDF of $X$ is given by
+PMF of $X$ is given by
 \begin{align}
 p_X(x) &= 
-\begin{cases}  
-\frac{1}{0.5} & -0.25 \leq X \leq 0.25 \\
-0 &  \text{otherwise}
+\begin{cases} 
+\frac{(0.25+0.25)}{(1+0.25)} & x=0 \\     
+\frac{(1-0)}{(1+0.25)} & x=1
 \end{cases}
 \\
-&= 
-\begin{cases}  \label{eq1}
-2 & -0.25 \leq X \leq 0.25 \\     
-0 &  \text{otherwise}
+&=
+\begin{cases} 
+0.4 & x=0 \\     
+0.8 & x=1
 \end{cases}
 \end{align}
 
-and,PDF of $Y$ is given by
+Now,Joint PMF of $X,Y$ is given by
 \begin{align}
-p_Y(y) &= 
-\begin{cases}    \label{eq2}
-1 & 0 \leq Y \leq 1 \\
-0 &  \text{otherwise}
+p_{XY}(x,y) &= 
+\begin{cases}  
+\frac{(0.25-0.2)}{(1+0.25)} & x=0,y=1 \\
+\frac{(0.2-0)}{(1+0.25)}  & x=1,y=0 \\
+\frac{(0.2+0.25)}{(1+0.25)} & x=0,y=0 \\
+\frac{(1-0.2)}{(1+0.25)} & x=1,y=1
+\end{cases}
+\\
+&=
+\begin{cases}  
+0.04 & x=0,y=1 \\
+0.16 & x=1,y=0 \\
+0.36 & x=0,y=0 \\
+0.64 & x=1,y=1
 \end{cases}
 \end{align}
 
-$\because$ Threshold of the detector is given as 0.2V .
-
-$\therefore$ Using eq. \eqref{eq1}, bit error probability for bit 0  is given by
+Now, bit error probability for $X=0$ is given by
 \begin{align}
-    \text{BEP}_0 &= \pr{0.2 \leq X \leq 0.25} = 2(0.25-0.2) = 0.1  \label{eq3}
+    P_{e0} = p_{Y|X=0}(1) &= \frac{p_{XY}(0,1)}{p_X(0)} \\
+    &= \frac{0.04}{0.4} \\
+    &= 0.01
 \end{align}
 
-and,using eq. \eqref{eq2}, bit error probability for bit 1  is given by
+and,bit error probability for $X=1$ is given by
 \begin{align}
-   \text{BEP}_1 &= \pr{0 \leq Y \leq 0.2} = 1(0.2-0) = 0.2  \label{eq4}
+    P_{e1} = p_{Y|X=1}(0) &= \frac{p_{XY}(1,0)}{p_X(1)} \\
+    &= \frac{0.16}{0.8} \\
+    &= 0.02
+\end{align}
+
+Hence,average bit error probability is given by
+\begin{align}
+    P_e &= \frac{1}{2}(P_{e0}+P_{e1}) \\
+    &= \frac{1}{2}(0.01+0.02) \\
+    &= \boxed{0.15}
 \end{align}
 
 \numberwithin{figure}{section}
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{Figure16_1}
-\caption{PDF of $X$}
-\label{fig:pdf_x}	
+\caption{PMF of $Y$}
+\label{fig:pmf_x}	
 \end{figure}
 
 \numberwithin{figure}{section}
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{Figure16_2}
-\caption{PDF of $Y$}
-\label{fig:pdf_y}	
+\caption{Joint PMF of $X,Y$}
+\label{fig:joint_pmf}	
 \end{figure}
-
-Hence,using eq. \eqref{eq3} and eq. \eqref{eq4} ,average bit error probability is given by
-\begin{align}
-    \text{BEP}_{avg} &= \frac{1}{2}\brak{\text{BEP}_0 + \text{BEP}_1} \\
-    &= \frac{1}{2}\brak{0.1+0.2} \\
-    &= \boxed{0.15}
-\end{align}
-
-
 
 \end{document}
 
