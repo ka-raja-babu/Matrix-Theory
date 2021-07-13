@@ -198,21 +198,21 @@ p_{XY}(x,y) &=
 
 Now, bit error probability for $X=0$ is given by
 \begin{align}
-    P_{e0} = \pr{Y=1|X=0} &= \frac{\text{Pr}\sbrak{(Y=1)(X=0)}}{\pr{X=0}} \\
+    P_{e_{0}} = \pr{Y=1|X=0} &= \frac{\text{Pr}\sbrak{(Y=1)(X=0)}}{\pr{X=0}} \\
     &= \frac{0.04}{0.4} \\
     &= 0.01
 \end{align}
 
 and,bit error probability for $X=1$ is given by
 \begin{align}
-    P_{e1} = \pr{Y=0|X=1} &= \frac{\text{Pr}\sbrak{(Y=0)(X=1)}}{\pr{X=1}} \\
+    P_{e_{1}} = \pr{Y=0|X=1} &= \frac{\text{Pr}\sbrak{(Y=0)(X=1)}}{\pr{X=1}} \\
     &= \frac{0.16}{0.8} \\
     &= 0.02
 \end{align}
 
 Now,average bit error probability or bit error rate is given by
 \begin{align}
-    P_e =BER &= P_0P_{e0}+P_1P_{e1}
+    P_e =BER &= P_0P_{e_{0}}+P_1P_{e_{1}}
 \end{align}
 
 $\because$ Symbols 0 and 1 are equally likely.
@@ -224,7 +224,7 @@ $\therefore$ $P_0$ and $P_1$ is given by
 
 Hence,average bit error probability is given by
 \begin{align}
-    P_e &=\frac{1}{2}(P_{e0}+P_{e1}) \\
+    P_e &=\frac{1}{2}(P_{e_{0}}+P_{e_{1}}) \\
     &= \frac{1}{2}(0.01+0.02) \\
     &= \boxed{0.15}
 \end{align}
