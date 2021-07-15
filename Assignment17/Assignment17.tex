@@ -210,8 +210,8 @@ From fig. \ref{question},PDF can be defined as:
 \begin{align}
 f(x) &= 
 \begin{cases}  
-x+1 & x \in [-1,0] \\
--x+1 & x \in [0,1]
+0 & |x|>1 \\
+1-|x| & |x| \leq 1
 \end{cases}
 \end{align}
 
@@ -220,12 +220,14 @@ Now, CDF can be defined as:
     &F(x)  \\ &=\int_{-\infty}^{x}f(x)dx  \\
     &=
     \begin{cases} 
+    0 & |x|>1 \\
     \int_{-1}^{x}(x+1)dx & x \in [-1,0] \\
     \int_{0}^{x}(-x+1)dx & x \in [0,1]
     \end{cases}
     \\
     &=
     \begin{cases}  \label{eq1}
+    0 & |x|>1 \\
     \frac{x^2}{2}+x+\frac{1}{2} & x \in [-1,0] \\
     \frac{-x^2}{2}+x+\frac{1}{2} & x \in [0,1]
     \end{cases}
