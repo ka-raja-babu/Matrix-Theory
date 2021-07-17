@@ -160,6 +160,32 @@ Consider a simple symmetric random walk on integers, where from every state $i$ 
 
 \section{Solution}
 
+\begin{definition}[Aperiodicity]
+A random walk defined by a Markov chain having state space $S$ and state transition matrix $P$ ,is said to be aperiodic if there exists self-transition in the chain such that
+\begin{align}
+    p^n_{ii}>0 \quad \text{for} \quad i \in S,n \in Z^+
+\end{align}
+\end{definition}
+
+\begin{definition}[Irreducibility]
+A random walk defined by a Markov chain having state space $S$ and state transition matrix $P$ ,is said to be irreducible if all states communicate with each other such that
+\begin{align}
+    p^n_{ij}>0 \quad \text{for} \quad i,j \in S,n \in Z^+
+\end{align}
+\end{definition}
+
+\begin{definition}[Positive and Null Recuurancy]
+A random walk defined by a Markov chain having state space $S$ ,is said to be positive recurrent if the excepted time to return to state $i$ $\forall$ $i \in S$ is finite such that
+\begin{align}
+    E(\tau_{ii}) < \infty
+\end{align}
+
+and,is said to be null recurrent if the excepted time to return to state $i$ $\forall$ $i \in S$ is infinite such that
+\begin{align}
+    E(\tau_{ii}) = \infty
+\end{align}
+\end{definition}
+
 Let us define a Markov Chain for the given simple symmetric random walk with states $\cbrak{i-1,i,i+1}$ .
 
 \begin{figure}[h]
@@ -209,11 +235,11 @@ State transition matrix $P$ can be defined as:
 \begin{enumerate}
     \item From State Transition Matrix $P$,
       \begin{align}
-        p_{mn} = 0
+        p_{mm} = 0
     \end{align}
     where
     \begin{align}
-        m,n=\{i-1,i,i+1\} \quad \& \quad m = n
+        m=\{i-1,i,i+1\} 
     \end{align}
     
     $\because$ There is no self-transition in the chain.
@@ -226,7 +252,7 @@ State transition matrix $P$ can be defined as:
     \end{align}
     where
     \begin{align}
-        m,n=\{i-1,i,i+1\} \quad \& \quad m \neq n
+        m,n=\{i-1,i,i+1\} 
     \end{align}
      
     $\because$ All states communicate with each other .
